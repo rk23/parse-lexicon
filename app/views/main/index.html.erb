@@ -1,0 +1,7 @@
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+
+<%= form_for :translate, url: '/translate' do |f| %>
+  Enter text here <%= f.text_area :text%>
+    <%= f.submit "Translate" %>
+<% end %>
