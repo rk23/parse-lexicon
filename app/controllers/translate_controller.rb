@@ -4,6 +4,7 @@ class TranslateController < ApplicationController
     @text = @sink['text']
 
     @freq = count_words @text
+    @sorted =  @freq.sort_by {|word, freq| freq}.reverse
 
 
   end

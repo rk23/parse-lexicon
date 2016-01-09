@@ -2,4 +2,8 @@
 <p>Find me in app/views/translate/index.html.erb</p>
 
 <p><%= @text %></p>
-<p><%= @freq %></p>
+
+<% @sorted.each do |word| %>
+    <p><%= word[1]%> <%= word[0]%>: (translation to go here) (checkbox to go here)</p>
+<% end %>
+
