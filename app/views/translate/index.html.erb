@@ -2,4 +2,4 @@
 <p>Find me in app/views/translate/index.html.erb</p>
 
 <p><%= @text %></p>
-<p><%= @freq %></p>
+<p><%= @freq.sort_by {|word, freq| freq}.reverse %></p>
