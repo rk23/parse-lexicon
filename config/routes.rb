@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get '/user/:id'     => 'users#show'
 
   #Translate routes
-  get '/translate'    => 'translate#index'
+  # get '/translate'    => 'translate#index'
+  post '/translate'    => 'translate#index'
 
   #Favorite routes
   get '/users/:id/favorites'         => 'favorites#index'
