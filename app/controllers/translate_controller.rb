@@ -1,9 +1,16 @@
 class TranslateController < ApplicationController
   def index
-    @sink = params.require(:translate).permit(:text)
-    @text = @sink['text']
+    #Grab data from the form on the main page
+    @form_data = params.require(:translate).permit(:text)
+    @text = @form_data['text']
 
-    @freq = count_words @text
+    @counted = count_words @text
+
+    #Sorts by frequency in descending order
+    @sorted =  @counted.sort_by {|word, freq| freq}.reverse
+
+    #Gets total word count
+    @word_count = @text.split(' ').length
 
 
   end

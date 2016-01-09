@@ -2,4 +2,12 @@
 <p>Find me in app/views/translate/index.html.erb</p>
 
 <p><%= @text %></p>
-<p><%= @freq %></p>
+
+<%@count = 0.0; @sorted.each do |word| %>
+    <% @count = @count + word[1].to_i %>
+    <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
+        <br><p>25% of the words in this article above</p><br>
+    <% end %>
+    <p><%= word[1]%> <%= word[0]%>: (translation to go here) (checkbox to go here)</p>
+<% end %>
+
