@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   #Main routes
   root 'main#index'
+  get '/about'        => 'main#about'
   get '/recommended'  => 'main#recommended'
 
   #Users routes
@@ -13,11 +14,11 @@ Rails.application.routes.draw do
   get '/translate'    => 'translate#index'
 
   #Favorite routes
-  get '/user/:id/favorites'         => 'favorites#index'
-  get '/user/:id/favorites/:id'     => 'favorites#show'
-  get '/user/:id/favorites/new'     => 'favorites#new'
-  post '/user/:id/favorites/new'    => 'favorites#create'
-  delete '/user/:id/favorites/:id'  => 'favorites#destroy'
+  get '/users/:id/favorites'         => 'favorites#index'
+  get '/users/:id/favorites/:id'     => 'favorites#show'
+  get '/users/:id/favorites/new'     => 'favorites#new'
+  post '/users/:id/favorites/new'    => 'favorites#create'
+  delete '/users/:id/favorites/:id'  => 'favorites#destroy'
 
   # get 'favorites/update'
   # get 'favorites/edit'
