@@ -1,27 +1,23 @@
 class TranslateController < ApplicationController
   def index
 
+    #Uses microsoft-translator gem
     translator = MicrosoftTranslator::Client.new('01928374', 'Rw8yP/mFE41m/Hp7pPJ4TORa5b4unbsPCIJva7jtKh0=')
-
-
-    # spanish = "hasta luego muchacha"
-    # @trtext = translator.translate(spanish,"es","en","text/html")
-
 
     #Grab data from the form on the main page
     @form_data = params.require(:translate).permit(:text, :lang)
 
     @text = @form_data['text']
-    @lang = @form_data
     @counted = count_words @text
-
-    #Sorts by frequency in descending order
-    @sorted =  @counted.sort_by {|word, freq| freq}.reverse
 
     #Gets total word count
     @word_count = @text.split(' ').length
 
+    #Sorts by frequency in descending order and returns a hash
+    @sorted =  @counted.sort_by {|word, freq| freq}.reverse
+
     # @translation = get_translation translator, @text, 'es', 'en'
+     @translation = get_translation translator, @sorted, 'es', 'en'
 
 
   end
@@ -40,10 +36,15 @@ class TranslateController < ApplicationController
     frequency
   end
 
-  def get_translation(translator, string, lang_from, lang_to)
-    words = parse_text(string)
+  def get_translation(translator, hash, lang_from, lang_to)
     translation = Hash.new(0)
-    words.each { |word| translation[word.downcase] = translator.translate(word,lang_from,lang_to,"text/html")}
+
+    #Iterate over the hash and store both word count and translation
+    #so both are accessible
+    hash.each do |word|
+        translation[word[0]] = {count: word[1],
+                                translation: translator.translate(word[0],lang_from,lang_to,"text/html")}
+    end
     translation
   end
 
