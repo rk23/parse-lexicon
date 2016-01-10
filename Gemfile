@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Typhoeus runs HTTP requests in parallel while cleanly encapsulating handling logic.
 gem "typhoeus"
 
+#Ruby wrapper for Microsoft Translate HTTP API.
+gem "microsoft_translator"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -3,5 +3,9 @@
 
 <%= form_for :translate, url: '/translate' do |f| %>
   Enter text here <%= f.text_area :text%>
+    <%= f.radio_button_tag(:lang, "es") %>
+    <%= f.label_tag(:lang_spanish, "Spanish") %>
+    <%= f.radio_button_tag(:lang, "fr") %>
+    <%= f.label_tag(:lang_french, "French") %>
     <%= f.submit "Translate" %>
 <% end %>
