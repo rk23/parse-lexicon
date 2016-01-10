@@ -44,7 +44,9 @@ class TranslateController < ApplicationController
     hash.each do |word|
         translation[word[0]] = {count: word[1],
                                 translation: translator.translate(word[0],lang_from,lang_to,"text/html")}
+
     end
+
     translation
   end
 
