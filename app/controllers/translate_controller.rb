@@ -15,7 +15,7 @@ class TranslateController < ApplicationController
     @parsed_and_sorted = count_words @text
 
     # @translation = get_translation translator, @text, 'es', 'en'
-     @translation = get_translation translator, @parsed_and_sorted, 'fr', 'en'
+     @translation = get_translation translator, @parsed_and_sorted, 'de', 'en'
 
 
   end
@@ -30,7 +30,7 @@ class TranslateController < ApplicationController
   def count_words(string)
     words = parse_text(string)
     frequency = Hash.new(0)
-    words.each { |word| frequency[word] += 1 }
+    words.each { |word| frequency[word.downcase] += 1 }
     frequency.sort_by {|word, freq| freq}.reverse
   end
 
