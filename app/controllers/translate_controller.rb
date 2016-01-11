@@ -12,10 +12,12 @@ class TranslateController < ApplicationController
     @word_count = @text.split(' ').length
 
     #Counts frequency and stores in hash
+    # @parsed_and_sorted = count_words @text
     @parsed_and_sorted = count_words @text
+    @parsed = parse_text @text
 
     # @translation = get_translation translator, @text, 'es', 'en'
-     @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
+    #  @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
 
 
   end
@@ -23,7 +25,7 @@ class TranslateController < ApplicationController
   private
 
   def parse_text(string)
-    words = string.gsub("(.*?)($|'|[^[:punct:]]+?)(.*?)", "\\2").split(' ')
+    words = string.gsub(/(?!')[[:punct:]]/, "").split(' ')
     words
   end
 
