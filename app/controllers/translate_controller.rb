@@ -7,19 +7,15 @@ class TranslateController < ApplicationController
 
     #Grab data from the form on the main page
     @form_data = params.require(:translate).permit(:text, :lang)
-
     @text = @form_data['text']
-    @word_count = @text.split(' ').length
 
     #Counts frequency and stores in hash
-    # @parsed_and_sorted = count_words @text
     @parsed_and_sorted = count_words @text
     @parsed = parse_text @text
+    @word_count = @parsed.length
 
-    # @translation = get_translation translator, @text, 'es', 'en'
-    #  @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
-
-
+    # Get the translation hash
+    @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
   end
 
   private
@@ -44,7 +40,7 @@ class TranslateController < ApplicationController
     #so both are accessible
     hash.each do |word|
         translation[word[0]] = {count: word[1],
-                                translation: "translated"}
+                                translation: ""}
     end
 
     translation
