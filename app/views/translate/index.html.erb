@@ -3,14 +3,17 @@
 
 
 <p><%= @text %></p>
-<%= form_for :this do |f| %>
+<%= form_for :word, url: '/translate/addwords' do |f| %>
 	<% @count = 0.0; @translation.each do |word| %>
 	    <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
 	        <br><p>25% of the words in this article above</p><br>
 	    <% end %>
-	    <p><%= word[1][:count]%>x <%= word[0]%>: <%= word[1][:translation]%>  <input type="checkbox" name="known" value="<%= word[0] %>"></p>
+	    <p><%= word[1][:count]%>x <%= word[0]%>: <%= word[1][:translation]%>  
+<!-- 	    	<input type="checkbox" name="known" value="<%= word[0] %>">
+ -->	   <%=  check_box("word", word[0], {}, "1", "0") %>
+ 		</p>
 	<% end %>
-	<% f.submit "Add these words" %>
+	<%= f.submit "Add these words" %>
 <% end %>
 
 <div class="two-thirds">
