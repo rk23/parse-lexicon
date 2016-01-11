@@ -1,0 +1,15 @@
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<%= form_for :user do |f| %>
+	email: <%= f.text_field :email, placeholder: "Enter email" %> <br>
+	password: <%= f.password_field :password, placeholder: "Enter password" %> <br>
+	<%= f.submit "login" %>
+<% end %>
+
+<%= form_for :user, url: "/users" do |f| %>
+	username: <%= f.text_field :name %> <br>
+	email: <%= f.text_field :email %> <br>
+	password: <%= f.password_field :password %> <br>
+	<%= f.submit "create account" %>
+<% end %>

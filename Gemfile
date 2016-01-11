@@ -26,6 +26,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Like a modern code version of the mythical beast with 100 serpent heads,
+# Typhoeus runs HTTP requests in parallel while cleanly encapsulating handling logic.
+gem "typhoeus"
+
+#Ruby wrapper for Microsoft Translate HTTP API.
+gem "microsoft_translator"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
