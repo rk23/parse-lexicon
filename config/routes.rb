@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/login'        => 'sessions#new'
+  post '/login'       => 'sessions#create'
+  get '/logout'       => 'sessions#destroy'
+
   #Main routes
   root 'main#index'
   get '/about'        => 'main#about'
