@@ -1,3 +1,12 @@
 // Place all the styles related to the translate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.two-thirds {display: inline-block; width: 66vw; top: 0}
+.one-third {display: inline-block; width: 60vw}
+
+.highest-freq {background-color: lightcoral}
+.high-freq {background-color: lightsalmon}
+.medium-freq {background-color: lightgreen}
+.low-freq {background-color: lightblue}
+.lowest-freq {background-color: mediumpurple}
