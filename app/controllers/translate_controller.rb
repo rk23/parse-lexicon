@@ -15,7 +15,7 @@ class TranslateController < ApplicationController
     @parsed_and_sorted = count_words @text
 
     # @translation = get_translation translator, @text, 'es', 'en'
-     @translation = get_translation translator, @parsed_and_sorted, 'de', 'en'
+     @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
 
 
   end
@@ -37,11 +37,12 @@ class TranslateController < ApplicationController
   def get_translation(translator, hash, lang_from, lang_to)
     translation = Hash.new(0)
 
+    # translator.translate(word[0],lang_from,lang_to,"text/html")
     #Iterate over the hash and store both word count and translation
     #so both are accessible
     hash.each do |word|
         translation[word[0]] = {count: word[1],
-                                translation: translator.translate(word[0],lang_from,lang_to,"text/html")}
+                                translation: "translated"}
     end
 
     translation
