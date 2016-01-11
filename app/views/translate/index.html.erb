@@ -1,12 +1,34 @@
 <h1>Translate#index</h1>
 <p>Find me in app/views/translate/index.html.erb</p>
 
-<p><%= @text %></p>
+<div class="two-thirds">
+  <% @count = 0.0; @parsed.each do |w| %>
 
-<% @count = 0.0; @translation.each do |word| %>
-    <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
-        <br><p>25% of the words in this article above</p><br>
-    <% end %>
-    <p><%= word[1][:count]%>x <%= word[0]%>: <%= word[1][:translation]%>  <input type="checkbox" name="known" value="isknown"></p>
-<% end %>
+      <% @parsed_and_sorted.each do |word| %>
+          <% if word[0] == w.downcase %>
+              <% if word[1] > 20 %>
+                  <span class="highest-freq"><%= w%></span>
+              <% elsif word[1] <= 20 && word[1] > 15 %>
+                  <span class="high-freq"><%= w%></span>
+              <% elsif word[1] <= 15 && word[1] > 10 %>
+                  <span class="medium-freq"><%= w%></span>
+              <% elsif word[1] <= 10 && word[1] > 5 %>
+                  <span class="low-freq"><%= w%></span>
+              <% elsif word[1] <= 5 && word[1] > 0 %>
+                  <span class="lowest-freq"><%= w%></span>
+              <% end %>
+          <% end %>
+
+      <% end %>
+  <% end %>
+</div>
+
+<div class="one-third">
+  <% @count = 0.0; @translation.each do |word| %>
+      <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
+          <br><p>25% of the words in this article above</p><br>
+      <% end %>
+      <p><%= word[1][:count]%>x <%= word[0]%>: <%= word[1][:translation]%> <input type="checkbox" name="known" value="isknown"></p>
+  <% end %>
+</div>
 
