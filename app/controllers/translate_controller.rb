@@ -18,6 +18,15 @@ class TranslateController < ApplicationController
     @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
   end
 
+  def create
+    render json: params[:word]
+    # @new_word = word_params[:understood_word]
+    # @word = Word.find_or_create_by(@new_word)
+    # User.word.find_or_create_by(@word)
+  end
+
+
+
   private
 
   def parse_text(string)
@@ -45,5 +54,12 @@ class TranslateController < ApplicationController
 
     translation
   end
+
+  private
+
+    def word_params
+      params.require(:word).permit(:understood_word, :languge)
+    end
+
 
 end
