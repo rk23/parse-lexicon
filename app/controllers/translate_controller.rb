@@ -20,6 +20,9 @@ class TranslateController < ApplicationController
 
   end
 
+
+
+
   private
 
   def parse_text(string)
