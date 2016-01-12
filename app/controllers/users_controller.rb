@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   	@user = User.create(user_params)
 
   		if @user.save
-  			session[:user_id] = @user_id
+  			session[:user_id] = @user.id
+        @user_language = @user.user_language.create(user_language_params)
   			# flash[:success] = "User created"
       		redirect_to root_path
       	else
@@ -23,6 +24,10 @@ class UsersController < ApplicationController
 
   def user_params
   	params.require(:user).permit(:email, :password, :name)
+  end
+
+  def user_language_params
+      params.require(:user).permit(:session_language)
   end
   
 end
