@@ -31,6 +31,7 @@ class TranslateController < ApplicationController
         @user_known_words << word.understood_word
       end
 
+      user_word_count = 0.0
       # New hash for words that the user doesn't know, with frequency data
       @parsed_sorted_and_compared = Hash.new(0)
       @parsed_and_sorted.each do |key_value_pair|
@@ -39,11 +40,14 @@ class TranslateController < ApplicationController
           # put it in an array we can access on the front end
           if @user_known_words.exclude? key_value_pair[0]
             @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
+            user_word_count += key_value_pair[1]
           end
 
       end
-    end
 
+      # Percentage of text known based on user vocab
+      @percentage = ((1 - (user_word_count.to_f / @word_count.to_f)) * 100).round(2)
+    end
 
     # Get the translation hash
     @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
