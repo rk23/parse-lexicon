@@ -23,13 +23,16 @@
   <% end %>
 </div>
 
-<div class="one-third">
+<div class="one-third" id="buttons">
   <% @count = 0.0; @translation.each do |word| %>
       <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
           <br><p>25% of the words in this article above</p><br>
       <% end %>
-      <button class="word_known" value="<%= word[0]%>"><%= word[0]%>: <%= word[1][:count]%> uses <%= word[1][:translation]%></button>
-      <br>
+      <!--word[1][:translation]-->
+      <div class="word_known">
+        <button value="<%= word[0]%>"><%= word[0]%> X <%= word[1][:count]%></button>
+        <br>
+      </div>
   <% end %>
 </div>
 
