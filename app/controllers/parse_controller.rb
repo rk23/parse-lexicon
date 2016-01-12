@@ -1,4 +1,4 @@
-class TranslateController < ApplicationController
+class ParseController < ApplicationController
   def index
 
     # Uses microsoft-translator gem
@@ -6,7 +6,7 @@ class TranslateController < ApplicationController
     translator = 0
 
     # Grab data from the form on the main page
-    form_data = params.require(:translate).permit(:text, :lang)
+    form_data = params.require(:parse).permit(:text, :lang)
     text = form_data['text']
 
     # Removes punctuation from text, puts into an array
@@ -16,7 +16,7 @@ class TranslateController < ApplicationController
     # Counts frequency and stores in hash
     @parsed_and_sorted = count_words text
 
-    #keeps track of user languge selection
+    # keeps track of user languge selection
     # @session_language = session_language
     # prints session_language
 

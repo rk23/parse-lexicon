@@ -11,7 +11,7 @@ $(function(){
         e.preventDefault();
         var div = $(this);
         $.ajax({
-            url: '/translate/addwords',
+            url: '/parse/addwords',
             method: 'POST',
             dataType: 'html',
             data: {word: div.context.children[0].value}

@@ -1,23 +1,24 @@
 Rails.application.routes.draw do
 
-  get '/login'        => 'sessions#new'
-  post '/login'       => 'sessions#create'
-  get '/logout'       => 'sessions#destroy'
-
-  #Main routes
+  # Main routes
   root 'main#index'
   get '/about'        => 'main#about'
   get '/recommended'  => 'main#recommended'
 
-  #Users routes
+  # Sessions
+  get '/login'        => 'sessions#new'
+  post '/login'       => 'sessions#create'
+  get '/logout'       => 'sessions#destroy'
+
+  # Users routes
   get '/signup'       => 'users#new'
   post '/users'       => 'users#create'
   get '/user/:id'     => 'users#show'
 
-  #Translate routes
-  # get '/translate'    => 'translate#index'
-  post '/translate'    => 'translate#index'
-  post '/translate/addwords'   => 'translate#create'
+  # Parse routes
+  # get '/parse'          => 'parse#index'
+  post '/parse'           => 'parse#index'
+  post '/parse/addwords'  => 'parse#create'
 
   #Favorite routes
   get '/users/:id/favorites'         => 'favorites#index'
