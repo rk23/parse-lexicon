@@ -4,7 +4,10 @@ class TranslateController < ApplicationController
     # Uses microsoft-translator gem
     # translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
     translator = 0
-    
+
+    puts "LOOOOOOKKKK HERERERERERERERERERE______________________"
+    puts current_user
+
     # Grab data from the form on the main page
     @form_data = params.require(:translate).permit(:text, :lang)
     @text = @form_data['text']
@@ -14,14 +17,13 @@ class TranslateController < ApplicationController
     # prints session_language
 
     #gets user language and saves it
-    @user_language = UserLanguage.create(user_language_params)
+    @user_language = current_user.user_language.create(user_language_params)
       if @user_language.save
-        session[:user_id] = @user_id
+        # session[:user_id] = @user_id
         print "got it"
       else
         print "did not save"
       end
-
 
     # Counts frequency and stores in hash
     @parsed_and_sorted = count_words @text

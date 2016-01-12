@@ -7,8 +7,6 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      print session[:user_id]
-      print @user.id
       redirect_to root_path
     else
       # flash[:danger] = "wrong password"
