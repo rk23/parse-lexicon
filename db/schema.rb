@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112013540) do
+ActiveRecord::Schema.define(version: 20160112181235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "user_languages", force: :cascade do |t|
+    t.text     "session_language"
+    t.boolean  "current_language"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  add_index "user_languages", ["user_id"], name: "index_user_languages_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160112013540) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "user_languages", "users"
   add_foreign_key "users_words", "users"
   add_foreign_key "users_words", "words"
 end
