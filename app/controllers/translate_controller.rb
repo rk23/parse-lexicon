@@ -9,6 +9,10 @@ class TranslateController < ApplicationController
     @form_data = params.require(:translate).permit(:text, :lang)
     @text = @form_data['text']
 
+    #keeps track of user languge selection
+    @session_language = session_language
+    prints session_language
+
     #Counts frequency and stores in hash
     @parsed_and_sorted = count_words @text
     @parsed = parse_text @text
