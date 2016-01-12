@@ -19,10 +19,12 @@ class TranslateController < ApplicationController
   end
 
   def create
-    render json: params[:word]
+    @new_word = render json: params[:word]
+
     # @new_word = word_params[:understood_word]
-    # @word = Word.find_or_create_by(@new_word)
-    # User.word.find_or_create_by(@word)
+    @word = Word.find_or_create_by(understood_word: @new_word[0])
+    current_user.words.find_or_create_by(@word)
+
   end
 
 
