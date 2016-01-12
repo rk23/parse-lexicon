@@ -24,7 +24,7 @@ body {
 	color: #008490;
 	font-weight: 500;
 	font-size: 14px;
-	width: 15em;
+	width: 12em;
 }
 
 #word-btn:hover {
@@ -46,4 +46,29 @@ body {
 	border-radius: 20px;
 }
 
+.right-sidebar {
+	max-height: 450px;
+	width: 15em;
+}
+
+
+ /* styling for current user */
+
+h1#brand {
+		margin-top: 40px;
+		font-size: 80px;
+		font-family: 'Elephant', serif;
+		letter-spacing: 0px;
+		color: #000000;
+}
+
+.current {
+	font-size: 1.3em;
+	margin-top: 45px;
+}
+
+.top-bar, .nav-bar {
+	height: 4em;
+	background-color: white;
+}
 
