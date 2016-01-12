@@ -20,19 +20,14 @@
       <li class="name">
         <h1 id="brand">translate</h1>
       </li>
+
     </ul>
-
-  </nav>
-  </div>
-  <div class="row">
-
-  <div class="medium-6 columns text-right">
-    <% if @current_user %>
-      <p class="current">signed in as <%= link_to @current_user.name, "/user/" + @current_user.id.to_s %> | <%= link_to "logout", "/logout" %></p>
+          <% if @current_user %>
+      <p class="current text-right">signed in as <%= link_to @current_user.name, "/user/" + @current_user.id.to_s %> | <%= link_to "logout", "/logout" %></p>
       <% else %>
         <p><%= link_to "login/signup", "/login" %></p>
       <% end %>
-  </div>
+  </nav>
   </div>
 
   <div class="row">
