@@ -38,6 +38,11 @@ gem "typhoeus"
 #Ruby wrapper for Microsoft Translate HTTP API.
 gem "microsoft_translator"
 
+# Use Nokogiri for parsing data from data scraping
+gem 'nokogiri'
+# Use rest-client to grab data from the web
+gem 'rest-client'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

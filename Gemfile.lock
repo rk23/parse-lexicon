@@ -178,8 +178,10 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   microsoft_translator
+  nokogiri
   pg
   rails (= 4.2.4)
+  rest-client
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
