@@ -1,42 +1,46 @@
-<h1>Translate#index</h1>
-<p>Find me in app/views/translate/index.html.erb</p>
+<div class="row small preview">
+<br><h2>Translated Text:</h2>
 
-<div class="two-thirds">
-  <% @count = 0.0; @parsed.each do |w| %>
+  <div class="medium-3 small-12 columns panel left-sidebar"> 
+  <ul>
+    <li>Candide</li>
+    <li>Author: Voltaire</li>
+    <li>Language: French</li>
+  </ul>
+  </div>
 
-      <% @parsed_and_sorted.each do |word| %>
-          <% if word[0] == w.downcase %>
-              <% if word[1] > 20 %>
-                  <span class="highest-freq"><%= w%></span>
-              <% elsif word[1] <= 20 && word[1] > 15 %>
-                  <span class="high-freq"><%= w%></span>
-              <% elsif word[1] <= 15 && word[1] > 10 %>
-                  <span class="medium-freq"><%= w%></span>
-              <% elsif word[1] <= 10 && word[1] > 5 %>
-                  <span class="low-freq"><%= w%></span>
-              <% elsif word[1] <= 5 && word[1] > 0 %>
-                  <span class="lowest-freq"><%= w%></span>
-              <% end %>
-          <% end %>
+  <div class="medium-6 small-12 columns">
+    <h4>Preview Text:</h4>
+    <% @count = 0.0; @parsed.each do |w| %>
 
-      <% end %>
-  <% end %>
-</div>
+        <% @parsed_and_sorted.each do |word| %>
+            <% if word[0] == w.downcase %>
+                <% if word[1] > 20 %>
+                    <span class="highest-freq"><%= w%></span>
+                <% elsif word[1] <= 20 && word[1] > 15 %>
+                    <span class="high-freq"><%= w%></span>
+                <% elsif word[1] <= 15 && word[1] > 10 %>
+                    <span class="medium-freq"><%= w%></span>
+                <% elsif word[1] <= 10 && word[1] > 5 %>
+                    <span class="low-freq"><%= w%></span>
+                <% elsif word[1] <= 5 && word[1] > 0 %>
+                    <span class="lowest-freq"><%= w%></span>
+                <% end %>
+            <% end %>
 
-<div class="one-third" id="buttons">
-  <% @count = 0.0; @translation.each do |word| %>
-      <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
-          <br><p>25% of the words in this article above</p><br>
-      <% end %>
-      <!--word[1][:translation]-->
-      <div class="word_known">
-        <button value="<%= word[0]%>"><%= word[0]%> X <%= word[1][:count]%></button>
+        <% end %>
+    <% end %>
+  </div>
+
+  <div class="medium-3 small-12 columns panel right-sidebar">
+  <h4>Word List:</h4>
+    <% @count = 0.0; @translation.each do |word| %>
+        <% if (@count / @word_count)*100 >= 25 && (@count / @word_count)*100 < 26%>
+            <br><p>25% of the words in this article above</p><br>
+        <% end %>
+        <div class="word_known">
+        <button class="button tiny" id="word-btn" value="<%= word[0]%>"><%= word[0]%> X <%= word[1][:count]%></button>
         <br>
-      </div>
-  <% end %>
-</div>
-
-
-
-
-
+        </div>
+    <% end %>
+  </div>

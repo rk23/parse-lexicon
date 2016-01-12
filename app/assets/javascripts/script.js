@@ -10,7 +10,6 @@ $(function(){
     $('.word_known').click(function(e){
         e.preventDefault();
         var div = $(this);
-
         $.ajax({
             url: '/translate/addwords',
             method: 'POST',

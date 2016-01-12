@@ -1,3 +1,45 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font-family: 'Avenir Next', sans-serif;
+	li {
+		list-style: none;
+	}
+}
+
+.button {
+	// background-color: #008490;
+	background-color: transparent;
+	border: 2px solid #008490;
+	color: #008490;
+}
+
+#word-btn {
+	color: #008490;
+	font-weight: 500;
+	font-size: 14px;
+	width: 15em;
+}
+
+#word-btn:hover {
+	color: #FFFFFF;
+}
+
+#translate {
+	width: 100%;
+}
+
+.text_area {
+	height: 15em;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.content {
+	margin-top: 20px;
+	border-radius: 20px;
+}
+
+

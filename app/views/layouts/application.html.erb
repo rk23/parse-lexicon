@@ -13,8 +13,19 @@
   </head>
 
   <body>
+  <div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">My Site</a></h1>
+      </li>
+    </ul>
+  </nav>
+  </div>
 
+  <div class="row">
     <%= yield %>
 
+  <script src="assets/javascripts/script.js"></script>
   </body>
 </html>
