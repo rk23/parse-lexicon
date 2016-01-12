@@ -20,14 +20,6 @@ class TranslateController < ApplicationController
     # @session_language = session_language
     # prints session_language
 
-    #gets user language and saves it
-    @user_language = current_user.user_language.create(user_language_params)
-      if @user_language.save
-        # session[:user_id] = @user_id
-        print "got it"
-      else
-        print "did not save"
-      end
 
     if current_user
       # Grabs the reference values/collection of the user's words
@@ -98,10 +90,5 @@ class TranslateController < ApplicationController
     def word_params
       params.require(:word).permit(:understood_word, :languge)
     end
-
-    def user_language_params
-      params.require(:translate).permit(:session_language)
-    end
-
 
 end
