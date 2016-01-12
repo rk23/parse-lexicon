@@ -12,17 +12,17 @@
 
               <% if word[0] == w.downcase %>
                   <% if word[1] > 20 %>
-                      <span class="highest-freq <%= word[0]%>"><%= w%></span>
+                      <span class="highest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 20 && word[1] > 10 %>
-                      <span class="high-freq <%= word[0]%>"><%= w%></span>
+                      <span class="high-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 10 && word[1] > 5 %>
-                      <span class="medium-freq <%= word[0]%>"><%= w%></span>
+                      <span class="medium-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 5 && word[1] > 2 %>
-                      <span class="low-freq <%= word[0]%>"><%= w%></span>
+                      <span class="low-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 2 && word[1] > 0 %>
-                      <span class="lowest-freq <%= word[0]%>"><%= w%></span>
+                      <span class="lowest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% else %>
-                      <span class="<%= word[0]%>"><%= w%></span>
+                      <span class="<%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% end %>
               <% end %>
 
