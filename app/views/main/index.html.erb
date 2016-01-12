@@ -1,13 +1,7 @@
-
-	<div class="medium-6 medium-offset-3 small-6 small-offset-3 columns">
-	<div class="panel content">
-		<h1 class="text-center">parse.</h1>
-
-		<%= form_for :parse, url: '/parse' do |f| %>
-		  <%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
-
-		    <%= f.submit "Parse", :class => 'button', :id => 'parse'%>
-		<% end %>
-
-	</div>
-	</div>
+<% if @current_user %>
+	<!-- if user is logged in, display home page -->
+	<%= render :partial => "main/partials/home" %>
+<% else %>
+	<!-- if user is not logged in, display welcome page -->
+	<%= render :partial => "main/partials/welcome" %>
+<% end %>
