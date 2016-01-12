@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.two-thirds {display: inline-block; width: 66vw; top: 0}
-.one-third {display: inline-block; width: 60vw}
+.two-thirds {display: inline-block; width: 66vw; vertical-align: top}
+.one-third {display: inline-block; margin-left: 20px;}
 
 .highest-freq {background-color: lightcoral}
 .high-freq {background-color: lightsalmon}
