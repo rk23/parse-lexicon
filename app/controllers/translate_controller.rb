@@ -1,11 +1,10 @@
 class TranslateController < ApplicationController
   def index
 
-    #Uses microsoft-translator gem
-    #Need to change these to ENV variables!
-    translator = MicrosoftTranslator::Client.new('01928374', 'Rw8yP/mFE41m/Hp7pPJ4TORa5b4unbsPCIJva7jtKh0=')
+    # Uses microsoft-translator gem
+    translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
-    #Grab data from the form on the main page
+    # Grab data from the form on the main page
     @form_data = params.require(:translate).permit(:text, :lang)
     @text = @form_data['text']
 
@@ -13,7 +12,8 @@ class TranslateController < ApplicationController
     @session_language = session_language
     prints session_language
 
-    #Counts frequency and stores in hash
+
+    # Counts frequency and stores in hash
     @parsed_and_sorted = count_words @text
     @parsed = parse_text @text
     @word_count = @parsed.length
@@ -23,10 +23,9 @@ class TranslateController < ApplicationController
   end
 
   def create
-    render json: params[:word]
-    # @new_word = word_params[:understood_word]
-    # @word = Word.find_or_create_by(@new_word)
-    # User.word.find_or_create_by(@word)
+    @new_word = render json: params[:word]
+    current_user.words.find_or_create_by(understood_word: @new_word[0])
+
   end
 
 
@@ -49,8 +48,7 @@ class TranslateController < ApplicationController
     translation = Hash.new(0)
 
     # translator.translate(word[0],lang_from,lang_to,"text/html")
-    #Iterate over the hash and store both word count and translation
-    #so both are accessible
+    # Iterate over the hash and store both word count and translation so both are accessible
     hash.each do |word|
         translation[word[0]] = {count: word[1],
                                 translation: ""}
