@@ -9,21 +9,17 @@ $(function(){
 
     $('.word_known').click(function(e){
         e.preventDefault();
-        console.log('clicked');
-        var btn = $(this);
-        console.log(btn);
+        var div = $(this);
         $.ajax({
             url: '/translate/addwords',
             method: 'POST',
             dataType: 'html',
-            data: {word: btn[0].value}
+            data: {word: div.context.children[0].value}
         }).done(function(data){
-            console.log(btn[0].value);
-            btn.hide();
+            div.remove();
         }).error(function(err){
             console.log(err);
         })
     })
-
 
 });
