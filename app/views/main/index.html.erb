@@ -1,13 +1,15 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
 
-<%= form_for :translate, url: '/translate' do |f| %>
-  Enter text here <%= f.text_area :text%>
-  <br />
-  	<%= f.radio_button :session_language, 'es' %> englsih<br />
-    <%= f.radio_button :session_language, 'se' %> spanish<br />
-    <%= f.radio_button :session_languge, 'nl' %> netherlands<br />
-    <%= f.submit "Translate" %>
-<% end %>
+	<div class="medium-6 medium-offset-3 small-6 small-offset-3 columns">
+	<div class="panel content">
+		<h1 class="text-center">translate.</h1>
 
-@new_word = word_params
+		<%= form_for :translate, url: '/translate' do |f| %>
+		  <%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
+
+		    <%= f.submit "Translate", :class => 'button', :id => 'translate'%>
+		<% end %>
+
+		@new_word = word_params
+
+	</div>
+	</div>
