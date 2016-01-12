@@ -4,12 +4,15 @@
 <%= form_for :user do |f| %>
 	email: <%= f.text_field :email, placeholder: "Enter email" %> <br>
 	password: <%= f.password_field :password, placeholder: "Enter password" %> <br>
+	<%= f.text_field :session_language, placeholder: "enter language" %><br>
 	<%= f.submit "login" %>
+
 <% end %>
 
 <%= form_for :user, url: "/users" do |f| %>
 	username: <%= f.text_field :name %> <br>
 	email: <%= f.text_field :email %> <br>
 	password: <%= f.password_field :password %> <br>
+	<%= f.text_field :session_language, placeholder: "enter language" %><br>
 	<%= f.submit "create account" %>
 <% end %>
