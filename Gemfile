@@ -13,8 +13,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
 # Add Foundation Framework for styling
 gem 'foundation-rails'
+# Use Foundation Form Builder to style forms
+gem 'foundation_form_builder'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

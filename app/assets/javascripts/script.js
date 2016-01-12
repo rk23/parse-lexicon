@@ -9,8 +9,9 @@ $(function(){
 
     $('.word_known').click(function(e){
         e.preventDefault();
+        console.log('clicked');
         var btn = $(this);
-
+        console.log(btn);
         $.ajax({
             url: '/translate/addwords',
             method: 'POST',
