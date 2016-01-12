@@ -24,3 +24,12 @@ $(function(){
     })
 
 });
+
+
+// Adding jQuery Plugin into Word List Sidebar
+
+(function($){
+    $(window).load(function(){
+    $(".right-sidebar").mCustomScrollbar();
+        });
+    })(jQuery);
