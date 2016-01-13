@@ -10,6 +10,10 @@ class ParseController < ApplicationController
       data = Nokogiri::HTML(html, nil, 'UTF-8')
       @show = data.css('body')
       text = @show.to_s
+      #parsing the string to get rid of header footer text
+      # puts "LOOOOOOOOOOOOOOOOOOO___________________"
+      text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
+
     else
       form_data = params.require(:parse).permit(:text, :lang)
       text = form_data['text']
