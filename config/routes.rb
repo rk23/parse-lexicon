@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Texts routes
-  get 'texts/index'
+  
   # get 'texts/show'
   # get 'texts/update'
   # get 'texts/detroy'
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Main routes
   root 'main#index'
   get '/about'        => 'main#about'
-  get '/recommended'  => 'main#recommended'
+  get '/recommended'  => 'texts#index'
 
   # Sessions
   get '/login'        => 'sessions#new'
@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   post '/users/:id/favorites/new'    => 'favorites#create'
   delete '/users/:id/favorites/:id'  => 'favorites#destroy'
 
+  # get '/recommended' => 'texts#index'
+  # get '/recommended' => 'texts#index'
   get '/texts/show' => 'texts#show'
   post '/texts/show' => 'texts#show'
 

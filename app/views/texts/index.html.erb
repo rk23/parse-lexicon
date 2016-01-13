@@ -3,6 +3,7 @@
 <% @link.each do |w| %>	
 	<%= form_for :text, url: "/parse" do |f| %>
 		<%= f.hidden_field :text, :value => w.link %><br>
+		<%= f.hidden_field 'text_form', :name => 'text_form' %><br>
 		<%= f.submit "render text", :class => 'button' %>
 	<% end %>
 <% end %>
