@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
+  def lang
+    # hash of language codes and language names (and flags?)
+  end
+
 end

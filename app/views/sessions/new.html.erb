@@ -4,7 +4,7 @@
 <%= form_for :user do |f| %>
 	email: <%= f.text_field :email, placeholder: "Enter email" %> <br>
 	password: <%= f.password_field :password, placeholder: "Enter password" %> <br>
-	<%= f.text_field :session_language, placeholder: "enter language" %><br>
+	language: <%= f.select :session_language, [['French', 'fr'], ['Spanish', 'es'], ['German', 'de']] %>
 	<%= f.submit "login" %>
 
 <% end %>
@@ -13,6 +13,6 @@
 	username: <%= f.text_field :name %> <br>
 	email: <%= f.text_field :email %> <br>
 	password: <%= f.password_field :password %> <br>
-	<%= f.text_field :session_language, placeholder: "enter language" %><br>
+	language: <%= f.select :session_language, [['French', 'fr'], ['Spanish', 'es'], ['German', 'de']] %>
 	<%= f.submit "create account" %>
 <% end %>
