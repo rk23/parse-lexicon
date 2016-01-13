@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # get 'texts/update'
   # get 'texts/detroy'
   post 'texts/create'
-  get 'texts/new'
+  get '/juicyJ' => 'texts#new'
 
   # Main routes
   root 'main#index'
