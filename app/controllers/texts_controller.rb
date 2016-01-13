@@ -25,8 +25,16 @@ class TextsController < ApplicationController
   end
 
   def create
+    @texts = Text.find_or_create_by(text_params)
+    redirect_to '/recommended'
   end
 
   def new
+  end
+
+  private
+
+  def text_params
+    params.require(:text).permit(:link, :img_link, :author, :language)
   end
 end
