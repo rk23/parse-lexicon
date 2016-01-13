@@ -10,7 +10,8 @@ body {
 }
 
 .preview {
-	font-family: 'Calendas Plus',
+	font-family: 'Calendas Plus';
+	margin-bottom: 40px;
 }
 
 .button {
@@ -24,7 +25,7 @@ body {
 	color: #008490;
 	font-weight: 500;
 	font-size: 14px;
-	width: 12em;
+	width: 13em;
 }
 
 #word-btn:hover {
@@ -47,8 +48,10 @@ body {
 }
 
 .right-sidebar {
-	max-height: 450px;
-	width: 15em;
+	max-height: 600px;
+	width: 16em;
+	border: 0px;
+	background-color: transparent;
 }
 
 
@@ -56,9 +59,10 @@ body {
 
 h1#brand {
 		margin-top: 40px;
-		font-size: 80px;
-		font-family: 'Elephant', serif;
-		letter-spacing: 0px;
+		font-size: 20px;
+		font-family: 'Avenir Next', sans-serif;
+		letter-spacing: 3px;
+		text-transform: uppercase;
 		color: #000000;
 }
 
