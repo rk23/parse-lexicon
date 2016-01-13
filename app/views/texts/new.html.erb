@@ -1,2 +1,7 @@
-<h1>Texts#new</h1>
-<p>Find me in app/views/texts/new.html.erb</p>
+<%= form_for :text, url: "/texts/create" do |f| %>
+	<%= f.text_field :link, placeholder: "utf-8 plain text link:", :id => "textField" %><br>
+	<%= f.text_field :img_link, placeholder: "img link:", :id => "textField" %><br>
+	<%= f.text_field :author, placeholder: "Author:", :id => "textField" %><br>
+	 <p class="lead">Select language</p><%= f.select :language, @language_array %><br>
+	<%= f.submit "create account", :class => 'button' %>
+<% end %>
