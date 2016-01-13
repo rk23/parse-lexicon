@@ -1,25 +1,38 @@
-<div class="medium-8 medium-offset-2 small-6 small-offset-3 columns">
-	
-	<!-- User switches language -->
-  <%= form_for :user, url: "/login" do |f| %>
-    Select language<%= f.select :session_language, @language_array %>
-    <%= f.submit "switch", :class => 'button' %>
-  <% end %>
+<div class="large-3 columns">
+<div class="panel content">
+  
+  <p class="lead">Learning: </p>
 
-	<!-- User's known words -->
+</div>
 
-	<!-- Form to submit text -->
-	<div class="panel content">
-		<h1 class="text-center">parse.</h1>	
+<div class="panel content">
+    <%= form_for :user, url: "/login" do |f| %>
+      <label>Choose Your Language: <%= f.select :session_language, @language_array, :id => 'dropdown left' %></label>
+      <%= f.submit "Pick Language", :class => 'button tiny submit_lang' %>
+    <% end %>
+  </div>
+  
+</div>
+
+<!-- form to parse the text --> 
+
+<div class="large-6 columns">
+  <div class="panel content">
 		<%= form_for :parse, url: '/parse' do |f| %>
 			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
-
 			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
 		<% end %>
 	</div>
-
-	<!-- Some curated texts -->
-
-	<!-- More home page features -->
-
 </div>
+
+<!-- Right Sidebar: Recommendations & Languages --> 
+
+<div class="large-3 columns language_dropdown">
+  <div class="panel content">
+    <p class="lead">Recommended Texts</p>
+  </div>
+
+  
+</div>
+
+
