@@ -1,7 +1,7 @@
 <div class="medium-8 medium-offset-2 small-6 small-offset-3 columns">
 	
 	<!-- User switches language -->
-  <%= form_for :user, url: "/login" do |f| %>
+  <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
     Select language<%= f.select :session_language, @language_array %>
     <%= f.submit "switch", :class => 'button' %>
   <% end %>

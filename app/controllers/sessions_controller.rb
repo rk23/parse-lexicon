@@ -17,6 +17,13 @@ class SessionsController < ApplicationController
 
   end
 
+  def update
+    session['user_language']['session_language'] = params[:user_language]
+    # render json: user_language_params[:session_language]
+    redirect_to root_path
+  end
+
+
   def destroy
     session[:user_id] = nil
     redirect_to "/"
@@ -29,7 +36,7 @@ class SessionsController < ApplicationController
   end
   
   def user_language_params
-      params.require(:user).permit(:session_language)
+      params.require(:user_language).permit(:session_language)
   end
   
 end
