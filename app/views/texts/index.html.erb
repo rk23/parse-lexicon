@@ -3,6 +3,8 @@
 	<%= w.author %><br>
 	<%= w.link %><br>
 	<%= w.language %><br>
+	<%= w.title %><br>
+	<%= w.year %><br>
 	<%= form_for :text, url: "/parse" do |f| %>
 		<%= f.hidden_field :text, :value => w.link %><br>
 		<%= f.hidden_field 'text_form', :name => 'text_form' %><br>
