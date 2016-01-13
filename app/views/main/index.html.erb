@@ -3,5 +3,5 @@
 	<%= render :partial => "main/home" %>
 <% else %>
 	<!-- if user is not logged in, display welcome page -->
-	<%= render :partial => "main/welcome" %>
+	<%= render :partial => "main/welcome" unless @diable_nav %>
 <% end %>
