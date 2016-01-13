@@ -1,12 +1,11 @@
 <div class="row small">
   <br>
-  <p class="p_text text-center"><strong><span id="percentage"><%= @percentage %></span>%</strong> understood | <span><strong><%= @ratio %></span>%</strong> unique words known</p>
+  <p class="p_text text-center"><strong><span id="percentage" value="<%= @user_word_count %>" name="<%= @word_count %>"><%= @percentage %></span>%</strong> understood | <span><strong id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %></span>%</strong> unique words known</p>
   <div class="medium-9 small-12 columns preview">
     <h4>Preview Text:</h4>
     <hr>
     <% @count = 0.0; @parsed.each do |w| %>
 
-        <!--If the user knows the word, print un-highlighted, else print highlighted-->
         <% if @user_known_words.include? w.downcase%>
             <span><%= w%></span>
         <% else %>
@@ -14,17 +13,17 @@
 
               <% if word[0] == w.downcase %>
                   <% if word[1] > 20 %>
-                      <span class="highest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="highest-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 20 && word[1] > 10 %>
-                      <span class="high-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="high-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 10 && word[1] > 5 %>
-                      <span class="medium-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="medium-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 5 && word[1] > 2 %>
-                      <span class="low-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="low-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 2 && word[1] > 0 %>
-                      <span class="lowest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="lowest-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% else %>
-                      <span class="<%= word[0].gsub("'", "_")%>"><%= w%></span>
+                      <span class="<%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
                   <% end %>
               <% end %>
 
@@ -38,8 +37,8 @@
       <div class="medium-3 small-12 columns panel right-sidebar mCustomScrollbar" id="sidebar">
         <h4>Word List:</h4><hr>
         <% @count = 0.0;  @parsed_sorted_and_compared.each do |word| %>
-            <div class="word_known">
-              <button class="button tiny" id="word-btn" value="<%= word[0]%>"><%= word[0]%> X <%= word[1]%></button>
+            <div class="word_known" value="<%= word[1]%>">
+              <button class="button tiny" id="word-btn" value="<%= word[0]%>" ><%= word[0]%> X <%= word[1]%></button>
               <br>
             </div>
         <% end %>
