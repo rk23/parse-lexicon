@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   before_action :is_authenticated?
   def show
   	@user = User.find params[:id]
+
+    @all_words = @user.words
+                     .select("words.language")
+                     .where(language: 'de')
+    @all_words.each do |word|
+      puts word.understood_word
+    end
   end
 
   def new

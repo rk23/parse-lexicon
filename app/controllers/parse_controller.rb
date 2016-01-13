@@ -3,7 +3,6 @@ class ParseController < ApplicationController
 
     # Uses microsoft-translator gem
     # translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
-    translator = 0
 
     # Grab data from the form on the main page
     form_data = params.require(:parse).permit(:text, :lang)
@@ -15,11 +14,6 @@ class ParseController < ApplicationController
 
     # Counts frequency and stores in hash
     @parsed_and_sorted = count_words text
-
-    # keeps track of user languge selection
-    # @session_language = session_language
-    # prints session_language
-
 
     if current_user
       # Grabs the reference values/collection of the user's words
@@ -48,13 +42,13 @@ class ParseController < ApplicationController
       # Percentage of text known based on user vocab
       @percentage = ((1 - (user_word_count.to_f / @word_count.to_f)) * 100).round(2)
 
-      # Ratio
+      # Ratio of unique words
       @ratio = 0.0
       @ratio = ((1 - (@parsed_sorted_and_compared.length.to_f / @parsed_and_sorted.length.to_f)) * 100).round(2)
     end
 
     # Get the translation hash
-    @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
+    # @translation = get_translation translator, @parsed_and_sorted, 'es', 'en'
   end
 
   def create
@@ -82,21 +76,17 @@ class ParseController < ApplicationController
 
   def get_translation(translator, hash, lang_from, lang_to)
     translation = Hash.new(0)
-
     # translator.translate(word[0],lang_from,lang_to,"text/html")
     # Iterate over the hash and store both word count and translation so both are accessible
     hash.each do |word|
         translation[word[0]] = {count: word[1],
                                 translation: ""}
     end
-
     translation
   end
 
-  private
-
-    def word_params
-      params.require(:word).permit(:understood_word, :languge)
-    end
+  def word_params
+    params.require(:word).permit(:understood_word, :languge)
+  end
 
 end
