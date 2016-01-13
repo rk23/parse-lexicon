@@ -55,7 +55,7 @@ class ParseController < ApplicationController
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
     current_user.words.find_or_create_by(understood_word: @new_word[0],
-                                         language: @current_language)
+                                         language: session['user_language']['session_language']
   end
 
 
