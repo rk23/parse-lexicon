@@ -15,7 +15,7 @@ class ParseController < ApplicationController
 
     if @show
       text = @show.to_s
-    else 
+    else
       form_data = params.require(:parse).permit(:text, :lang)
       text = form_data['text']
     end
