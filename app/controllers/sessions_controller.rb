@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password)
   end
+  
   def user_language_params
       params.require(:user).permit(:session_language)
   end
