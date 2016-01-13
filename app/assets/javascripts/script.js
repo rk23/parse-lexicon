@@ -1,3 +1,8 @@
+function getPercentage (num1, num2) {
+    var percent = parseFloat((1 - (num1 / num2)) * 100).toFixed(2)
+    return percent;
+}
+
 $(function(){
 
     //Tell Rails that we’re sending a JavaScript request
@@ -15,7 +20,22 @@ $(function(){
             method: 'POST',
             dataType: 'html',
             data: {word: div.context.children[0].value}
-        }).done(function(data){
+        }).success(function(data){
+            var frequency = parseInt(div.attr('value'));
+
+            var wordCount = parseFloat($('#percentage').attr('name'));
+            var userWordCount = parseFloat($('#percentage').attr('value')) - frequency;
+            var known_percent = getPercentage(userWordCount, wordCount);
+
+            var uniqueWordCount = parseFloat($('#unique-ratio').attr('name'));
+            var uniqueUserWordCount = parseFloat($('#unique-ratio').attr('value')) - 1;
+            var unique_percent = getPercentage(uniqueUserWordCount, uniqueWordCount);
+
+            $('#percentage').attr('value', userWordCount);
+            $('#percentage').html(known_percent);
+            $('#unique-ratio').attr('value', uniqueUserWordCount);
+            $('#unique-ratio').html(unique_percent);
+
             div.remove();
             $('.parse-' + data.replace("'", "_")).removeClass()
         }).error(function(err){

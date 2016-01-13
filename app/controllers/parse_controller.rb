@@ -25,7 +25,7 @@ class ParseController < ApplicationController
         @user_known_words << word.understood_word
       end
 
-      user_word_count = 0.0
+      @user_word_count = 0.0
       # New hash for words that the user doesn't know, with frequency data
       @parsed_sorted_and_compared = Hash.new(0)
       @parsed_and_sorted.each do |key_value_pair|
@@ -34,17 +34,17 @@ class ParseController < ApplicationController
           # put it in an array we can access on the front end
           if @user_known_words.exclude? key_value_pair[0]
             @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
-            user_word_count += key_value_pair[1]
+            @user_word_count += key_value_pair[1]
           end
 
       end
 
       # Percentage of text known based on user vocab
-      @percentage = ((1 - (user_word_count.to_f / @word_count.to_f)) * 100).round(2)
+      @percentage = get_percentage @user_word_count, @word_count
 
       # Ratio of unique words
       @ratio = 0.0
-      @ratio = ((1 - (@parsed_sorted_and_compared.length.to_f / @parsed_and_sorted.length.to_f)) * 100).round(2)
+      @ratio = get_percentage @parsed_sorted_and_compared.length, @parsed_and_sorted.length
     end
 
     # Get the translation hash
@@ -61,6 +61,11 @@ class ParseController < ApplicationController
 
 
   private
+
+  def get_percentage num1, num2
+    per = ((1 - (num1.to_f / num2.to_f)) * 100).round(2)
+    per
+  end
 
   def parse_text(string)
     words = string.gsub(/(?!')[[:punct:]]/, "").split(' ')
