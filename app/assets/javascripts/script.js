@@ -14,7 +14,27 @@ $(function(){
             xhr.setRequestHeader("Accept", "text/javascript")}
     });
 
+    //Translate word on click
+    $('.prs').on('click', function(e){
+        e.preventDefault();
+        var word = $(this);
 
+        $.ajax({
+            url: '/parse/translate',
+            method: 'POST',
+            dataType: 'html',
+            data: {word: word.text()}
+        }).success(function(data){
+            $('#to-translate').text(word.text())
+            $('#translated').text(data)
+        }).error(function(err){
+            console.log(err)
+            $('#translated').text("Unable to translate")
+        })
+    });
+
+
+    //Add word to known words
     $('.word_known').click(function(e){
         e.preventDefault();
         var div = $(this);
@@ -61,7 +81,6 @@ $(function(){
 
 
 // Adding jQuery Plugin into Word List Sidebar
-
 (function($){
     $(window).load(function(){
     $(".right-sidebar").mCustomScrollbar();
@@ -69,7 +88,6 @@ $(function(){
     })(jQuery);
 
 // trying to add Sticky sidebar
-
 $(function() {
 
     var $sidebar   = $(".right-sidebar"), 

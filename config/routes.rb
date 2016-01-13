@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   get '/user/:id'     => 'users#show'
 
   # Parse routes
-  # get '/parse'          => 'parse#index'
   post '/parse'           => 'parse#index'
   post '/parse/addwords'  => 'parse#create'
+  post '/parse/translate' => 'parse#translate'
 
   #Favorite routes
   get '/users/:id/favorites'         => 'favorites#index'
