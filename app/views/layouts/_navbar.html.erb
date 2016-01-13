@@ -1,0 +1,17 @@
+<div class="contain-to-grid sticky nav-bar">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+    <ul class="title-area">
+      <li class="name">
+        <a href="/"><h1 id="brand">Parse</h1></a>
+      </li>
+    </ul>
+
+    <!-- navbar will not show on welcome page (which only shows when not logged in), so this conditional will be unnecessary (we'll just need to keep the true case) -->
+    <% if @current_user %>
+      <p class="current text-right"><%= @current_user.name %> | <%= session['user_language']['session_language'] %> | <%= link_to "logout", "/logout" %></p>
+    <% else %>
+      <p class="current text-right">not logged in</p>
+    <% end %>
+
+  </nav>
+</div>

@@ -1,18 +1,16 @@
-
 <!-- You should keep this! -->
 <br>
 <%= form_for :user do |f| %>
-	<%= f.text_field :email, placeholder: "Enter Email", :id => "textField" %> <br>
-	<%= f.password_field :password, placeholder: "Enter password", :id => "textField" %> <br>
+	<%= f.text_field :email, placeholder: "Enter Email", :id => "textField" %><br>
+	<%= f.password_field :password, placeholder: "Enter password", :id => "textField" %><br>
 	<%= f.text_field :session_language, placeholder: "Enter Language", :id => "textField" %><br>
 	<%= f.submit "Login", :class => 'button' %>
-
 <% end %>
 
 <%= form_for :user, url: "/users" do |f| %>
-	<%= f.text_field :name, placeholder: "Choose a Username:", :id => "textField" %> <br>
-	<%= f.text_field :email, placeholder: "Email:", :id => "textField" %> <br>
-	<%= f.password_field :password, placeholder: "Password:", :id => "textField" %> <br>
+	<%= f.text_field :name, placeholder: "Choose a Username:", :id => "textField" %><br>
+	<%= f.text_field :email, placeholder: "Email:", :id => "textField" %><br>
+	<%= f.password_field :password, placeholder: "Password:", :id => "textField" %><br>
 	<%= f.text_field :session_language, placeholder: "Enter Language", :id => "textField" %><br>
 	<%= f.submit "create account", :class => 'button' %>
 <% end %>
