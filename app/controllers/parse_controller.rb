@@ -4,9 +4,25 @@ class ParseController < ApplicationController
     # Uses microsoft-translator gem
     # translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
+    #scrape from the guttenberg sent from text index
+    @text = params[:text][:text]
+    url = @text
+    response = RestClient.get url
+    html = response.body
+    data = Nokogiri::HTML(html, nil, 'UTF-8')
+
+    @show = data.css('body')
+
+    if @show
+      text = @show.to_s
+    else 
+      form_data = params.require(:parse).permit(:text, :lang)
+      text = form_data['text']
+    end
+
     # Grab data from the form on the main page
-    form_data = params.require(:parse).permit(:text, :lang)
-    text = form_data['text']
+    
+    
 
     # Removes punctuation from text, puts into an array
     @parsed = parse_text text
