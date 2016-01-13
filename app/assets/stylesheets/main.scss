@@ -7,6 +7,9 @@ body {
 	li {
 		list-style: none;
 	}
+	a:link {
+		color: #000000;
+	}
 }
 
 .preview {
@@ -21,6 +24,10 @@ body {
 	background-color: transparent;
 	border: 2px solid #008490;
 	color: #008490;
+	border-radius: 5px;
+	.hover {
+		color: #000000;
+	}
 }
 
 #word-btn {
