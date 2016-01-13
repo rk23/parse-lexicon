@@ -4,17 +4,17 @@
 
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <%= form_for :user, url: "/login" do |f| %>
-      <%= f.text_field :email, placeholder: "Enter email", :id => "textField" %><br>
-      <%= f.password_field :password, placeholder: "Enter password", :id => "textField" %><br>
-      Select language<%= f.select :session_language, [['French', 'fr'], ['Spanish', 'es'], ['German', 'de']] %><br>
-      <%= f.submit "Login", :class => 'button' %>
+    <%= f.text_field :email, placeholder: "Enter email", :id => "textField" %><br>
+    <%= f.password_field :password, placeholder: "Enter password", :id => "textField" %><br>
+    Select language<%= f.select :session_language, @language_array %><br>
+    <%= f.submit "Login", :class => 'button' %>
   <% end %>
 
   <%= form_for :user, url: "/users" do |f| %>
     <%= f.text_field :name, placeholder: "Choose a Username:", :id => "textField" %><br>
     <%= f.text_field :email, placeholder: "Email:", :id => "textField" %><br>
     <%= f.password_field :password, placeholder: "Password:", :id => "textField" %><br>
-    Select language<%= f.select :session_language, [['French', 'fr'], ['Spanish', 'es'], ['German', 'de']] %><br>
+    Select language<%= f.select :session_language, @language_array %><br>
     <%= f.submit "create account", :class => 'button' %>
   <% end %>
 

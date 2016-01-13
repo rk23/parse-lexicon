@@ -1,12 +1,25 @@
 <div class="medium-8 medium-offset-2 small-6 small-offset-3 columns">
-	<div class="panel content">
-		<h1 class="text-center">parse.</h1>
+	
+	<!-- User switches language -->
+  <%= form_for :user, url: "/login" do |f| %>
+    Select language<%= f.select :session_language, @language_array %>
+    <%= f.submit "switch", :class => 'button' %>
+  <% end %>
 
+
+	<!-- User's known words -->
+
+
+	<!-- Form to submit text -->
+	<div class="panel content">
+		<h1 class="text-center">parse.</h1>	
 		<%= form_for :parse, url: '/parse' do |f| %>
 		  <%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
-
-		    <%= f.submit "Parse", :class => 'button', :id => 'parse'%>
+		  <%= f.submit "Parse", :class => 'button', :id => 'parse'%>
 		<% end %>
-
 	</div>
+
+
+	<!-- User does more stuff -->
+
 </div>
