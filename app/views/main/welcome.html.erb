@@ -10,8 +10,7 @@
   <a href="#" class="button login" data-reveal-id="login">Login</a>
   <a href="#" class="button login" data-reveal-id="signUp">Sign Up</a>
 
-    <!-- Modal for Login -->
-
+  <!-- Modal for Login -->
   <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <%= form_for :user, url: "/login" do |f| %>
       <%= f.text_field :email, placeholder: "Enter email", :id => "textField" %><br>
@@ -23,8 +22,7 @@
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 
-    <!-- Modal for Sign Up -->
-
+  <!-- Modal for Sign Up -->
   <div id="signUp" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <%= form_for :user, url: "/users" do |f| %>
       <%= f.text_field :name, placeholder: "Choose a Username:", :id => "textField" %><br>

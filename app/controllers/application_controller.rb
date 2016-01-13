@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
     # hash associating language codes and language names (and flags?)
   end
 
-  def disable_nav
-    @disable_nav = true
+  def disable_navbar
+    @disable_navbar = true
   end
 
 end

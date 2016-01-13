@@ -3,9 +3,9 @@
 		<h1 class="text-center">parse.</h1>
 
 		<%= form_for :parse, url: '/parse' do |f| %>
-		  <%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
+			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
 
-		    <%= f.submit "Parse", :class => 'button', :id => 'parse'%>
+			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
 		<% end %>
 
 	</div>
