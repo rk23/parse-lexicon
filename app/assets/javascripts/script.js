@@ -17,7 +17,7 @@ $(function(){
             data: {word: div.context.children[0].value}
         }).done(function(data){
             div.remove();
-            $('.' + data.replace("'", "_")).removeClass()
+            $('.parse-' + data.replace("'", "_")).removeClass()
         }).error(function(err){
             console.log(err);
         })
