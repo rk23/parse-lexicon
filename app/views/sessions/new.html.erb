@@ -5,8 +5,7 @@
 	email: <%= f.text_field :email, placeholder: "Enter email" %> <br>
 	password: <%= f.password_field :password, placeholder: "Enter password" %> <br>
 	language: <%= f.select :session_language, [['French', 'fr'], ['Spanish', 'es'], ['German', 'de']] %>
-	<%= f.submit "login" %>
-
+	<%= f.submit "log in" %>
 <% end %>
 
 <%= form_for :user, url: "/users" do |f| %>

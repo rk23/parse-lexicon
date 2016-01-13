@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def lang
-    # hash of language codes and language names (and flags?)
+    # hash associating language codes and language names (and flags?)
   end
 
 end
