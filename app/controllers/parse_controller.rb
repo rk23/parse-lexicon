@@ -1,9 +1,6 @@
 class ParseController < ApplicationController
   def index
 
-    # Uses microsoft-translator gem
-    # translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
-
     #scrape from the guttenberg sent from text index
     if params[:text_form]
       @text = params[:text][:text]
@@ -70,6 +67,16 @@ class ParseController < ApplicationController
     # Not finding, always creating but ok for now
     current_user.words.find_or_create_by(understood_word: @new_word[0],
                                          language: @current_language)
+  end
+
+  def translate
+    # Uses microsoft-translator gem
+    translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
+
+    to_translate = params[:word]
+    translated = translator.translate(to_translate,@current_language,'en',"text/html")
+
+    render json: translated
   end
 
 
