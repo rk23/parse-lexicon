@@ -5,15 +5,13 @@ class ParseController < ApplicationController
     # translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
     #scrape from the guttenberg sent from text index
-    # @text = params[:text][:text]
-    # url = @text
-    # response = RestClient.get url
-    # html = response.body
-    # data = Nokogiri::HTML(html, nil, 'UTF-8')
-    #
-    # @show = data.css('body')
-
-    if @show
+    if params[:text_form]
+      @text = params[:text][:text]
+      url = @text
+      response = RestClient.get url
+      html = response.body
+      data = Nokogiri::HTML(html, nil, 'UTF-8')
+      @show = data.css('body')
       text = @show.to_s
     else
       form_data = params.require(:parse).permit(:text, :lang)
