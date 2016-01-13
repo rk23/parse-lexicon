@@ -18,7 +18,12 @@ class ApplicationController < ActionController::Base
   end
 
   def access_languages
-    # Hash associating language codes and language names (and flags?)
+
+    # Can be used anywhere! It's a string.
+    @current_language = session['user_language']['session_language']
+
+    # Hash associating language codes and language names
+      # To get current language name, use: @language_hash[@current_language.to_sym]
       # Working, but incomplete list
     @language_hash = {
       :en => 'English',

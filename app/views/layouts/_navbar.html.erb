@@ -6,12 +6,7 @@
       </li>
     </ul>
 
-    <!-- navbar will not show on welcome page (which only shows when not logged in), so this conditional will be unnecessary (we'll just need to keep the true case) -->
-    <% if @current_user %>
-      <p class="current text-right"><%= @current_user.name %> | <%= session['user_language']['session_language'] %> | <%= link_to "logout", "/logout" %></p>
-    <% else %>
-      <p class="current text-right">not logged in</p>
-    <% end %>
+    <p class="current text-right"><%= @current_user.name %> | <%= @language_hash[@current_language.to_sym] %> | <%= link_to "logout", "/logout" %></p>
 
   </nav>
 </div>
