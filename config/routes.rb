@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   # Texts routes
   get 'texts/index'
   # get 'texts/show'
-  get 'texts/update'
-  get 'texts/detroy'
-  get 'texts/create'
-  get 'texts/new'
+  # get 'texts/update'
+  # get 'texts/detroy'
+  # get 'texts/create'
+  # get 'texts/new'
 
   # Main routes
   root 'main#index'
@@ -35,7 +35,8 @@ Rails.application.routes.draw do
   post '/users/:id/favorites/new'    => 'favorites#create'
   delete '/users/:id/favorites/:id'  => 'favorites#destroy'
 
-  get 'texts/show' => 'texts#show'
+  get '/texts/show' => 'texts#show'
+  post '/texts/show' => 'texts#show'
 
   # get 'favorites/update'
   # get 'favorites/edit'
