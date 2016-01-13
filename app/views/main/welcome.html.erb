@@ -1,18 +1,31 @@
-<div class="medium-6 small-12 columns text-justify welcome">
+<style>
+  
+  body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(<%= asset_path 'half.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top-center;
+}
 
-  <div class="welcome-text">
+</style>
+
   <h1 id="brand-text">parse</h1> 
+
+  <div class="medium-5 columns left paragraph random">
+
+    <p class="lead text-center">Already a User? <a class="login" href="#" data-reveal-id="login">Login</a>
+    <br><a class="login" href="#" data-reveal-id="signUp">Sign Up</a> and Get Started.</p>
+    </div>
+  
+    <div class="medium-6 columns right paragraph">
   <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
 
   <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
 
-  </div>
-
-
-<!-- <div class="medium-5 small-12 columns text-center right"> -->
-
-  <button class="login" href="#" data-reveal-id="login">Login</button>
-  <button class="login" href="#" data-reveal-id="signUp">Sign Up</button>
+<!--   <div class="text-center">
+  
+  </div> -->
 
   <!-- Modal for Login -->
   <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -41,3 +54,4 @@
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 </div>
+
