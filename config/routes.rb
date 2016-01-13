@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # Texts routes
   get 'texts/index'
-  get 'texts/show'
+  # get 'texts/show'
   get 'texts/update'
   get 'texts/detroy'
   get 'texts/create'
@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   get '/users/:id/favorites/new'     => 'favorites#new'
   post '/users/:id/favorites/new'    => 'favorites#create'
   delete '/users/:id/favorites/:id'  => 'favorites#destroy'
+
+  get 'texts/show' => 'texts#show'
 
   # get 'favorites/update'
   # get 'favorites/edit'

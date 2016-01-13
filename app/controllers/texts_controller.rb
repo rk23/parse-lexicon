@@ -6,14 +6,15 @@ class TextsController < ApplicationController
   end
 
   def show
-    url = "https://www.gutenberg.org/files/30655/30655-h/30655-h.htm"
+    url = "https://www.gutenberg.org/files/21989/21989-0.txt"
     response = RestClient.get url
     html = response.body
-    data = Nokogiri::HTML(html.encode('UTF-8'), nil, 'UTF-8')
+    data = Nokogiri::HTML(html, nil, 'UTF-8')
     # data.encoding = 'iso-8859-1'
 
     @show = data.css('body')
-    render text: @show
+    # @show = html
+    # render text: @show
   end
 
   def update
