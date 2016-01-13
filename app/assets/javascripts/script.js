@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+    });
+
 function getPercentage (num1, num2) {
     var percent = parseFloat((1 - (num1 / num2)) * 100).toFixed(2)
     return percent;
@@ -56,5 +59,23 @@ $(function(){
 
 // trying to add Sticky sidebar
 
-var sidebar = document.getElementById('sidebar');
-Stickyfill.add(sidebar);
+$(function() {
+
+    var $sidebar   = $(".right-sidebar"), 
+        $window    = $(window),
+        offset     = $sidebar.offset(),
+        topPadding = -150;
+
+    $window.scroll(function() {
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+                marginTop: $window.scrollTop() - offset.top - topPadding
+            });
+        } else {
+            $sidebar.stop().animate({
+                marginTop: 40
+            });
+        }
+    });
+    
+});
