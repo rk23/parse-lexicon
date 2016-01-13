@@ -47,6 +47,10 @@ class ParseController < ApplicationController
 
       # Percentage of text known based on user vocab
       @percentage = ((1 - (user_word_count.to_f / @word_count.to_f)) * 100).round(2)
+
+      # Ratio
+      @ratio = 0.0
+      @ratio = ((1 - (@parsed_sorted_and_compared.length.to_f / @parsed_and_sorted.length.to_f)) * 100).round(2)
     end
 
     # Get the translation hash
@@ -56,8 +60,8 @@ class ParseController < ApplicationController
   def create
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
-    current_user.words.find_or_create_by(understood_word: @new_word[0])
-
+    current_user.words.find_or_create_by(understood_word: @new_word[0],
+                                         language: session['user_language']['session_language'])
   end
 
 
