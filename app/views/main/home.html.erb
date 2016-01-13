@@ -6,20 +6,20 @@
     <%= f.submit "switch", :class => 'button' %>
   <% end %>
 
-
 	<!-- User's known words -->
-
 
 	<!-- Form to submit text -->
 	<div class="panel content">
 		<h1 class="text-center">parse.</h1>	
 		<%= form_for :parse, url: '/parse' do |f| %>
-		  <%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
-		  <%= f.submit "Parse", :class => 'button', :id => 'parse'%>
+			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
+
+			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
 		<% end %>
 	</div>
 
+	<!-- Some curated texts -->
 
-	<!-- User does more stuff -->
+	<!-- More home page features -->
 
 </div>

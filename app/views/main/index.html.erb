@@ -1,7 +1,0 @@
-<% if @current_user %>
-	<!-- if user is logged in, display home page -->
-	<%= render :partial => "main/home" %>
-<% else %>
-	<!-- if user is not logged in, display welcome page -->
-	<%= render :partial => "main/welcome" %>
-<% end %>

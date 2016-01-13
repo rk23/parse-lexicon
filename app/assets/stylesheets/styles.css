@@ -1,0 +1,114 @@
+body {
+	font-family: 'Avenir Next', sans-serif;
+	li {
+		list-style: none;
+	}
+	a:link {
+		color: #000000;
+	}
+}
+
+.preview {
+	font-family: 'Calendas Plus';
+	margin-bottom: 40px;
+}
+
+/* Styling for the Welcome page */
+
+.welcome {
+	font-family: 'Karla', sans-serif;
+}
+
+.login {
+	background-color: white;
+}
+
+/* Styling the Form to Submit Text to Parse */
+
+
+.button {
+	// background-color: #008490;
+	background-color: transparent;
+	border: 1px solid #008490;
+	color: #008490;
+	border-radius: 0px;
+}
+
+.login:hover {
+	color:  #000000;
+}
+
+#word-btn {
+	color: #008490;
+	font-weight: 500;
+	font-size: 14px;
+	width: 13em;
+}
+
+#word-btn:hover {
+	color: #FFFFFF;
+}
+
+#parse {
+	width: 100%;
+	border-radius: 50px;
+}
+
+.text_area {
+	height: 15em;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.content {
+	margin-top: 20px;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+/* Style for the Right SideBar aka Word List */
+
+.right-sidebar {
+	max-height: 418px;
+	width: 16em;
+	// border: 0px;
+	background-color: transparent;
+}
+
+.p_text {
+	font-size: 18px;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+
+ /* styling for current user */
+
+h1#brand {
+		margin-top: 40px;
+		font-size: 20px;
+		font-family: 'Avenir Next', sans-serif;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		color: #000000;
+}
+
+.current {
+	font-size: 1.3em;
+	margin-top: 45px;
+}
+
+.top-bar, .nav-bar {
+	height: 7em;
+	background-color: white;
+	border-bottom: 1px solid grey;
+}
+
+.field {
+	border-bottom: 2px solid #000000;
+}

@@ -34,4 +34,8 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def disable_navbar
+    @disable_navbar = true
+  end
+
 end
