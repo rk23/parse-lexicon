@@ -25,7 +25,26 @@
           <% if @current_user %>
       <p class="current text-right">signed in as <%= link_to @current_user.name, "/user/" + @current_user.id.to_s %> | <%= link_to "logout", "/logout" %></p>
       <% else %>
-        <p class="current text-right"><%= link_to "login/signup", "/login" %></p>
+        <p class="current text-right"><a href="#" data-reveal-id="myModal">Login/Signup</a>
+
+        <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <%= form_for :user, url: "/login" do |f| %>
+              email: <%= f.text_field :email, placeholder: "Enter email" %> <br>
+              password: <%= f.password_field :password, placeholder: "Enter password" %> <br>
+              <%= f.text_field :session_language, placeholder: "enter language" %><br>
+              <%= f.submit "login" %>
+
+          <% end %>
+
+          <%= form_for :user, url: "/users" do |f| %>
+              username: <%= f.text_field :name %> <br>
+              email: <%= f.text_field :email %> <br>
+              password: <%= f.password_field :password %> <br>
+              <%= f.text_field :session_language, placeholder: "enter language" %><br>
+              <%= f.submit "create account" %>
+          <% end %>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
       <% end %>
   </nav>
   </div>
