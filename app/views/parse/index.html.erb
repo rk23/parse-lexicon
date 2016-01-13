@@ -1,16 +1,8 @@
-<div class="row small preview">
-<br><h2>Parsed Text:</h2>
-
-  <div class="medium-3 small-12 columns panel left-sidebar"> 
-  <ul>
-    <li>Candide</li>
-    <li>Author: Voltaire</li>
-    <li>Language: French</li>
-  </ul>
-  </div>
-
-  <div class="medium-6 small-12 columns">
-    <h4>Full Text:</h4>
+<div class="row small">
+  <br>
+  <div class="medium-9 small-12 columns preview">
+    <h4>Preview Text:</h4>
+    <p><span id="percentage"><%= @percentage %></span>% of this document can be understood</p>
     <% @count = 0.0; @parsed.each do |w| %>
 
         <!--If the user knows the word, print un-highlighted, else print highlighted-->
@@ -21,17 +13,17 @@
 
               <% if word[0] == w.downcase %>
                   <% if word[1] > 20 %>
-                      <span class="highest-freq <%= word[0]%>"><%= w%></span>
+                      <span class="highest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 20 && word[1] > 10 %>
-                      <span class="high-freq <%= word[0]%>"><%= w%></span>
+                      <span class="high-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 10 && word[1] > 5 %>
-                      <span class="medium-freq <%= word[0]%>"><%= w%></span>
+                      <span class="medium-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 5 && word[1] > 2 %>
-                      <span class="low-freq <%= word[0]%>"><%= w%></span>
+                      <span class="low-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% elsif word[1] <= 2 && word[1] > 0 %>
-                      <span class="lowest-freq <%= word[0]%>"><%= w%></span>
+                      <span class="lowest-freq <%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% else %>
-                      <span class="<%= word[0]%>"><%= w%></span>
+                      <span class="<%= word[0].gsub("'", "_")%>"><%= w%></span>
                   <% end %>
               <% end %>
 
@@ -42,7 +34,7 @@
     <% end %>
   </div>
 
-  <div class="medium-3 small-12 columns panel right-sidebar">
+  <div class="medium-3 small-12 columns panel right-sidebar mCustomScrollbar">
   <h4>Word List:</h4>
     <% @count = 0.0;  @parsed_sorted_and_compared.each do |word| %>
         <div class="word_known">
@@ -51,4 +43,4 @@
         </div>
     <% end %>
   </div>
-  </div>
+</div>

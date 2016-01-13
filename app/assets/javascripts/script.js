@@ -17,10 +17,19 @@ $(function(){
             data: {word: div.context.children[0].value}
         }).done(function(data){
             div.remove();
-            $('.' + data).removeClass()
+            $('.' + data.replace("'", "_")).removeClass()
         }).error(function(err){
             console.log(err);
         })
     })
 
 });
+
+
+// Adding jQuery Plugin into Word List Sidebar
+
+(function($){
+    $(window).load(function(){
+    $(".right-sidebar").mCustomScrollbar();
+        });
+    })(jQuery);

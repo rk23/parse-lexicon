@@ -10,21 +10,23 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
   </head>
 
   <body>
-  <div class="contain-to-grid sticky">
+  <div class="contain-to-grid sticky nav-bar">
   <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#">My Site</a></h1>
+        <h1 id="brand">translate</h1>
       </li>
+
     </ul>
-     <% if @current_user %>
-            <p>signed in as <span style="font-style: italic"><%= link_to @current_user.name, "/user/" + @current_user.id.to_s %></span> | <%= link_to "logout", "/logout" %></p>
-            <% else %>
-              <p><%= link_to "login/signup", "/login" %></p>
-        <% end %>
+          <% if @current_user %>
+      <p class="current text-right">signed in as <%= link_to @current_user.name, "/user/" + @current_user.id.to_s %> | <%= link_to "logout", "/logout" %></p>
+      <% else %>
+        <p><%= link_to "login/signup", "/login" %></p>
+      <% end %>
   </nav>
   </div>
 
@@ -33,5 +35,6 @@
     <%= yield %>
   </div>
 
+  <script src="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
   </body>
 </html>
