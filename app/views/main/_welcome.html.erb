@@ -14,7 +14,8 @@
   <button class="login" href="#" data-reveal-id="login">Login</button>
   <button class="login" href="#" data-reveal-id="signUp">Sign Up</button>
 
-  <!-- Modal for Login -->
+    <!-- Modal for Login -->
+
   <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <h2>Login</h2><hr>
     <%= form_for :user, url: "/login" do |f| %>
@@ -27,7 +28,8 @@
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
 
-  <!-- Modal for Sign Up -->
+    <!-- Modal for Sign Up -->
+
   <div id="signUp" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <h2>Sign Up</h2><hr>
     <%= form_for :user, url: "/users" do |f| %>
