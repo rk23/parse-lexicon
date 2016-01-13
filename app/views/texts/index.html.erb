@@ -1,2 +1,8 @@
 <h1>Texts#index</h1>
 <p>Find me in app/views/texts/index.html.erb</p>
+<% @link.each do |w| %>	
+	<%= form_for :text, url: "/parse" do |f| %>
+		<%= f.hidden_field :text, :value => w.link %><br>
+		<%= f.submit "render text", :class => 'button' %>
+	<% end %>
+<% end %>

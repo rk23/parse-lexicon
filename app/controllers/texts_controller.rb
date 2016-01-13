@@ -2,16 +2,20 @@ require 'rest-client'
 require 'nokogiri'
 
 class TextsController < ApplicationController
+  before_action :is_authenticated?
   def index
+    @link = Text.all
   end
 
   def show
-    url = "https://www.gutenberg.org/files/21989/21989-0.txt"
-    response = RestClient.get url
-    html = response.body
-    data = Nokogiri::HTML(html, nil, 'UTF-8')
+    #text from a form is sent link available from a view which is taken from a model
+    # @text = params[:text][:text]
+    # url = @text
+    # response = RestClient.get url
+    # html = response.body
+    # data = Nokogiri::HTML(html, nil, 'UTF-8')
 
-    @show = data.css('body')
+    # @show = data.css('body')
   end
 
   def update
