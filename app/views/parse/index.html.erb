@@ -3,6 +3,7 @@
   <div class="medium-9 small-12 columns preview">
     <h4>Preview Text:</h4>
     <p><span id="percentage"><%= @percentage %></span>% of this document can be understood</p>
+    <p><span><%= @ratio %></span>% unique words known</p>
     <% @count = 0.0; @parsed.each do |w| %>
 
         <!--If the user knows the word, print un-highlighted, else print highlighted-->
