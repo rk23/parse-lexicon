@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
   # Texts routes
-  get 'texts/index'
+  
   # get 'texts/show'
   # get 'texts/update'
   # get 'texts/detroy'
-  # get 'texts/create'
-  # get 'texts/new'
+  post 'texts/create'
+  get 'texts/new'
 
   # Main routes
   root 'main#index'
   get '/about'        => 'main#about'
-  get '/recommended'  => 'main#recommended'
+  get '/recommended'  => 'texts#index'
 
   # Sessions
   get '/login'        => 'sessions#new'
@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   get '/user/:id'     => 'users#show'
 
   # Parse routes
-  # get '/parse'          => 'parse#index'
   post '/parse'           => 'parse#index'
   post '/parse/addwords'  => 'parse#create'
+  post '/parse/translate' => 'parse#translate'
 
   #Favorite routes
   get '/users/:id/favorites'         => 'favorites#index'
@@ -34,9 +34,6 @@ Rails.application.routes.draw do
   get '/users/:id/favorites/new'     => 'favorites#new'
   post '/users/:id/favorites/new'    => 'favorites#create'
   delete '/users/:id/favorites/:id'  => 'favorites#destroy'
-
-  get '/texts/show' => 'texts#show'
-  post '/texts/show' => 'texts#show'
 
   # get 'favorites/update'
   # get 'favorites/edit'

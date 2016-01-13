@@ -20,6 +20,7 @@
   <div class="panel content">
 		<%= form_for :parse, url: '/parse' do |f| %>
 			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
+			<%= f.hidden_field 'parse_form', :name => 'parse_form' %><br>
 			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
 		<% end %>
 	</div>
