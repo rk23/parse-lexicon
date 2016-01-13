@@ -14,6 +14,8 @@ body {
 	margin-bottom: 40px;
 }
 
+/* Styling the Form to Submit Text to Parse */
+
 .button {
 	// background-color: #008490;
 	background-color: transparent;
@@ -44,14 +46,28 @@ body {
 
 .content {
 	margin-top: 20px;
-	border-radius: 20px;
+	border-radius: 10px;
+	background-color: transparent;
 }
 
+/* Style for the Right SideBar aka Word List */
+
 .right-sidebar {
-	max-height: 600px;
+	max-height: 418px;
 	width: 16em;
-	border: 0px;
+	// border: 0px;
 	background-color: transparent;
+}
+
+.p_text {
+	font-size: 18px;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
 }
 
 
@@ -77,3 +93,6 @@ h1#brand {
 	border-bottom: 1px solid grey;
 }
 
+.field {
+	border-bottom: 2px solid #000000;
+}
