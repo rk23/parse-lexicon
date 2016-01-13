@@ -12,23 +12,14 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       # flash[:danger] = "wrong password"
-      redirect_to login_path
+      redirect_to root_path
     end
-
-     #gets user language and saves it
-    
-      # if @user_language.save
-      #   # session[:user_id] = @user_id
-      #   print "got it"
-      # else
-      #   print "did not save"
-      # end
 
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to "/login"
+    redirect_to root_path
   end
 
   private

@@ -10,11 +10,8 @@ class TextsController < ApplicationController
     response = RestClient.get url
     html = response.body
     data = Nokogiri::HTML(html, nil, 'UTF-8')
-    # data.encoding = 'iso-8859-1'
 
     @show = data.css('body')
-    # @show = html
-    # render text: @show
   end
 
   def update
