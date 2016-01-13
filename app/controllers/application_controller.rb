@@ -20,8 +20,9 @@ class ApplicationController < ActionController::Base
   def access_languages
 
     # Can be used anywhere! It's a string.
-      # Except when I restart my server, then it errors on root route: "undefined method `[]' for nil:NilClass"
-    # @current_language = session['user_language']['session_language']
+    if current_user
+      @current_language = session['user_language']['session_language']
+    end
 
     # Hash associating language codes and language names
     @language_hash = {
