@@ -33,3 +33,8 @@ $(function(){
     $(".right-sidebar").mCustomScrollbar();
         });
     })(jQuery);
+
+// trying to add Sticky sidebar
+
+var sidebar = document.getElementById('sidebar');
+Stickyfill.add(sidebar);
