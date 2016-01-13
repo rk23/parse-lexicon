@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'texts/index'
+
+  get 'texts/show'
+
+  get 'texts/update'
+
+  get 'texts/detroy'
+
+  get 'texts/create'
+
+  get 'texts/new'
+
   get '/login'        => 'sessions#new'
   post '/login'       => 'sessions#create'
   get '/logout'       => 'sessions#destroy'
