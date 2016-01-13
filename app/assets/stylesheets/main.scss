@@ -10,8 +10,11 @@ body {
 }
 
 .preview {
-	font-family: 'Calendas Plus',
+	font-family: 'Calendas Plus';
+	margin-bottom: 40px;
 }
+
+/* Styling the Form to Submit Text to Parse */
 
 .button {
 	// background-color: #008490;
@@ -24,7 +27,7 @@ body {
 	color: #008490;
 	font-weight: 500;
 	font-size: 14px;
-	width: 12em;
+	width: 13em;
 }
 
 #word-btn:hover {
@@ -43,12 +46,28 @@ body {
 
 .content {
 	margin-top: 20px;
-	border-radius: 20px;
+	border-radius: 10px;
+	background-color: transparent;
 }
 
+/* Style for the Right SideBar aka Word List */
+
 .right-sidebar {
-	max-height: 450px;
-	width: 15em;
+	max-height: 418px;
+	width: 16em;
+	// border: 0px;
+	background-color: transparent;
+}
+
+.p_text {
+	font-size: 18px;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
 }
 
 
@@ -56,9 +75,10 @@ body {
 
 h1#brand {
 		margin-top: 40px;
-		font-size: 80px;
-		font-family: 'Elephant', serif;
-		letter-spacing: 0px;
+		font-size: 20px;
+		font-family: 'Avenir Next', sans-serif;
+		letter-spacing: 3px;
+		text-transform: uppercase;
 		color: #000000;
 }
 
@@ -73,3 +93,6 @@ h1#brand {
 	border-bottom: 1px solid grey;
 }
 
+.field {
+	border-bottom: 2px solid #000000;
+}
