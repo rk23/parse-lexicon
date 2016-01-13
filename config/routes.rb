@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  # Texts routes
+  get 'texts/index'
+  get 'texts/show'
+  get 'texts/update'
+  get 'texts/detroy'
+  get 'texts/create'
+  get 'texts/new'
+
   # Main routes
   root 'main#index'
   get '/about'        => 'main#about'
