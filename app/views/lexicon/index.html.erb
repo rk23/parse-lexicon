@@ -1,0 +1,9 @@
+<h1>Lexicon</h1>
+
+<h3><%= @current_user.name %>'s <%= @current_language[:name] %> lexicon:</h3>
+
+<% @current_user.words.each do |w| %>
+	<% if w.language === @current_language[:code] %>
+		<%= w.understood_word %><br>
+	<% end %>
+<% end %>

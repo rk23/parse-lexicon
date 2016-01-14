@@ -66,7 +66,7 @@ class ParseController < ApplicationController
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
     current_user.words.find_or_create_by(understood_word: @new_word[0],
-                                         language: @current_language)
+                                         language: @current_language[:code])
   end
 
   def translate
@@ -74,7 +74,7 @@ class ParseController < ApplicationController
     translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
     to_translate = params[:word]
-    translated = translator.translate(to_translate,@current_language,'en',"text/html")
+    translated = translator.translate(to_translate,@current_language[:code],'en',"text/html")
 
     render json: translated
   end

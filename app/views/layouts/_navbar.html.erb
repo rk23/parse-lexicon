@@ -6,7 +6,7 @@
       </li>
     </ul>
 
-    <p class="current text-right"><%= @current_user.name %> | <%= @language_hash[@current_language.to_sym] %> | <%= link_to "logout", "/logout" %></p>
+    <p class="current text-right"><%= @current_user.name %> | <%= @current_language[:name] %> | <%= link_to "logout", "/logout" %></p>
 
   </nav>
 </div>

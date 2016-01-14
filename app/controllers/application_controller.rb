@@ -19,11 +19,6 @@ class ApplicationController < ActionController::Base
 
   def access_languages
 
-    # Can be used anywhere! It's a string.
-    if current_user
-      @current_language = session['user_language']['session_language']
-    end
-
     # Hash associating language codes and language names
     @language_hash = {
       :fr => 'French',
@@ -135,17 +130,29 @@ class ApplicationController < ActionController::Base
       :yua => 'Yucatec Maya'
     }
 
+    # @current_language is a hash with format {:fr => 'French'}
+    if current_user
+      @current_language = {
+        :code => session['user_language']['session_language'],
+        :name => @language_hash[session['user_language']['session_language'].to_sym]
+      }
+    end
+
     # Array of languages in the format [['French', 'fr'], ...] -- for use in dropdown menus
     @language_array = []
     @language_hash.each do |symbol, name|
       @language_array.push([name, symbol.to_s])
     end
-
+    # Another array for dropdown menus, but using the purely alphabetical language_hash_alpha
     @language_array_alpha = []
     @language_hash_alpha.each do |symbol, name|
       @language_array_alpha.push([name, symbol.to_s])
     end
 
+  end
+
+  def language_storage
+    
   end
 
   def disable_navbar
