@@ -107,7 +107,7 @@ a:visited {
 	color: #008490;
 	font-weight: 500;
 	font-size: 14px;
-	width: 13em;
+	width: 12em;
 }
 
 #word-btn:hover {
@@ -134,8 +134,8 @@ a:visited {
 /* Style for the Right SideBar aka Word List */
 
 .right-sidebar {
-	max-height: 400px;
-	width: 16em;
+	max-height: 480px;
+	width: 15.5em;
 	/*border: 0px;*/
 	background-color: transparent;
 	float: right;
@@ -196,9 +196,12 @@ h1#brand {
 }
 
 
-
-
-
+/* Recommendations Form */
+/*
+.recommend_form {
+	margin: 0 auto;
+}
+*/
 
 
 
