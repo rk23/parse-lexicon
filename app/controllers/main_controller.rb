@@ -2,6 +2,7 @@ class MainController < ApplicationController
 	before_action :is_authenticated?
   
   def index
+    @link = Text.all
   	# If user is not logged in, disable navbar and display welcome view instead of home view
   	if current_user
       user_words = current_user.words
@@ -16,6 +17,7 @@ class MainController < ApplicationController
   		disable_navbar
   		render "welcome"
   	end
+
 
   end
 
