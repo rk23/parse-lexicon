@@ -88,8 +88,11 @@ ready = function() {
             dataType: 'html',
             data: {word: word.text()}
         }).success(function(data){
+            
             $('#to-translate').text(word.text())
-            $('#translated').html('<span class="flag-icon flag-icon-gb"></span><span> '+data+'</span>')
+
+            $('#translated').text(data)
+
         }).error(function(err){
             console.log(err)
             $('#translated').text("Unable to translate")
