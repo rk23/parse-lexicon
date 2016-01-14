@@ -6,13 +6,14 @@
 <!-- List of user's languages -->
 <div class="panel content">
   <p class="lead">Learning: </p>
-  <!-- key_value[0]: language code (string), key_value[1]: count -->
-  <% @word_count_sorted_by_language.each do |key_value| %>
-  <p><%= key_value[1] %> <span class="flag-icon flag-icon-fr"></span> <%= @language_hash[key_value[0].to_s] %></p>
-  <% end %>
-</div>
 
-  
+  <% @word_count_by_lang.each do |w| %>
+      <!-- w[0]: language code (string), w[1]: count (number) -->
+      <p><%= w[1] %> <span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </p>
+  <% end %>
+
+</div>
+<!-- paste -->
 </div>
 </div>
 

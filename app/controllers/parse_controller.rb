@@ -1,7 +1,6 @@
 class ParseController < ApplicationController
   def index
-
-    #scrape from the guttenberg sent from text index
+    # Scrape from the guttenberg sent from text index
     if params[:text_form]
       @text = params[:text][:text]
       url = @text
@@ -10,18 +9,18 @@ class ParseController < ApplicationController
       data = Nokogiri::HTML(html, nil, 'UTF-8')
       @show = data.css('body')
       text = @show.to_s
-      #parsing the string to get rid of header footer text
-      # puts "LOOOOOOOOOOOOOOOOOOO___________________"
+      # Parsing the string to get rid of header footer text
       text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
     else
+      # Grab data from the form on the main page
       form_data = params.require(:parse).permit(:text, :lang)
       text = form_data['text']
     end
 
-    # Grab data from the form on the main page
-    
-    
+    if text.length == 0
+      redirect_to root_path
+    end
 
     # Removes punctuation from text, puts into an array
     @parsed = parse_text text
@@ -44,14 +43,12 @@ class ParseController < ApplicationController
       # New hash for words that the user doesn't know, with frequency data
       @parsed_sorted_and_compared = Hash.new(0)
       @parsed_and_sorted.each do |key_value_pair|
-
-          # If the user's known words does not include the word from the text, then
-          # put it in an array we can access on the front end
-          if @user_known_words.exclude? key_value_pair[0]
-            @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
-            @user_word_count += key_value_pair[1]
-          end
-
+        # If the user's known words does not include the word from the text, then
+        # put it in an array we can access on the front end
+        if @user_known_words.exclude? key_value_pair[0]
+          @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
+          @user_word_count += key_value_pair[1]
+        end
       end
 
       # Percentage of text known based on user vocab
@@ -70,7 +67,7 @@ class ParseController < ApplicationController
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
     current_user.words.find_or_create_by(understood_word: @new_word[0],
-                                         language: @current_language[:code])
+                                         language: @current_lang['code'])
   end
 
   def translate
@@ -78,12 +75,10 @@ class ParseController < ApplicationController
     translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
     to_translate = params[:word]
-    translated = translator.translate(to_translate,@current_language[:code],'en',"text/html")
+    translated = translator.translate(to_translate, @current_lang['code'], 'en', "text/html")
 
     render json: translated
   end
-
-
 
   private
 
@@ -118,5 +113,4 @@ class ParseController < ApplicationController
   def word_params
     params.require(:word).permit(:understood_word, :languge)
   end
-
 end
