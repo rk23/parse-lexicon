@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Sessions
   get '/login'            => 'sessions#new'
   post '/login'           => 'sessions#create'
-  post '/update'          => 'sessions#update'
+  put '/update'          => 'sessions#update'
   get '/logout'           => 'sessions#destroy'
 
   # Users routes
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   # Lexicon routes
   get '/lexicon'          => 'lexicon#index'
+  get '/lexicon/:lang'    => 'lexicon#index'
   delete '/lexicon'          => 'lexicon#delete'
 
   #404 route
