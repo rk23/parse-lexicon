@@ -82,9 +82,13 @@ $(function(){
 
             //Update percentages as well as stored values used in this script
             $('#percentage').attr('value', userWordCount);
-            $('#percentage').html(known_percent);
+            $('#percentage').html(known_percent + '%');
             $('#unique-ratio').attr('value', uniqueUserWordCount);
             $('#unique-ratio').html(unique_percent);
+
+            //Update Progress Bar with updated percentage
+            $('#progressBar').css('width', known_percent + '%');
+            $('#percentage strong').text(known_percent + '%');
 
             //Remove the word count button div then remove the
             //highlight class on associated words
