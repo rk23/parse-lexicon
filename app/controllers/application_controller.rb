@@ -19,237 +19,182 @@ class ApplicationController < ActionController::Base
 
   def access_languages
 
-    # Hash associating language code, name, and flag (country code)
-    @language_hash_flags = {
-      :ar => {
+    # Hash containing language code, name, and flag (country code)
+    @lang_hash = {
+      'ar' => {
         :name => 'Arabic',
         :flag => 'eg'},
-      :'bs-Latn' => {
+      'bs-Latn' => {
         :name => 'Bosnian (Latin)',
         :flag => 'ba'},
-      :bg => {
+      'bg' => {
         :name => 'Bulgarian',
         :flag => 'bg'},
-      :'zh-CHS' => {
+      'zh-CHS' => {
         :name => 'Chinese Simplified',
         :flag => 'cn'},
-      :'zh-CHT' => {
+      'zh-CHT' => {
         :name => 'Chinese Traditional',
         :flag => 'cn'},
-      :hr => {
+      'hr' => {
         :name => 'Croatian',
         :flag => 'hr'},
-      :ca => {
+      'ca' => {
         :name => 'Catalan',
         :flag => 'ad'},
-      :cs => {
+      'cs' => {
         :name => 'Czech',
         :flag => 'cz'},
-      :da => {
+      'da' => {
         :name => 'Danish',
         :flag => 'dk'},
-      :nl => {
-        :name => 'Danish',
+      'nl' => {
+        :name => 'Dutch',
         :flag => 'nl'},
-      :en => {
+      'en' => {
         :name => 'English',
         :flag => 'gb'},
-      :et => {
+      'et' => {
         :name => 'Estonian',
         :flag => 'ee'},
-      :fi => {
+      'fi' => {
         :name => 'Finnish',
         :flag => 'fi'},
-      :fr => {
+      'fr' => {
         :name => 'French',
         :flag => 'fr'},
-      :de => {
+      'de' => {
         :name => 'German',
         :flag => 'de'},
-      :el => {
+      'el' => {
         :name => 'Greek',
         :flag => 'gr'},
-      :ht => {
+      'ht' => {
         :name => 'Haitian Creole',
         :flag => 'ht'},
-      :he => {
+      'he' => {
         :name => 'Hebrew',
         :flag => 'il'},
-      :hi => {
+      'hi' => {
         :name => 'Hindi',
         :flag => 'in'},
-      :mww => {
+      'mww' => {
         :name => 'Hmong Daw',
         :flag => 'la'},
-      :hu => {
+      'hu' => {
         :name => 'Hungarian',
         :flag => 'hu'},
-      :it => {
+      'it' => {
         :name => 'Italian',
         :flag => 'it'},
-      :ja => {
+      'ja' => {
         :name => 'Japanese',
         :flag => 'jp'},
-      :sw => {
+      'sw' => {
         :name => 'Kiswahili',
         :flag => 'tz'},
-      :tlh => {
+      'tlh' => {
         :name => 'Klingon',
         :flag => 'tk'},
-      :'tlh-Qaak' => {
+      'tlh-Qaak' => {
         :name => 'Klingon (pIqaD)',
         :flag => 'tk'},
-      :ko => {
+      'ko' => {
         :name => 'Korean',
         :flag => 'kr'},
-      :lv => {
+      'lv' => {
         :name => 'Latvian',
         :flag => 'lv'},
-      :lt => {
+      'lt' => {
         :name => 'Lithuanian',
         :flag => 'lt'},
-      :ms => {
+      'ms' => {
         :name => 'Malay',
         :flag => 'my'},
-      :mt => {
+      'mt' => {
         :name => 'Maltese',
         :flag => 'mt'},
-      :no => {
+      'no' => {
         :name => 'Norwegian',
         :flag => 'no'},
-      :fa => {
+      'fa' => {
         :name => 'Persian',
         :flag => 'ir'},
-      :pl => {
+      'pl' => {
         :name => 'Polish',
         :flag => 'pl'},
-      :pt => {
+      'pt' => {
         :name => 'Portuguese',
         :flag => 'pt'},
-      :otq => {
+      'otq' => {
         :name => 'Querétaro Otomi',
         :flag => 'mx'},
-      :ro => {
+      'ro' => {
         :name => 'Romanian',
         :flag => 'ro'},
-      :ru => {
+      'ru' => {
         :name => 'Russian',
         :flag => 'ru'},
-      :'sr-Cyrl' => {
+      'sr-Cyrl' => {
         :name => 'Serbian (Cyrillic)',
         :flag => 'rs'},
-      :'sr-Latn' => {
+      'sr-Latn' => {
         :name => 'Serbian (Latin)',
         :flag => 'rs'},
-      :sk => {
+      'sk' => {
         :name => 'Slovak',
         :flag => 'sk'},
-      :sl => {
+      'sl' => {
         :name => 'Slovenian',
         :flag => 'si'},
-      :es => {
+      'es' => {
         :name => 'Spanish',
         :flag => 'es'},
-      :sv => {
+      'sv' => {
         :name => 'Swedish',
         :flag => 'se'},
-      :th => {
+      'th' => {
         :name => 'Thai',
         :flag => 'th'},
-      :tr => {
+      'tr' => {
         :name => 'Turkish',
         :flag => 'tr'},
-      :uk => {
+      'uk' => {
         :name => 'Ukrainian',
         :flag => 'ua'},
-      :ur => {
+      'ur' => {
         :name => 'Urdu',
         :flag => 'pk'},
-      :vi => {
+      'vi' => {
         :name => 'Vietnamese',
         :flag => 'vn'},
-      :cy => {
+      'cy' => {
         :name => 'Welsh',
         :flag => 'gb'},
-      :yua => {
+      'yua' => {
         :name => 'Yucatec Maya',
         :flag => 'mx'}
     }
 
-    # Hash associating language codes and language names
-    @language_hash = {
-      :fr => 'French',
-      :es => 'Spanish',
-      :de => 'German',
-      :it => 'Italian',
-      :ar => 'Arabic',
-      :'bs-Latn' => 'Bosnian (Latin)',
-      :bg => 'Bulgarian',
-      :ca => 'Catalan',
-      :'zh-CHS' => 'Chinese Simplified',
-      :'zh-CHT' => 'Chinese Traditional',
-      :hr => 'Croatian',
-      :cs => 'Czech',
-      :da => 'Danish',
-      :nl => 'Dutch',
-      :en => 'English',
-      :et => 'Estonian',
-      :fi => 'Finnish',
-      :el => 'Greek',
-      :ht => 'Haitian Creole',
-      :he => 'Hebrew',
-      :hi => 'Hindi',
-      :mww => 'Hmong Daw',
-      :hu => 'Hungarian',
-      :id => 'Indonesian',
-      :ja => 'Japanese',
-      :sw => 'Kiswahili',
-      :tlh => 'Klingon',
-      :'tlh-Qaak' => 'Klingon (pIqaD)',
-      :ko => 'Korean',
-      :lv => 'Latvian',
-      :lt => 'Lithuanian',
-      :ms => 'Malay',
-      :mt => 'Maltese',
-      :no => 'Norwegian',
-      :fa => 'Persian',
-      :pl => 'Polish',
-      :pt => 'Portuguese',
-      :otq => 'Querétaro Otomi',
-      :ro => 'Romanian',
-      :ru => 'Russian',
-      :'sr-Cyrl' => 'Serbian (Cyrillic)',
-      :'sr-Latn' => 'Serbian (Latin)',
-      :sk => 'Slovak',
-      :sl => 'Slovenian',
-      :sv => 'Swedish',
-      :th => 'Thai',
-      :tr => 'Turkish',
-      :uk => 'Ukrainian',
-      :ur => 'Urdu',
-      :vi => 'Vietnamese',
-      :cy => 'Welsh',
-      :yua => 'Yucatec Maya'
-    }
-
-    # @current_language is a hash with format {:fr => 'French'}
     if current_user
-      @current_language = {
-        :code => session['user_language']['session_language'],
-        :name => @language_hash[session['user_language']['session_language'].to_sym]
+      session_lang = session['user_language']['session_language']
+      @current_lang = {
+        'code' => session_lang,
+        'name' => @lang_hash[session_lang][:name],
+        'flag' => @lang_hash[session_lang][:flag]
       }
     end
 
-    # Array of languages in the format [['French', 'fr'], ...] -- for use in dropdown menus
-    @language_array = []
-    @language_hash.each do |symbol, name|
-      @language_array.push([name, symbol.to_s])
+    # Array of languages in the format [['French', 'fr'], ...] -- for dropdown menus
+    @lang_dropdown_array = []
+#####
+    @lang_hash.each do |code, value_hash|
+      @lang_dropdown_array.push([value_hash[:name], code])
     end
 
   end
 
   def language_storage
-    
   end
 
   def disable_navbar

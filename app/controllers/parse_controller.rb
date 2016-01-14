@@ -1,7 +1,7 @@
 class ParseController < ApplicationController
   def index
 
-    #scrape from the guttenberg sent from text index
+    # Scrape from the guttenberg sent from text index
     if params[:text_form]
       @text = params[:text][:text]
       url = @text
@@ -10,8 +10,7 @@ class ParseController < ApplicationController
       data = Nokogiri::HTML(html, nil, 'UTF-8')
       @show = data.css('body')
       text = @show.to_s
-      #parsing the string to get rid of header footer text
-      # puts "LOOOOOOOOOOOOOOOOOOO___________________"
+      # Parsing the string to get rid of header footer text
       text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
     else
@@ -19,10 +18,10 @@ class ParseController < ApplicationController
       text = form_data['text']
     end
 
+
     # Grab data from the form on the main page
     
     
-
     # Removes punctuation from text, puts into an array
     @parsed = parse_text text
     @word_count = @parsed.length
@@ -70,7 +69,7 @@ class ParseController < ApplicationController
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
     current_user.words.find_or_create_by(understood_word: @new_word[0],
-                                         language: @current_language[:code])
+                                         language: @current_lang['code'])
   end
 
   def translate
@@ -78,12 +77,10 @@ class ParseController < ApplicationController
     translator = MicrosoftTranslator::Client.new(ENV['MS_TRANSLATOR_KEY'], ENV['MS_TRANSLATOR_SECRET'])
 
     to_translate = params[:word]
-    translated = translator.translate(to_translate,@current_language[:code],'en',"text/html")
+    translated = translator.translate(to_translate, @current_lang['code'], 'en', "text/html")
 
     render json: translated
   end
-
-
 
   private
 

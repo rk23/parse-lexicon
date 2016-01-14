@@ -6,19 +6,18 @@
 <!-- List of user's languages -->
 <div class="panel content">
   <p class="lead">Learning: </p>
-  <!-- key_value[0]: language code (string), key_value[1]: count -->
-  <!-- now they're 'w' -->
-  <% @word_count_sorted_by_language.each do |w| %>
 
-      <!-- For now, French flag is a placeholder. Will replace with dynamic flag soon. Will replace language code with name. -->
-      <p><%= w[1] %> <span class="flag-icon flag-icon-fr"></span> <%= w[0] %></p>
+  <% @word_count_by_lang.each do |w| %>
+      <!-- w[0]: language code (string), w[1]: count (number) -->
+      <p><%= w[1] %> <span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </p>
   <% end %>
+
 </div>
 
 <!-- Form to switch current language -->
 <div class="panel content">
   <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
-      Select language<%= f.select :session_language, @language_array %>
+      Select language<%= f.select :session_language, @lang_dropdown_array %>
       <%= f.submit "switch", :class => 'button' %>
   <% end %>
   
