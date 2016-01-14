@@ -140,12 +140,11 @@ a:visited {
 
 /* Styling for Left Side Bar in Homepage */
 
-.left-section {
+.left_section {
 	margin-top: 20px;
 	border-radius: 0px;
 	background-color: transparent;
-	background: transparent;
-
+	border-bottom: 4px solid #58b2ba;
 }
 
 .special_heading {
@@ -156,7 +155,11 @@ a:visited {
 }
 
 #learning_languages {
-	max-height: 300px;
+	height: 500px;
+}
+
+#left2 {
+	max-height: 150px;
 }
 
 .left-bar {
