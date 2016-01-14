@@ -89,7 +89,7 @@ ready = function() {
             data: {word: word.text()}
         }).success(function(data){
             $('#to-translate').text(word.text())
-            $('#translated').text(data)
+            $('#translated').html('<span class="flag-icon flag-icon-gb"></span><span> '+data+'</span>')
         }).error(function(err){
             console.log(err)
             $('#translated').text("Unable to translate")

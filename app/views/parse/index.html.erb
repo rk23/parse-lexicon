@@ -1,18 +1,23 @@
 <div class="row">
 <br>
 
-<div class="progress large-4 success round columns ">
+<ul class="medium-block-grid-3">
+<li><p class="lead">Progress:</p><div class="progress success round columns ">
   <span class="meter text-right" id="progressBar" style="width: <%= @percentage %>%">
   <span id="percentage" value="<%= @user_word_count %>" name="<%= @word_count %>"><%= @percentage %>%</span></span>
-</div> words understood.
-</div>
+</div> </li>
 
-<div class="row">
-<div class="progress large-4 end success round columns">
+<li><p class="lead">Unique Words Known:</p><div class="progress success round columns">
   <span class="meter text-right" id="ratioProgress" style="width: <%= @ratio %>%">
   <span id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %>%</span></span>
-</div> unique words known.
-</div>
+</div></li>
+
+<li><div class="columns translation">
+<p class="lead">Translate: </p>
+<span id="to-translate" style="margin-bottom: 2px"></span> <span id="translated" style="margin-bottom: 2px"><span class="flag-icon flag-icon-gb"></span></span>
+</div></li>
+
+</ul>
 
 <hr>
 <div class="row">
@@ -46,9 +51,9 @@
   </div>
 
   <div class="medium-3 small-12 columns panel right-sidebar">
-    <h4>Translate:</h4><hr>
+    <!-- <h4>Translate:</h4><hr>
     <p id="to-translate" style="margin-bottom: 2px"></p>
-    <p id="translated" style="margin-bottom: 2px"></p>
+    <p id="translated" style="margin-bottom: 2px"></p> -->
     <br>
     <h4>Word List:</h4><hr>
     <% @count = 0.0;  @parsed_sorted_and_compared.each do |word| %>
