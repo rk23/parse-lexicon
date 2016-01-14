@@ -33,16 +33,39 @@ ready = function() {
         })
     });
 
-    // Change user's language on home page
+    //Change user's language on home page via learning language click
+    $('.learning-lang-switch').click(function(e){
+        e.preventDefault()
+        var langDiv = $(this);
+        console.log(langDiv.attr('value'))
+
+        $.ajax({
+            url: '/update',
+            method: 'PUT',
+            dataType: 'JSON',
+            data: {user_language: langDiv.attr('value')}
+        }).success(function(data){
+            $('#session_language').html(data.name);
+            $('#user-flag-icon').removeClass();
+            $('#user-flag-icon').addClass("flag-icon flag-icon-" + data.flag);
+
+        }).error(function(err){
+            console.log(err)
+        });
+        return false
+        $
+    })
+
+    // Change user's language on home page via form
     $('#user_language_change').on('submit', function(e){
         e.preventDefault();
         var form = $(this);
 
         $.ajax({
             url: '/update',
-            method: 'POST',
+            method: 'PUT',
             dataType: 'JSON',
-            data: {user_language: form[0][1].value}
+            data: {user_language_symbol: form[0][1].value}
         }).success(function(data){
             $('#session_language').html(data.name);
             $('#user-flag-icon').removeClass();
