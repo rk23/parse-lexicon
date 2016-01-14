@@ -8,7 +8,7 @@
 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Learning: </span></p>
     <div class="panel left_section hvr-underline-from-left" id="left2">
-      <% @word_count_by_lang.each do |w| %>
+      <% @words.each do |w| %>
           <!-- w[0]: language code (string), w[1]: count (number) -->
           <span class="learning-lang-switch" value="<%= @lang_hash[w[0]][:name] %>"><span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </span>
           <span class="view-lang-lexicon"><a href="/lexicon/<%= @lang_hash[w[0]][:name] %>"><%= w[1] %></a></span><br>

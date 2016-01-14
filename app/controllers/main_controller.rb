@@ -8,11 +8,12 @@ class MainController < ApplicationController
   	if current_user
       user_words = current_user.words
 
-      @word_count_by_lang = Hash.new(0)
+      word_count_by_lang = Hash.new(0)
       user_words.each do |word|
-        @word_count_by_lang[word.language] += 1
+        word_count_by_lang[word.language] += 1
       end
 
+      @words = word_count_by_lang.sort_by {|key, value| value}.reverse
       render "home"
       
   	else
