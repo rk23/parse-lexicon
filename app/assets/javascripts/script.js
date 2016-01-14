@@ -107,6 +107,7 @@ $(function(){
     })(jQuery);
 
 // trying to add Sticky sidebar
+
 $(function() {
 
     var $sidebar   = $(".right-sidebar"), 
@@ -131,3 +132,4 @@ $(function() {
 
     
 });
+
