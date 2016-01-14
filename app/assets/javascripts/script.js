@@ -152,6 +152,9 @@ ready = function() {
     // Adding jQuery Plugin into Word List Sidebar
     $(".right-sidebar").mCustomScrollbar();
 
+    // Adding Scrollbar to the Learning Languages section
+    $("#learning_languages").mCustomScrollbar();
+
     //// trying to add Sticky sidebar
 
     var $sidebar   = $(".right-sidebar"),
@@ -173,6 +176,9 @@ ready = function() {
         });
     }
 };
+
+
+
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
