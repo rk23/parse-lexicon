@@ -176,7 +176,7 @@ class ApplicationController < ActionController::Base
     }
 
     if current_user
-      session_lang = session['user_language']['session_language']
+      session_lang = session['user_language']['session_language'];
       @current_lang = {
         'code' => session_lang,
         'name' => @lang_hash[session_lang][:name],
