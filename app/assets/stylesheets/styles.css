@@ -1,5 +1,5 @@
 body {
-	font-family: 'Avenir Next', sans-serif;
+	font-family: 'Avenir', sans-serif;
 }
 
 li {
@@ -84,20 +84,25 @@ a:visited {
 /* Styling the Form to Submit Text to Parse */
 
 
-.button {
+.button, .postfix {
 	/*background-color: #008490;*/
 	background-color: transparent;
-	border: 1px solid #008490;
+	border: 1px solid #21c6f5;
 	color: #008490;
-	border-radius: 5px;
+	border-radius: 0px;
 }
 
-.submit_lang, .postfix {
+.button:hover, .postfix:hover {
+	background-color: transparent;
+	color: #21c6f5;
+}
+
+/*.submit_lang, .postfix {
 	border-radius: 5px;
 	background-color: transparent;
 	border: 1px solid #008490;
 	color: #008490;
-}
+}*/
 
 .login:hover {
 	color:  #000000;
@@ -114,21 +119,23 @@ a:visited {
 	color: #FFFFFF;
 }
 
-#parse {
+#parse, .postfix {
 	width: 100%;
-	border-radius: 50px;
+	border-radius: 0px;
 }
 
 .text_area {
 	height: 15em;
-	font-size: 20px;
-	font-weight: 100;
+	font-size: 18px;
+	font-weight: 500;
+	border: 1px solid #21c6f5;
 }
 
 .content {
 	margin-top: 20px;
-	border-radius: 5px;
+	border-radius: 0px;
 	background-color: transparent;
+	border: 0px;
 }
 
 /* Style for the Right SideBar aka Word List */

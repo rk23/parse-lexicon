@@ -13,20 +13,22 @@
   <% end %>
 
 </div>
-
-<!-- Form to switch current language -->
-<div class="panel content">
-  <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
-      Select language<%= f.select :session_language, @lang_dropdown_array %>
-      <%= f.submit "switch", :class => 'button' %>
-  <% end %>
-  
+<!-- paste -->
 </div>
 </div>
 
 <!-- Form to parse the text --> 
+<!-- Form to switch current language -->
+
+
 <div class="large-6 columns">
   <div class="panel content">
+
+  <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
+      Select language<%= f.select :session_language, @lang_dropdown_array %>
+      <%= f.submit "switch", :class => 'button postfix' %>
+  <% end %>
+
 		<%= form_for :parse, url: '/parse' do |f| %>
 			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
 			<%= f.hidden_field 'parse_form', :name => 'parse_form' %><br>

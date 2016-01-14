@@ -11,6 +11,7 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
   </head>
 
@@ -19,11 +20,7 @@
     <%= render :partial => "layouts/navbar" unless @disable_navbar %>
   
       <!-- all other html goes in yield below -->
-    <div class="row">
-
       <%= yield %>
-
-    </div>
 
     <script src="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
 
