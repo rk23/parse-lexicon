@@ -5,7 +5,14 @@ class MainController < ApplicationController
     @link = Text.all
   	# If user is not logged in, disable navbar and display welcome view instead of home view
   	if current_user
-  		render "home"
+      user_words = current_user.words
+
+      @sorted_words = Hash.new(0)
+      user_words.each do |word|
+        @sorted_words[word.language] += 1
+      end
+
+      render "home"
   	else
   		disable_navbar
   		render "welcome"
