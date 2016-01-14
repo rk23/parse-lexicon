@@ -3,11 +3,12 @@ class ErrorsController < ApplicationController
 
 	def not_found
 		respond_to do |format|
+      disable_navbar
       format.html { render status: 404 }
    	end
 
    	def forbidden	
-   		render "damn it"
+   		disable_navbar
    	end
   	rescue ActionController::UnknownFormat
     	render status: 404, text: "nope"
