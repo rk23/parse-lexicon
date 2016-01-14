@@ -7,6 +7,10 @@
     <!-- content_for?(:title) ? yield(:title) : "foundation-rails" %>-->
     <title>Parse</title>
 
+    <!-- Browser title icon -->
+    <link rel="SHORTCUT ICON" href="public/favicon.ico" />
+    <link rel="icon" href="public/favicon.ico" type="image/ico" />
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -19,7 +23,7 @@
 
     <%= render :partial => "layouts/navbar" unless @disable_navbar %>
   
-      <!-- all other html goes in yield below -->
+      <!-- All other html goes in yield below -->
       <%= yield %>
 
     <script src="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>

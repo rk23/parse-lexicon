@@ -175,6 +175,8 @@ class ApplicationController < ActionController::Base
         :flag => 'mx'}
     }
 
+    # @current_lang is a handy way to reference current language in session
+    # Don't use @current_lang if you're trying to update the session
     if current_user
       session_lang = session['user_language']['session_language'];
       @current_lang = {
