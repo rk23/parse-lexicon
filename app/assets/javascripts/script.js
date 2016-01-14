@@ -155,6 +155,30 @@ ready = function() {
     // Adding Scrollbar to the Learning Languages section
     $("#learning_languages").mCustomScrollbar();
 
+    // Hover over Left Bar Panel 1 settings
+
+    $("#left1").mouseenter(function(){
+        $("#left1").css("background-color", "#efefef");
+    }).mouseleave(function (){
+        $("#left1").css("background-color", "white");
+    });
+    
+    // Hover over Left Bar Panel 2 settings
+
+     $("#left2").mouseenter(function(){
+        $("#left2").css("background-color", "#efefef");
+    }).mouseleave(function (){
+        $("#left2").css("background-color", "white");
+    });
+
+    // Hover over Left Bar Panel 3 settings
+
+    $("#left3").hover(function(){
+        $("#left3").css("background-color", "#efefef");
+        }, function(){
+        $("#left3").css("background-color", "white");
+    });
+
     //// trying to add Sticky sidebar
 
     var $sidebar   = $(".right-sidebar"),

@@ -123,7 +123,7 @@ a:visited {
 	font-size: 18px;
 	font-weight: 500;
 	border: 1px solid #21c6f5;
-	height: 315px;
+	height: 360px;
 }
 
 #parse {
@@ -140,12 +140,11 @@ a:visited {
 
 /* Styling for Left Side Bar in Homepage */
 
-.left-section {
-	margin-top: 20px;
+.left_section {
+/*	margin-top: 20px;*/
 	border-radius: 0px;
 	background-color: transparent;
-	background: transparent;
-
+	/*border-bottom: 4px solid #58b2ba;*/
 }
 
 .special_heading {
@@ -156,7 +155,12 @@ a:visited {
 }
 
 #learning_languages {
-	max-height: 300px;
+	height: 500px;
+}
+
+#left2, #left3 {
+	max-height: 150px;
+	width: 100%;
 }
 
 .left-bar {
