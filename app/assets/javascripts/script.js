@@ -88,8 +88,11 @@ ready = function() {
             dataType: 'html',
             data: {word: word.text()}
         }).success(function(data){
+            
             $('#to-translate').text(word.text())
-            $('#translated').html('<span class="flag-icon flag-icon-gb"></span><span> '+data+'</span>')
+
+            $('#translated').text(data)
+
         }).error(function(err){
             console.log(err)
             $('#translated').text("Unable to translate")
@@ -149,6 +152,9 @@ ready = function() {
     // Adding jQuery Plugin into Word List Sidebar
     $(".right-sidebar").mCustomScrollbar();
 
+    // Adding Scrollbar to the Learning Languages section
+    $("#learning_languages").mCustomScrollbar();
+
     //// trying to add Sticky sidebar
 
     var $sidebar   = $(".right-sidebar"),
@@ -170,6 +176,9 @@ ready = function() {
         });
     }
 };
+
+
+
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
