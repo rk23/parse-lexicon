@@ -6,7 +6,10 @@
       </li>
     </ul>
 
-    <p class="current text-right"><%= @current_user.name %> | <%= @current_language[:name] %> | <%= link_to "logout", "/logout" %></p>
+    <p class="current text-right"><strong><%= @current_user.name %></strong>
+      | <span id="session_language"><%= @current_language[:name] %></span>
+      | <%= link_to "logout", "/logout" %>
+    </p>
 
   </nav>
 </div>

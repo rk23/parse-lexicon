@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   # Main routes
   root 'main#index'
   get '/about'            => 'main#about'
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
   # Sessions
   get '/login'            => 'sessions#new'
   post '/login'           => 'sessions#create'
+  post '/update'          => 'sessions#update'
   get '/logout'           => 'sessions#destroy'
 
   # Users routes

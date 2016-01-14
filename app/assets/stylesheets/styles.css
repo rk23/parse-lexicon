@@ -1,5 +1,5 @@
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Avenir Next', sans-serif;
 }
 
 li {
@@ -85,11 +85,18 @@ a:visited {
 
 
 .button {
-	// background-color: #008490;
+	/*background-color: #008490;*/
 	background-color: transparent;
 	border: 1px solid #008490;
 	color: #008490;
-	border-radius: 0px;
+	border-radius: 5px;
+}
+
+.submit_lang, .postfix {
+	border-radius: 5px;
+	background-color: transparent;
+	border: 1px solid #008490;
+	color: #008490;
 }
 
 .login:hover {
@@ -120,7 +127,7 @@ a:visited {
 
 .content {
 	margin-top: 20px;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: transparent;
 }
 
@@ -150,21 +157,49 @@ h4 {
  /* styling for current user */
 
 h1#brand {
-		margin-top: 40px;
-		font-size: 20px;
-		font-family: 'Avenir Next', sans-serif;
-		letter-spacing: 3px;
-		text-transform: uppercase;
-		color: #000000;
+	margin-top: 27px;
+	font-size: 20px;
+	font-family: 'Avenir Next', sans-serif;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #000000;
 }
 
 .current {
-	font-size: 1.3em;
-	margin-top: 45px;
+	margin-top: 35px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .top-bar, .nav-bar {
-	height: 7em;
-	background-color: white;
-	border-bottom: 1px solid grey;
+	height: 6em;
+	background-color: #21c6f5;
+	border-bottom: 0px solid grey;
 }
+
+/* dropdown menu */
+
+.language_dropdown {
+/*	width: 200px;*/
+	display: inline-block;
+}
+
+
+
+
+.fullWidth {
+	background-color: #000000;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 100%;
+	height: 300px;
+}
+
+
+
+
+
+
+
+
+

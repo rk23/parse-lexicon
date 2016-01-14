@@ -17,6 +17,12 @@ class SessionsController < ApplicationController
 
   end
 
+  def update
+    session['user_language']['session_language'] = params[:user_language]
+    render json: session['user_language']['session_language'].to_sym
+  end
+
+
   def destroy
     session[:user_id] = nil
     redirect_to "/"
