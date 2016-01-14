@@ -44,11 +44,9 @@ ready = function() {
             dataType: 'JSON',
             data: {user_language: form[0][1].value}
         }).success(function(data){
-            $('#session_language').html(data);
-            console.log($('#user-flag-icon'));
+            $('#session_language').html(data.name);
             $('#user-flag-icon').removeClass();
-            $('#user-flag-icon').addClass("flag-icon flag-icon-" + data);
-            console.log($('#user-flag-icon'));
+            $('#user-flag-icon').addClass("flag-icon flag-icon-" + data.flag);
 
         }).error(function(err){
             console.log(err)
