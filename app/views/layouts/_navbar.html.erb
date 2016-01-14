@@ -7,7 +7,7 @@
     </ul>
 
     <p class="current text-right"><strong><%= @current_user.name %></strong>
-      | <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>"></span> <span id="session_language"><%= @current_lang['name'] %></span>
+      | <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>" id="user-flag-icon" ></span> <span id="session_language"><%= @current_lang['name'] %></span>
       | <%= link_to "logout", "/logout" %>
     </p>
 

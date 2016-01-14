@@ -34,7 +34,7 @@ ready = function() {
     });
 
     // Change user's language on home page
-    $('#user_language_change').submit(function(e){
+    $('#user_language_change').on('submit', function(e){
         e.preventDefault();
         var form = $(this);
 
@@ -44,7 +44,10 @@ ready = function() {
             dataType: 'JSON',
             data: {user_language: form[0][1].value}
         }).success(function(data){
-            $('#session_language').html(data)
+            $('#session_language').html(data.name);
+            $('#user-flag-icon').removeClass();
+            $('#user-flag-icon').addClass("flag-icon flag-icon-" + data.flag);
+
         }).error(function(err){
             console.log(err)
         });

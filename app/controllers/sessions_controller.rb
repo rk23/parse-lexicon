@@ -18,8 +18,9 @@ class SessionsController < ApplicationController
   end
 
   def update
-    session['user_language']['session_language'] = params[:user_language]
-    render json: session['user_language']['session_language'].to_sym
+    language_code = params[:user_language]
+    session['user_language']['session_language'] = language_code
+    render json: @lang_hash[language_code]
   end
 
 
