@@ -18,7 +18,24 @@ class SessionsController < ApplicationController
   end
 
   def update
-    language_code = params[:user_language]
+
+    if params[:user_language]
+      language = params[:user_language]
+
+      language_code = ''
+      # The only thing I can get from this response is full language name
+      # so I iterate through the language hash, find where the language code
+      # is equal to the language name, then set that key value as the lang code
+      @lang_hash.each do |key_value|
+        if language == key_value[1][:name]
+          language_code = key_value[0]
+          break
+        end
+      end
+    else
+      language_code = params[:user_language_symbol]
+    end
+
     session['user_language']['session_language'] = language_code
     render json: @lang_hash[language_code]
   end
