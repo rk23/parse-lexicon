@@ -84,11 +84,13 @@ $(function(){
             $('#percentage').attr('value', userWordCount);
             $('#percentage').html(known_percent + '%');
             $('#unique-ratio').attr('value', uniqueUserWordCount);
-            $('#unique-ratio').html(unique_percent);
+            $('#unique-ratio').html(unique_percent + '%');
 
             //Update Progress Bar with updated percentage
             $('#progressBar').css('width', known_percent + '%');
-            $('#percentage strong').text(known_percent + '%');
+            $('#percentage').text(known_percent + '%');
+            $('#ratioProgress').css('width', unique_percent + '%');
+            $('#unique-ratio').text(unique_percent + '%');
 
             //Remove the word count button div then remove the
             //highlight class on associated words

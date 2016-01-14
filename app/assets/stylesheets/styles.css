@@ -197,26 +197,20 @@ h1#brand {
 
 /* progress bar styles */
 
-#progressBar {
+#progressBar, #ratioProgress {
 	background-color: #21c6f5;
 	-webkit-transition: width 500ms linear 0.1s;
   -moz-transition: width 500ms linear 0.1s;
   -o-transition: width 500ms linear 0.1s;
   transition: width 500ms linear 0.1s;
   overflow: hidden;
-  max-height: 29px;
+  max-height: 32px;
+ 	font-size: 14px;
+ 	color: #FFFFFF;
+	padding-right: 10px;
 }
 
-#percentage {
-	whitespace: nowrap;
-	font-size: 10px;
-	max-height: 29px;
-}
 
-.progress.large-5.success.round {
-	max-height: 29px;
-/*	overflow: hidden;*/
-}
 
 
 
