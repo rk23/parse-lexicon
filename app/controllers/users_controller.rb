@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_authenticated?
+  skip_before_filter :require_login
   def show
   	@user = User.find params[:id]
   end

@@ -1,5 +1,6 @@
 class MainController < ApplicationController
 	before_action :is_authenticated?
+  skip_before_filter :require_login
   
   def index
     @link = Text.all
