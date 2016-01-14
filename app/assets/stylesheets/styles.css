@@ -195,14 +195,28 @@ h1#brand {
 	height: 300px;
 }
 
+/* progress bar styles */
 
-/* Recommendations Form */
-/*
-.recommend_form {
-	margin: 0 auto;
+#progressBar {
+	background-color: #21c6f5;
+	-webkit-transition: width 500ms linear 0.1s;
+  -moz-transition: width 500ms linear 0.1s;
+  -o-transition: width 500ms linear 0.1s;
+  transition: width 500ms linear 0.1s;
+  overflow: hidden;
+  max-height: 29px;
 }
-*/
 
+#percentage {
+	whitespace: nowrap;
+	font-size: 10px;
+	max-height: 29px;
+}
+
+.progress.large-5.success.round {
+	max-height: 29px;
+/*	overflow: hidden;*/
+}
 
 
 
