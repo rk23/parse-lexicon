@@ -8,9 +8,8 @@
   <p class="lead">Learning: </p>
   <!-- key_value[0]: language code (string), key_value[1]: count -->
   <% @word_count_sorted_by_language.each do |key_value| %>
-      <!-- <p><%= key_value[1] %> <span class="flag-icon flag-icon-<%= @language_hash_flags[key_value[0].to_sym][:flag] %>"></span> <%= @language_hash[key_value[0].to_sym] %></p> -->
 
-      <!-- For now, French flag is a placeholder (below). Above line works, but @language_hash_flags needs to be filled out. -->
+      <!-- For now, French flag is a placeholder (below). Will update once I've filled out @language_hash_flags. -->
       <p><%= key_value[1] %> <span class="flag-icon flag-icon-fr"></span> <%= @language_hash[key_value[0].to_sym] %></p>
   <% end %>
 </div>
