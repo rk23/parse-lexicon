@@ -9,7 +9,7 @@
 
   <% @word_count_by_lang.each do |w| %>
       <!-- w[0]: language code (string), w[1]: count (number) -->
-      <p><%= w[1] %> <span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span><!--  <%= @lang_hash[w[0]][:name] %> --> </p>
+      <p><%= w[1] %> <span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </p>
   <% end %>
 
 </div>
