@@ -5,17 +5,17 @@
   <!-- Form to switch current language -->
 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba"> Change Language: </span></p>
-      <div class="left_section panel">
+      <div class="left_section panel" id="left1">
       <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
         Select language<%= f.select :session_language, @lang_dropdown_array %>
-        <%= f.button "switch", :class => 'postfix' %>
+        <%= f.button "switch", :class => 'postfix hvr-underline-from-left' %>
       <% end %>
       </div>
   
   <!-- Switch Language, Learning, Recommended Left Side Bar --> 
 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Learning: </span></p>
-    <div class="panel left_section" id="learning_languages">
+    <div class="panel left_section" id="left2">
       <% @word_count_by_lang.each do |w| %>
           <!-- w[0]: language code (string), w[1]: count (number) -->
           <span class="learning-lang-switch" value="<%= @lang_hash[w[0]][:name] %>"><span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </span>
@@ -24,10 +24,10 @@
     </div>
 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span></p>
-    <div class="panel left_section">
-
+    <div class="panel left_section" id="left3">
+        <p>fkjsdklfdsf</p>
         <% @link.each do |w| %>
-          <!-- <%= w.author %><br>
+          Author: <%= w.author %><br>
           <%= w.link %><br>
           <%= w.language %><br>
           <%= w.title %><br>
