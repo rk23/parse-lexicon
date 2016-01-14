@@ -14,6 +14,25 @@ $(function(){
             xhr.setRequestHeader("Accept", "text/javascript")}
     });
 
+    $('#user_language_change').submit(function(e){
+        e.preventDefault();
+        var form = $(this);
+        console.log("Made it before ajax")
+        console.log(form[0][1].value)
+
+        $.ajax({
+            url: '/update',
+            method: 'POST',
+            dataType: 'JSON',
+            data: {user_language: form[0][1].value}
+        }).success(function(data){
+            $('#session_language').html(data)
+        }).error(function(err){
+            console.log(err)
+        });
+        return false
+    });
+
     //Translate word on click
     $('.prs').on('click', function(e){
         e.preventDefault();
@@ -95,16 +114,20 @@ $(function() {
         offset     = $sidebar.offset(),
         topPadding = -150;
 
-    $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-                marginTop: $window.scrollTop() - offset.top - topPadding
-            });
-        } else {
-            $sidebar.stop().animate({
-                marginTop: 40
-            });
-        }
-    });
+    if ($sidebar) {
+        $window.scroll(function() {
+            if ($window.scrollTop() > offset.top) {
+                $sidebar.stop().animate({
+                    marginTop: $window.scrollTop() - offset.top - topPadding
+                });
+            } else {
+                $sidebar.stop().animate({
+                    marginTop: 40
+                });
+            }
+        });
+    }
+
+
     
 });
