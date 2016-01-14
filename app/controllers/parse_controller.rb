@@ -15,13 +15,14 @@ class ParseController < ApplicationController
       text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
     else
+      # Grab data from the form on the main page
       form_data = params.require(:parse).permit(:text, :lang)
       text = form_data['text']
     end
 
-    # Grab data from the form on the main page
-    
-    
+    if text.length == 0
+      redirect_to root_path
+    end
 
     # Removes punctuation from text, puts into an array
     @parsed = parse_text text

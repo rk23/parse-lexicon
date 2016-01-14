@@ -1,12 +1,13 @@
-$( document ).ready(function() {
-    });
+//Fancy way to resolve jQuery loading with turbolinks
+var ready;
+ready = function() {
 
-function getPercentage (num1, num2) {
-    var percent = parseFloat((1 - (num1 / num2)) * 100).toFixed(2)
-    return percent;
-}
 
-$(function(){
+    function getPercentage (num1, num2) {
+        var percent = parseFloat((1 - (num1 / num2)) * 100).toFixed(2)
+        return percent;
+    }
+
 
     //Tell Rails that we’re sending a JavaScript request
     $.ajaxSetup({
@@ -14,11 +15,28 @@ $(function(){
             xhr.setRequestHeader("Accept", "text/javascript")}
     });
 
+    //Remove word from users lexicon (lexicon/index)
+    $('.parse-lexicon').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+
+        $.ajax({
+            url: '/lexicon',
+            method: 'DELETE',
+            dataType: 'HTML',
+            data: {id: button.attr('id')}
+        }).success(function(data){
+            console.log("made it passed")
+            button.remove();
+        }).error(function(err){
+            console.log(err)
+        })
+    });
+
+    // Change user's language on home page
     $('#user_language_change').submit(function(e){
         e.preventDefault();
         var form = $(this);
-        console.log("Made it before ajax")
-        console.log(form[0][1].value)
 
         $.ajax({
             url: '/update',
@@ -100,28 +118,19 @@ $(function(){
         }).error(function(err){
             console.log(err);
         })
-    })
+    });
 
-});
-
-
-// Adding jQuery Plugin into Word List Sidebar
-(function($){
-    $(window).load(function(){
+    // Adding jQuery Plugin into Word List Sidebar
     $(".right-sidebar").mCustomScrollbar();
-        });
-    })(jQuery);
 
-// trying to add Sticky sidebar
+    //// trying to add Sticky sidebar
 
-$(function() {
-
-    var $sidebar   = $(".right-sidebar"), 
+    var $sidebar   = $(".right-sidebar"),
         $window    = $(window),
         offset     = $sidebar.offset(),
         topPadding = -150;
 
-    if ($sidebar) {
+    if (offset) {
         $window.scroll(function() {
             if ($window.scrollTop() > offset.top) {
                 $sidebar.stop().animate({
@@ -134,8 +143,7 @@ $(function() {
             }
         });
     }
+};
 
-
-    
-});
-
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -2,8 +2,8 @@
 
 <h3><%= @current_user.name %>'s <%= @current_language[:name] %> lexicon:</h3>
 
-<% @current_user.words.each do |w| %>
+<% @user_words.each do |w| %>
 	<% if w.language === @current_language[:code] %>
-		<%= w.understood_word %><br>
+        <button class="button parse-lexicon" id="<%= w.id %>"><%= w.understood_word %></button>
 	<% end %>
 <% end %>
