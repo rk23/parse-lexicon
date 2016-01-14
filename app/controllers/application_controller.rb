@@ -182,7 +182,6 @@ class ApplicationController < ActionController::Base
       :es => 'Spanish',
       :de => 'German',
       :it => 'Italian',
-      # Resorted so that above languages will show up at top of dropdown menu
       :ar => 'Arabic',
       :'bs-Latn' => 'Bosnian (Latin)',
       :bg => 'Bulgarian',
