@@ -2,20 +2,42 @@
 <br>
 
 <ul class="medium-block-grid-3">
-<li><p class="lead">Progress:</p><div class="progress success round columns ">
-  <span class="meter text-right" id="progressBar" style="width: <%= @percentage %>%">
-  <span id="percentage" value="<%= @user_word_count %>" name="<%= @word_count %>"><%= @percentage %>%</span></span>
-</div> </li>
 
-<li><p class="lead">Unique Words Known:</p><div class="progress success round columns">
-  <span class="meter text-right" id="ratioProgress" style="width: <%= @ratio %>%">
-  <span id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %>%</span></span>
-</div></li>
+  <li><p class="lead">Progress:</p><div class="progress success round columns ">
+      <span class="meter text-right" id="progressBar" style="width: <%= @percentage %>%">
+      <span id="percentage" value="<%= @user_word_count %>" name="<%= @word_count %>"><%= @percentage %>%</span></span>
+    </div>
+  </li>
 
-<li><div class="columns translation">
-<p class="lead">Translate: </p>
-<span id="to-translate" style="margin-bottom: 2px"></span> <span id="translated" style="margin-bottom: 2px"><span class="flag-icon flag-icon-gb"></span></span>
-</div></li>
+  <li><p class="lead">Unique Words Known:</p>
+    <div class="progress success round columns">
+      <span class="meter text-right" id="ratioProgress" style="width: <%= @ratio %>%">
+      <span id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %>%</span></span>
+    </div>
+  </li>
+
+  <li>
+    <div class="columns translation">
+      <p class="lead">Translate: </p>
+
+      <!-- Foreign word to translate -->
+      <div>
+        <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>"></span>
+        <span id="to-translate">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+      <!-- Translated word in English -->
+      <div>
+        <span class="flag-icon flag-icon-gb"></span>
+        <span id="translated">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+    </div>
+  </li>
 
 </ul>
 
