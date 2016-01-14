@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  
+  before_filter :require_login
   protect_from_forgery with: :exception
 
   # Allows use of language list and conversion between language name and symbol
@@ -198,5 +200,11 @@ class ApplicationController < ActionController::Base
 
   def disable_navbar
     @disable_navbar = true
+  end
+
+  def require_login
+    unless current_user
+      redirect_to forbidden_path
+    end
   end
 end

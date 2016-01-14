@@ -50,13 +50,6 @@ a:visited {
 
 /* Styling for the Welcome page */
 
-/*.content {
-	background-color: steelblue;
-	position: relative;
-	height: 300px;
-	z-index: -1;
-}*/
-
 .login, .login:visited {
 	background-color: #21c6f5;
 	border-bottom: 3px solid black;
@@ -86,15 +79,17 @@ a:visited {
 
 .button, .postfix {
 	/*background-color: #008490;*/
-	background-color: transparent;
+	background-color: #FFFFFF;
 	border: 1px solid #21c6f5;
-	color: #008490;
+	color: #21c6f5;
 	border-radius: 0px;
 }
 
 .button:hover, .postfix:hover {
-	background-color: transparent;
-	color: #21c6f5;
+	background-color: #FFFFFF;
+	color: #004478;
+	font-weight: 500;
+	border-color: #004478;
 }
 
 /*.submit_lang, .postfix {
@@ -103,10 +98,6 @@ a:visited {
 	border: 1px solid #008490;
 	color: #008490;
 }*/
-
-.login:hover {
-	color:  #000000;
-}
 
 #word-btn {
 	color: #008490;
@@ -119,24 +110,73 @@ a:visited {
 	color: #FFFFFF;
 }
 
-#parse, .postfix {
-	width: 100%;
-	border-radius: 0px;
+/* Parse Section and Text Area */
+
+.parse_area {
+	margin-top: 20px;
+	background-color: white;
+	height: 470px;
+	border: 0px;
 }
 
 .text_area {
-	height: 15em;
 	font-size: 18px;
 	font-weight: 500;
 	border: 1px solid #21c6f5;
+	height: 315px;
+}
+
+#parse {
+	width: 100%;
+	border-radius: 0px;
+	border: 1px solid #21c6f5;
+}
+
+#parse:hover {
+	border-color: #004478;
+}
+
+/* ----- end parse section styling --------- */
+
+/* Styling for Left Side Bar in Homepage */
+
+.left-section {
+	margin-top: 20px;
+	border-radius: 0px;
+	background-color: transparent;
+	background: transparent;
+
+}
+
+.special_heading {
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 900;
+}
+
+#learning_languages {
+	max-height: 300px;
+}
+
+.left-bar {
+	margin-top: 20px;
 }
 
 .content {
 	margin-top: 20px;
 	border-radius: 0px;
 	background-color: transparent;
-	border: 0px;
 }
+
+/* dropdown menu */
+
+.language_dropdown {
+/*	width: 200px;*/
+	display: inline-block;
+}
+
+/* ----- end left sidebar section styling --------- */
 
 /* Style for the Right SideBar aka Word List */
 
@@ -183,14 +223,6 @@ h1#brand {
 	background-color: #21c6f5;
 	border-bottom: 0px solid grey;
 }
-
-/* dropdown menu */
-
-.language_dropdown {
-/*	width: 200px;*/
-	display: inline-block;
-}
-
 
 
 

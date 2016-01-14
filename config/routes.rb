@@ -34,7 +34,11 @@ Rails.application.routes.draw do
   delete '/lexicon'          => 'lexicon#delete'
 
   #404 route
+  get "/403" => 'errors#forbidden', as: 'forbidden'
   get "*any", via: :all, to: "errors#not_found"
+
+  #403
+  # get '/403', => 'main#recommended'
 
   #Favorite routes
   # get '/users/:id/favorites'         => 'favorites#index'

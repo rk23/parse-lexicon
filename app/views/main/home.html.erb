@@ -1,52 +1,59 @@
-<div class="large-3 columns">
+<div class="row">
 
-  <!-- List of user's languages -->
-  <div class="panel content">
-    <p class="lead">Learning: </p>
+  <div class="large-4 columns left-bar">
 
-    <% @word_count_by_lang.each do |w| %>
-        <!-- w[0]: language code (string), w[1]: count (number) -->
-        <div class="learning-lang-switch" value="<%= @lang_hash[w[0]][:name] %>"><span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </div>
-        <div class="view-lang-lexicon"><a href="/lexicon/<%= @lang_hash[w[0]][:name] %>"><%= w[1] %></a></div>
-    <% end %>
+  <!-- Form to switch current language -->
 
-  </div>
-</div>
-
-<div class="large-6 columns">
-  <div class="panel content">
-
-    <!-- Form to switch current language -->
-    <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
-      Select language<%= f.select :session_language, @lang_dropdown_array %>
-      <%= f.submit "switch", :class => 'button postfix' %>
-    <% end %>
-
-    <!-- Form to parse the text -->
-    <%= form_for :parse, url: '/parse' do |f| %>
-			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
-			<%= f.hidden_field 'parse_form', :name => 'parse_form' %><br>
-			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
-		<% end %>
-
-	</div>
-</div>
-
-<!-- Right Sidebar: Recommendations & Languages --> 
-<div class="large-3 columns language_dropdown">
-  <div class="panel content">
-    <p class="lead">Recommended Texts</p>
-    <% @link.each do |w| %>
-      <!-- <%= w.author %><br>
-      <%= w.link %><br>
-      <%= w.language %><br>
-      <%= w.title %><br>
-      <%= w.year %><br> -->
-      <%= form_for :text, url: "/parse" do |f| %>
-        <%= f.hidden_field :text, :value => w.link %>
-        <%= f.hidden_field 'text_form', :name => 'text_form' %>
-        <%= f.submit "render text", :class => 'button' %>
+  <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba"> Change Language: </span></p>
+      <div class="left_section panel">
+      <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
+        Select language<%= f.select :session_language, @lang_dropdown_array %>
+        <%= f.button "switch", :class => 'postfix' %>
       <% end %>
-    <% end %>
+      </div>
+  
+  <!-- Switch Language, Learning, Recommended Left Side Bar --> 
+
+  <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Learning: </span></p>
+    <div class="panel left_section" id="learning_languages">
+      <% @word_count_by_lang.each do |w| %>
+          <!-- w[0]: language code (string), w[1]: count (number) -->
+          <span class="learning-lang-switch" value="<%= @lang_hash[w[0]][:name] %>"><span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span> <%= @lang_hash[w[0]][:name] %> </span>
+          <span class="view-lang-lexicon"><a href="/lexicon/<%= @lang_hash[w[0]][:name] %>"><%= w[1] %></a></span><br>
+      <% end %>
+    </div>
+
+  <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span></p>
+    <div class="panel left_section">
+
+        <% @link.each do |w| %>
+          <!-- <%= w.author %><br>
+          <%= w.link %><br>
+          <%= w.language %><br>
+          <%= w.title %><br>
+          <%= w.year %><br> -->
+          <%= form_for :text, url: "/parse" do |f| %>
+            <%= f.hidden_field :text, :value => w.link %>
+            <%= f.hidden_field 'text_form', :name => 'text_form' %>
+            <%= f.submit "render text", :class => 'button' %>
+          <% end %>
+        <% end %>
+      </div>
+
   </div>
+
+  <div class="large-8 columns content">
+  <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Paste Text to Parse and Translate: </span></p>
+    <div class="panel parse_area">
+
+      <!-- Form to parse the text -->
+      <%= form_for :parse, url: '/parse' do |f| %>
+  			<%= f.text_area :text, :placeholder => 'Enter text here', :class => 'text_area'%>
+  			<%= f.hidden_field 'parse_form', :name => 'parse_form' %><br>
+  			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
+  		<% end %>
+
+  	</div>
+  </div>
+
 </div>
