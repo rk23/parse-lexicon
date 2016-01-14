@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   get '/lexicon/:lang'    => 'lexicon#index'
   delete '/lexicon'          => 'lexicon#delete'
 
+  #404 route
+  get "*any", via: :all, to: "errors#not_found"
+
   #Favorite routes
   # get '/users/:id/favorites'         => 'favorites#index'
   # get '/users/:id/favorites/:id'     => 'favorites#show'
