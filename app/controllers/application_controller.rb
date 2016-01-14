@@ -19,6 +19,17 @@ class ApplicationController < ActionController::Base
 
   def access_languages
 
+    # Langauge hash w/ flag (flag country codes) -- to be filled out
+    @language_hash_flags = {
+      :ar => {
+        :name => 'Arabic(test)',
+        :flag => 'cz'},
+      # remove :ar
+      :'bs-Latn' => {
+        :name => 'Bosnian (Latin)',
+        :flag => 'ba'}
+    }
+
     # Hash associating language codes and language names
     @language_hash = {
       :fr => 'French',

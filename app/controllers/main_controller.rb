@@ -7,9 +7,11 @@ class MainController < ApplicationController
   	if current_user
       user_words = current_user.words
 
-      @sorted_words = Hash.new(0)
+
+      @word_count_sorted_by_language = Hash.new(0)
       user_words.each do |word|
-        @sorted_words[word.language] += 1
+        @word_count_sorted_by_language[word.language] += 1
+        # @word_count_sorted_by_language looks like: {"ar"=>5, "da"=>8, ...}
       end
 
       render "home"

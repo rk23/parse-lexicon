@@ -43,6 +43,10 @@ gem 'nokogiri'
 # Use rest-client to grab data from the web
 gem 'rest-client'
 
+# Flag Icon Css gem for displaying country flags
+gem 'flag_icon_css_rails'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
