@@ -3,7 +3,9 @@
 <div class="panel content">
   
   <p class="lead">Learning: </p>
-
+  <% @sorted_words.each do |key_value| %>
+      <p><%= key_value[0] %> <%= key_value[1] %></p>
+  <% end %>
 </div>
 
 <div class="panel content">
