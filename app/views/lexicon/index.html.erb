@@ -1,9 +1,7 @@
 <h3><%= @current_lang['name'] %> lexicon:</h3>
 
-<% @current_user.words.each do |w| %>
+<% @user_words.each do |w| %>
 	<% if w.language === @current_lang['code'] %>
-		<span style="border: 1px solid #21c6f5; background-color: #d2f9ec; padding: 0px 3px;">
-			<%= w.understood_word %>
-		</span>
+        <button class="button parse-lexicon" id="<%= w.id %>"><%= w.understood_word %></button>
 	<% end %>
 <% end %>

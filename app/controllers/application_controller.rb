@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def access_languages
-
     # Hash containing language code, name, and flag (country code)
     @lang_hash = {
       'ar' => {
@@ -187,11 +186,9 @@ class ApplicationController < ActionController::Base
 
     # Array of languages in the format [['French', 'fr'], ...] -- for dropdown menus
     @lang_dropdown_array = []
-#####
     @lang_hash.each do |code, value_hash|
       @lang_dropdown_array.push([value_hash[:name], code])
     end
-
   end
 
   def language_storage
@@ -200,5 +197,4 @@ class ApplicationController < ActionController::Base
   def disable_navbar
     @disable_navbar = true
   end
-
 end

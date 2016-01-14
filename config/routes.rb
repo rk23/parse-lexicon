@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   # Lexicon routes
   get '/lexicon'          => 'lexicon#index'
+  delete '/lexicon'          => 'lexicon#delete'
 
   #Favorite routes
   # get '/users/:id/favorites'         => 'favorites#index'

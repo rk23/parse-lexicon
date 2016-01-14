@@ -1,6 +1,5 @@
 class ParseController < ApplicationController
   def index
-
     # Scrape from the guttenberg sent from text index
     if params[:text_form]
       @text = params[:text][:text]
@@ -14,14 +13,15 @@ class ParseController < ApplicationController
       text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
     else
+      # Grab data from the form on the main page
       form_data = params.require(:parse).permit(:text, :lang)
       text = form_data['text']
     end
 
+    if text.length == 0
+      redirect_to root_path
+    end
 
-    # Grab data from the form on the main page
-    
-    
     # Removes punctuation from text, puts into an array
     @parsed = parse_text text
     @word_count = @parsed.length
@@ -43,14 +43,12 @@ class ParseController < ApplicationController
       # New hash for words that the user doesn't know, with frequency data
       @parsed_sorted_and_compared = Hash.new(0)
       @parsed_and_sorted.each do |key_value_pair|
-
-          # If the user's known words does not include the word from the text, then
-          # put it in an array we can access on the front end
-          if @user_known_words.exclude? key_value_pair[0]
-            @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
-            @user_word_count += key_value_pair[1]
-          end
-
+        # If the user's known words does not include the word from the text, then
+        # put it in an array we can access on the front end
+        if @user_known_words.exclude? key_value_pair[0]
+          @parsed_sorted_and_compared[key_value_pair[0]] = key_value_pair[1]
+          @user_word_count += key_value_pair[1]
+        end
       end
 
       # Percentage of text known based on user vocab
@@ -115,5 +113,4 @@ class ParseController < ApplicationController
   def word_params
     params.require(:word).permit(:understood_word, :languge)
   end
-
 end
