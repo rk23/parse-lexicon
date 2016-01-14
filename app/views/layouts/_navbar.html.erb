@@ -5,15 +5,12 @@
         <a href="/"><h1 id="brand">Parse</h1></a>
       </li>
     </ul>
-  <!--   <% if(defined?(current_user) == nil)  %> -->
-
-   <!--  <% else %> -->
 
     <p class="current text-right">
       <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>" id="user-flag-icon" ></span> <span id="session_language"><%= @current_lang['name'] %></span>
       | <strong><%= @current_user.name %></strong>
       | <%= link_to "logout", "/logout" %>
     </p>
-<!--     <% end %>
- -->  </nav>
+
+  </nav>
 </div>
