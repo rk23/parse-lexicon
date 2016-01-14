@@ -7,7 +7,7 @@ class ErrorsController < ApplicationController
    	end
 
    	def forbidden	
-   		render "damn it"
+   		
    	end
   	rescue ActionController::UnknownFormat
     	render status: 404, text: "nope"
