@@ -66,8 +66,11 @@ class ParseController < ApplicationController
   def create
     @new_word = render json: params[:word]
     # Not finding, always creating but ok for now
-    current_user.words.find_or_create_by(understood_word: @new_word[0],
-                                         language: @current_lang['code'])
+    # current_user.words.find_or_create_by(understood_word: @new_word[0],
+    #                                      language: @current_lang['code'])
+
+    word = Word.where(understood_word: @new_word[0], language: @current_lang['code']).first_or_create
+    UsersWords.create(user_id: current_user.id, word_id: word.id)
   end
 
   def translate
