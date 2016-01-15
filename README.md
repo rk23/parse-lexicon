@@ -13,11 +13,13 @@ French and it actually gave us exactly 79.68% understood when 20.02% of the uniq
 
 ### Tech
 
-Parse's secret sauce is comprised of many different technologies:
+Parse's secret sauce is comprised of many different technologies and resources:
 - *Ruby on Rails*
 - *Foundation*
 - *RubyMine and Sublime Text*
 - *jQuery*
+- *malihu custom scrollbar plugin* 
+- *flag-icon-css*
 
 
 ### Installation
