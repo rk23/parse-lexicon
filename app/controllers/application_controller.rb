@@ -207,4 +207,14 @@ class ApplicationController < ActionController::Base
       redirect_to forbidden_path
     end
   end
+
+  protect_from_forgery
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
+  protected
+
+  def json_request?
+    request.format.json?
+  end
+  
 end
