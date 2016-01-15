@@ -153,12 +153,12 @@ ready = function() {
     $(".right-sidebar").mCustomScrollbar();
 
     // Adding Scrollbar to the Learning Languages section
-    $("#learning_languages").mCustomScrollbar();
+    $("#left2").mCustomScrollbar();
 
     // Hover over Left Bar Panel 1 settings
 
     $("#left1").mouseenter(function(){
-        $("#left1").css("background-color", "#efefef");
+        $("#left1").css("background-color", "white");
     }).mouseleave(function (){
         $("#left1").css("background-color", "white");
     });
@@ -166,7 +166,7 @@ ready = function() {
     // Hover over Left Bar Panel 2 settings
 
      $("#left2").mouseenter(function(){
-        $("#left2").css("background-color", "#efefef");
+        $("#left2").css("background-color", "white");
     }).mouseleave(function (){
         $("#left2").css("background-color", "white");
     });
@@ -174,7 +174,7 @@ ready = function() {
     // Hover over Left Bar Panel 3 settings
 
     $("#left3").hover(function(){
-        $("#left3").css("background-color", "#efefef");
+        $("#left3").css("background-color", "white");
         }, function(){
         $("#left3").css("background-color", "white");
     });

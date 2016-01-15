@@ -29,10 +29,10 @@
         <p>fkjsdklfdsf</p>
         <% @link.each do |w| %>
           Author: <%= w.author %><br>
-          <%= w.link %><br>
-          <%= w.language %><br>
+          Link: <%= w.link %><br>
+          Language: <%= w.language %><br>
           <%= w.title %><br>
-          <%= w.year %><br> -->
+          <%= w.year %><br>
           <%= form_for :text, url: "/parse" do |f| %>
             <%= f.hidden_field :text, :value => w.link %>
             <%= f.hidden_field 'text_form', :name => 'text_form' %>
