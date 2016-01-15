@@ -4,7 +4,7 @@
   background-image: url(<%= asset_path 'parse_bg.jpg' %>);
   background-repeat: repeat;
   background-size: cover;
-  background-attachment: fixed;
+
 }
 
   #section2 {
@@ -27,20 +27,25 @@
   <div class="section" id="section0" >
     
   <h1 id="brand-text">parse</h1> 
-  <div class="medium-4 columns left left paragraph random">
-    <p class="lead text-center">Already a User? <a class="login hvr-underline-from-left" href="#" data-reveal-id="login">Login</a>
-    <br>Get started by <a class="login hvr-underline-from-left" href="#" data-reveal-id="signUp">Signing Up</a></p>
-  </div>
   
   <div class="medium-5 columns right paragraph">
-
     <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
     <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
+    <p class="lead text-center">Already a User? <a class="login hvr-underline-from-left" href="#" data-reveal-id="login">Login</a>
+    <br>Get started by <a class="login hvr-underline-from-left" href="#" data-reveal-id="signUp">Signing Up</a></p>
     </div>
 
     <div class="medium-5 columns about">
     <a class="hvr-underline-from-left callout_links" href="#secondPage">1. How to Use Parse</a>
     <br><a class="hvr-underline-from-left callout_links" href="#thirdPage">2. About the App</a>
+    <% if session[:danger] %>
+        <div data-alert class="alert-box alert round">
+          <p class="text-center"><%= session[:danger] %></p>
+          <a href="/" class="close">&times;</a>
+        </div>
+      <% else %>
+      
+      <% end %>
     </div>
 
   <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -96,7 +101,7 @@
       Don't know where to get started? We have a 'Recommended Texts' section.
       <p class="about_us">Honestly, just watch the video and you will quickly learn how Parse works.
         <br><br><strong><span class="callout_links">Languages:</span></strong> Ruby on Rails, HTML, CSS, jQuery, AJAX
-      <br><span class="callout_links">Resources:</span></strong> Microsoft Translator API, Project Gutenberg, Foundation CSS Framework, Flat-Icon-CSS gem
+      <br><span class="callout_links"><strong>Resources:</strong></span></strong> MS Translator API, Project Gutenberg, Foundation 5 and icons from <a href="https://github.com/lipis/flag-icon-css" style="border-bottom: 2px solid #cfcfcf">flag-icon-css</a>.
       </p></p>
 
       <h3><a class="callout_links" href="#firstPage">Ready to Go?</a></h3>
