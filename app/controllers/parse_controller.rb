@@ -3,6 +3,7 @@ class ParseController < ApplicationController
     # Scrape from the guttenberg sent from text index
     if params[:text_form]
       @text = params[:text][:text]
+      session['user_language']['session_language'] = params[:text][:language]
       url = @text
       response = RestClient.get url
       html = response.body
@@ -114,6 +115,6 @@ class ParseController < ApplicationController
   end
 
   def word_params
-    params.require(:word).permit(:understood_word, :languge)
+    params.require(:word).permit(:understood_word, :language)
   end
 end
