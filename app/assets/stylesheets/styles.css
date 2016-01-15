@@ -48,6 +48,12 @@ a:visited {
 	margin-bottom: 40px;
 }
 
+/* footer / second part of welcome.page */
+
+.instructions {
+	margin: 50px auto;
+}
+
 /* Styling for the Welcome page */
 
 .login, .login:visited {
