@@ -154,6 +154,9 @@ ready = function() {
     // Adding Scrollbar to the Learning Languages section
     $("#left2").mCustomScrollbar();
 
+    // Adding Scrollbar to the Learning Languages section
+    $("#left3").mCustomScrollbar();
+
     // Hover over Left Bar Panel 1 settings
 
     $("#left1").mouseenter(function(){
@@ -203,7 +206,7 @@ ready = function() {
         //Navigation
         menu: '#menu',
         lockAnchors: false,
-        anchors:['firstPage', 'secondPage'],
+        anchors:['firstPage', 'secondPage', 'thirdPage'],
         navigation: false,
         navigationPosition: 'right',
         navigationTooltips: ['firstSlide', 'secondSlide'],
