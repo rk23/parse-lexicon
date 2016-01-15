@@ -57,7 +57,7 @@
   </div>
 
   <!-- Text box for entering text -->
-  <div class="large-8 columns content">
+  <div class="large-8 columns content"> 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Paste Text to Parse and Translate: </span></p>
     <div class="panel parse_area">
       <%= form_for :parse, url: '/parse' do |f| %>
@@ -65,6 +65,8 @@
   			<%= f.hidden_field 'parse_form', :name => 'parse_form' %><br>
   			<%= f.submit "Parse", :class => 'button', :id => 'parse'%>
   		<% end %>
+      <h4><span id="loading" style="display:none">Parsing Text...</span></h4>
+
   	</div>
   </div>
 

@@ -202,6 +202,16 @@ ready = function() {
         });
     }
 
+    function show_loading() {
+        $("#loading").show();
+    };
+
+    // $(document).ready(function() {
+        $('#parse').click(function(){
+        show_loading();
+        });
+    // });
+
     $('#fullpage').fullpage({
         //Navigation
         menu: '#menu',
