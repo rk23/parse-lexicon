@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
   </head>
 
-  <body>
+  <!-- Added data-no-turbolink to body tag to fix bug: after logging out, have to reload for buttons to work -->
+  <body data-no-turbolink="true">
 
     <%= render :partial => "layouts/navbar" unless @disable_navbar %>
   
