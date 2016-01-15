@@ -46,15 +46,14 @@ ready = function() {
             data: {user_language: langDiv.attr('value')}
         }).success(function(data){
             $('#session_language').html(data.name);
-            $('#user-flag-icon').removeClass();
+            $('#user-flag-icon').attr('class', '');
             $('#user-flag-icon').addClass("flag-icon flag-icon-" + data.flag);
 
         }).error(function(err){
             console.log(err)
         });
-        return false
-        $
-    })
+        return false;
+    });
 
     // Change user's language on home page via form
     $('#user_language_change').on('submit', function(e){
@@ -68,13 +67,13 @@ ready = function() {
             data: {user_language_symbol: form[0][1].value}
         }).success(function(data){
             $('#session_language').html(data.name);
-            $('#user-flag-icon').removeClass();
+            $('#user-flag-icon').attr('class', '');
             $('#user-flag-icon').addClass("flag-icon flag-icon-" + data.flag);
 
         }).error(function(err){
             console.log(err)
         });
-        return false
+        return false;
     });
 
     //Translate word on click
@@ -199,12 +198,7 @@ ready = function() {
             }
         });
     }
-};
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
-
-$(document).ready(function() {
     $('#fullpage').fullpage({
         //Navigation
         menu: '#menu',
@@ -263,4 +257,7 @@ $(document).ready(function() {
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
     });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
