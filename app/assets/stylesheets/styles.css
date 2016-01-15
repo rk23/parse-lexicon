@@ -155,9 +155,22 @@ a:visited {
 	height: 500px;
 }
 
-#left2, #left3, #left1 {
-	max-height: 150px;
+#left2, #left3 {
+	max-height: 110px;
 	width: 100%;
+}
+
+#left1 {
+	width: 100%;
+}
+
+#left3 {
+	font-size: 9px;
+}
+
+.render_book {
+	font-size: 9px;
+	padding: 0;
 }
 
 .left-bar {
