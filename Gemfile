@@ -28,23 +28,27 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+####################
+# Gems added/uncommented manually
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
 #Like a modern code version of the mythical beast with 100 serpent heads,
 # Typhoeus runs HTTP requests in parallel while cleanly encapsulating handling logic.
 gem "typhoeus"
-
 #Ruby wrapper for Microsoft Translate HTTP API.
 gem "microsoft_translator"
-
 # Use Nokogiri for parsing data from data scraping
 gem 'nokogiri'
 # Use rest-client to grab data from the web
 gem 'rest-client'
-
 # Flag Icon Css gem for displaying country flags
 gem 'flag_icon_css_rails'
+
+gem 'rails_12factor', group: :production
+
+####################
 
 
 # Use Unicorn as the app server
