@@ -56,15 +56,39 @@ a:visited {
 	text-transform: uppercase;
 }
 
+.callout_links {
+	border-bottom: 2px solid white;
+}
+
+.callout_links:hover {
+	border-bottom: 2px solid black;
+}
+
 .preview {
 	font-family: 'Calendas Plus';
 	margin-bottom: 40px;
 }
 
+.quote {
+	font-size: 30px;
+	font-weight: 900;
+/*	font-family: 'Calendas Plus';*/
+}
+
+.about_us {
+	font-size: 20px;
+	font-family: 'Karla';
+}
+
+.intro {
+	margin-top: -20px;
+	background-color: white;
+}
+
 /* footer / second part of welcome.page */
 
 .instructions {
-	margin: 50px auto;
+	margin:  auto;
 }
 
 /* Styling for the Welcome page */
@@ -185,6 +209,7 @@ a:visited {
 
 #left3 {
 	font-size: 9px;
+	max-height: 110px;
 }
 
 .render_book {

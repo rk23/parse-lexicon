@@ -14,10 +14,17 @@
   background-position: bottom;
   }
 
+  #section3 {
+  background-image: url(<%= asset_path 'parse_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  }
+
 </style>
 
   <div id="fullpage">
-  <div class="section " id="section0" >
+  <div class="section" id="section0" >
     
   <h1 id="brand-text">parse</h1> 
   <div class="medium-4 columns left left paragraph random">
@@ -32,8 +39,8 @@
     </div>
 
     <div class="medium-5 columns about">
-    <a class="hvr-underline-from-left" style="border-bottom: 4px solid white" href="#secondPage">1. How to Use Parse</a>
-    <br><a class="hvr-underline-from-left" style="border-bottom: 4px solid white" href="/about">2. About the App</a>
+    <a class="hvr-underline-from-left callout_links" href="#secondPage">1. How to Use Parse</a>
+    <br><a class="hvr-underline-from-left callout_links" href="/about">2. About the App</a>
     </div>
 
   <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -65,19 +72,31 @@
   </div>
 
   <div class="section" id="section2">
-    <div class="intro">
       <div class="row instructions slide">
-  <div class="large-6 columns">
-    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
-    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
-  </div>
-
-  <div class="large-6 columns">
-    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
-    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
-  </div>
-</div>
+        <div class="large-12 columns text-center">
+          <p class="lead"><strong>How Does It Work:</strong></p>
+          <iframe src="https://www.youtube.com/embed/TqpA0Tn21NQ?rel=0&showinfo=0&theme=light" width="900" height="536" frameborder="0" allowfullscreen=""></iframe>
+        </div>
     </div>
   </div>
 
+  <div class="section" id="section3">
+    <div class="large-8 large-offset-2 end columns intro">
+    <!-- <p class="quote">"To have another language is to possess a second soul."</p> -->
+    <h3><strong>About Us:</strong></h3>
+      <br><p class="about_us">Our app parses texts and generates a list of words based on the language you choose.</p>
+      <p class="about_us">We keep track of words you know and you don't know. We also calculate how much of the text you understand based on how many words you have learned through using our app.</p>
+      <p class="about_us">Honestly, just watch the video and you will quickly learn how Parse works.</p>
+      <p class="lead">
+      <p>Technologies Used:</p>
+        <p>Languages: Ruby on Rails, HTML, CSS, jQuery, AJAX
+      <br>Microsoft Translator API, Project Gutenberg, Foundation CSS Framework, flag thing plugin
+      </p>
+      </p>
+    </div>
+    <div class="large-12 columns text-center" style="margin-top: 170px"><p class="special_heading">Made with a ton of &hearts; by Derek Poppe, Reed Kinning, Stuart Hiller, and Cynthia Wong.</p></div>
 </div>
+  </div>
+</div>
+
+  </div>
