@@ -20,18 +20,40 @@
       <% end %>
       </div>
     <!-- Lit of recommended texts -->
-    <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span></p>
-      <div class="panel left_section hvr-underline-from-left" id="left3">
-        <% @link.each do |w| %>
-          <%= w.title %> by <strong><%= w.author %></strong><br>
-          <%= form_for :text, url: "/parse" do |f| %>
-                <%= f.hidden_field :text, :value => w.link %>
-                <%= f.hidden_field :language, :value => w.language %>
-                <%= f.hidden_field 'text_form', :name => 'text_form' %>
-            <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
-          <% end %>
+    <p class="special_heading" style="display: inline">
+      <span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span>
+      <a href="/recommended">
+        <div class="button tiny" style="float: right">
+          See All
+        </div>
+      </a>
+    </p>
+    <div class="panel left_section hvr-underline-from-left" id="left3">
+      <% @link.each do |w| %>
+        <!-- One text -->
+        <ul class="small-block-grid-2 texts-item">
+          <!-- Flag -->
+          <li style="width: 10%">
+            <span class="flag-icon flag-icon-<%= w.language %>"></span>
+          </li>
+          <!-- Text -->
+          <li style="width: 90%">
+            <span style="font-style: italic"><strong><%= w.title %></strong></span>
+            <br>
+            <%= w.author %> (<%= w.year %>)
+          </li>
+        </ul>
+
+        <!-- Button -->
+        <%= form_for :text, url: "/parse" do |f| %>
+          <%= f.hidden_field :text, :value => w.link %>
+          <%= f.hidden_field :language, :value => w.language %>
+          <%= f.hidden_field 'text_form', :name => 'text_form' %>
+          <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
         <% end %>
-      </div>
+
+      <% end %>
+    </div>
   </div>
 
   <!-- Text box for entering text -->
