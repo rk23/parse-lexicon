@@ -20,17 +20,27 @@
       <% end %>
       </div>
     <!-- Lit of recommended texts -->
-    <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span></p>
+    <p class="special_heading" style="display: inline">
+      <span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span>
+      <a href="/recommended">
+        <div class="button tiny" style="float: right">
+          See All
+        </div>
+      </a>
+    </p>
       <div class="panel left_section hvr-underline-from-left" id="left3">
         <% @link.each do |w| %>
-          <%= w.title %> by <strong><%= w.author %></strong><br>
-          <%= form_for :text, url: "/parse" do |f| %>
-                <%= f.hidden_field :text, :value => w.link %>
-                <%= f.hidden_field :language, :value => w.language %>
-                <%= f.hidden_field 'text_form', :name => 'text_form' %>
-            <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
+          <div class="texts-item">
+            <span class="flag-icon flag-icon-<%= w.language %>"></span> <%= w.title %> by <strong><%= w.author %></strong><br>
+            <%= form_for :text, url: "/parse" do |f| %>
+              <%= f.hidden_field :text, :value => w.link %>
+              <%= f.hidden_field :language, :value => w.language %>
+              <%= f.hidden_field 'text_form', :name => 'text_form' %>
+              <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
+            </div>
           <% end %>
         <% end %>
+
       </div>
   </div>
 
