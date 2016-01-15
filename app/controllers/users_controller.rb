@@ -14,10 +14,9 @@ class UsersController < ApplicationController
   		if @user.save
   			session[:user_id] = @user.id
         @user_language = @user.user_language.create(user_language_params)
-  			# flash[:success] = "User created"
-      		redirect_to root_path
+        session[:user_language] = @user_language
+        redirect_to root_path
       	else
-      		# flash[:danger] = "Credentials invalid"
       		redirect_to "/signup"
       	end
   end
