@@ -1,37 +1,42 @@
 <style>
   
-  body {
+  #section0 {
   background-image: url(<%= asset_path 'parse_bg.jpg' %>);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
-
   background-attachment: fixed;
 }
 
+  #section2 {
+  background-image: url(<%= asset_path 'parse_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  }
+
 </style>
-<div class="row">
+
+  <div id="fullpage">
+  <div class="section " id="section0" >
+    
   <h1 id="brand-text">parse</h1> 
-  <div class="medium-5 columns left paragraph random">
+  <div class="medium-4 columns left left paragraph random">
     <p class="lead text-center">Already a User? <a class="login hvr-underline-from-left" href="#" data-reveal-id="login">Login</a>
     <br>Get started by <a class="login hvr-underline-from-left" href="#" data-reveal-id="signUp">Signing Up</a></p>
   </div>
   
-  <div class="medium-6 columns right paragraph">
+  <div class="medium-5 columns right paragraph">
 
     <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
     <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
-
-    <!-- Temporary link buttons -->
-    <div class="row">
-      <div class="text-center">
-      <a class="button" href="/instructions">Instructions</a>
-      <a class="button" href="/about">About</a>
     </div>
-    
-    <!-- <div class="text-center"></div> -->
 
-    <!-- Modal for Login -->
-    <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="medium-5 columns about">
+    <a class="hvr-underline-from-left" style="border-bottom: 4px solid white" href="#secondPage">1. How to Use Parse</a>
+    <br><a class="hvr-underline-from-left" style="border-bottom: 4px solid white" href="/about">2. About the App</a>
+    </div>
+
+  <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
       <p class="special_heading">Login</p><hr>
       <%= form_for :user, url: "/login" do |f| %>
         <%= f.text_field :email, placeholder: "Enter email", :id => "textField" %>
@@ -56,19 +61,23 @@
 
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
-    
+
+  </div>
+
+  <div class="section" id="section2">
+    <div class="intro">
+      <div class="row instructions slide">
+  <div class="large-6 columns">
+    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
+    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
+  </div>
+
+  <div class="large-6 columns">
+    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
+    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
   </div>
 </div>
-
-
-<div class="row instructions">
-  <div class="large-6 columns">
-    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
-    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
+    </div>
   </div>
 
-  <div class="large-6 columns">
-    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
-    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
-  </div>
 </div>
