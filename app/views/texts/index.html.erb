@@ -14,6 +14,7 @@
 		<%= w.year %><br>
 		<%= form_for :text, url: "/parse" do |f| %>
 			<%= f.hidden_field :text, :value => w.link %>
+			<%= f.hidden_field :language, :value => w.language %>
 			<%= f.hidden_field 'text_form', :name => 'text_form' %>
 			<%= f.submit "See Parsed Text", :class => 'postfix' %>
 		<% end %>
