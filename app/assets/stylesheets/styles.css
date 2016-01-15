@@ -250,6 +250,27 @@ h1#brand {
 	padding-right: 10px;
 }
 
+/* ERRRRORRRRRRRRR */
+
+.error {
+/*	background-color: #FFFFFF;*/
+	margin-top: 100px;
+	border-radius: 20px;
+	opacity: 0.9;
+	padding: 20px;
+}
+
+.error_one {
+	background-color: #FFFFFF;
+	margin-top: 300px;
+	border-radius: 20px;
+	opacity: 0.9;
+	padding: 20px;
+}
+
+.four {
+	font-size: 150px;
+}
 
 
 
