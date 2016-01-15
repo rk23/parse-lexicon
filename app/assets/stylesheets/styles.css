@@ -356,6 +356,12 @@ h1#brand {
 	color: black;
 }
 
+.alert-box {
+	font-size: 0.5em;
+	height: 50px;
+	margin-top: 60px;
+}
+
 
 
 
