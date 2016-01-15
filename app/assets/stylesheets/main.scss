@@ -2,3 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.test-headshot {
+	height: 100px;
+	width: 100px;
+	border: 3px solid teal;
+	background-color: gray;
+}
+.test-bio {
+	border: 1px solid black;
+}
