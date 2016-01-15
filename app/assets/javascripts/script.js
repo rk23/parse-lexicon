@@ -26,7 +26,6 @@ ready = function() {
             dataType: 'HTML',
             data: {id: button.attr('id')}
         }).success(function(data){
-            console.log("made it passed")
             button.remove();
         }).error(function(err){
             console.log(err)
@@ -37,7 +36,6 @@ ready = function() {
     $('.learning-lang-switch').click(function(e){
         e.preventDefault()
         var langDiv = $(this);
-        console.log(langDiv.attr('value'))
 
         $.ajax({
             url: '/update',
@@ -80,6 +78,12 @@ ready = function() {
     $('.prs').on('click', function(e){
         e.preventDefault();
         var word = $(this);
+        $('#translated').empty();
+        $('#to-translate').text('Translating.');
+
+        setTimeout(function(){
+            $('#to-translate').append('.')
+        }, 250);
 
         $.ajax({
             url: '/parse/translate',
