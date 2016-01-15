@@ -150,13 +150,10 @@ ready = function() {
     });
 
     // Adding jQuery Plugin into Word List Sidebar
-    $(".right-sidebar").mCustomScrollbar();
+    $(".right-sidebar").mCustomScrollbar({mouseWheel:{ scrollAmount: 10 }}, {scrollInertia: 0});
 
     // Adding Scrollbar to the Learning Languages section
     $("#left2").mCustomScrollbar();
-
-    // Adding Scrollbar to the Recommended Texts
-    $("#left3").mCustomScrollbar();
 
     // Hover over Left Bar Panel 1 settings
 
