@@ -22,6 +22,18 @@ class ApplicationController < ActionController::Base
   def access_languages
     # Hash containing language code, name, and flag (country code)
     @lang_hash = {
+      'fr' => {
+        :name => 'French',
+        :flag => 'fr'},
+      'de' => {
+        :name => 'German',
+        :flag => 'de'},
+      'it' => {
+        :name => 'Italian',
+        :flag => 'it'},
+      'pt' => {
+        :name => 'Portuguese',
+        :flag => 'pt'},
       'ar' => {
         :name => 'Arabic',
         :flag => 'eg'},
@@ -61,12 +73,6 @@ class ApplicationController < ActionController::Base
       'fi' => {
         :name => 'Finnish',
         :flag => 'fi'},
-      'fr' => {
-        :name => 'French',
-        :flag => 'fr'},
-      'de' => {
-        :name => 'German',
-        :flag => 'de'},
       'el' => {
         :name => 'Greek',
         :flag => 'gr'},
@@ -85,9 +91,6 @@ class ApplicationController < ActionController::Base
       'hu' => {
         :name => 'Hungarian',
         :flag => 'hu'},
-      'it' => {
-        :name => 'Italian',
-        :flag => 'it'},
       'ja' => {
         :name => 'Japanese',
         :flag => 'jp'},
@@ -96,10 +99,10 @@ class ApplicationController < ActionController::Base
         :flag => 'tz'},
       'tlh' => {
         :name => 'Klingon',
-        :flag => 'tk'},
+        :flag => 'lc'},
       'tlh-Qaak' => {
         :name => 'Klingon (pIqaD)',
-        :flag => 'tk'},
+        :flag => 'lc'},
       'ko' => {
         :name => 'Korean',
         :flag => 'kr'},
@@ -124,9 +127,6 @@ class ApplicationController < ActionController::Base
       'pl' => {
         :name => 'Polish',
         :flag => 'pl'},
-      'pt' => {
-        :name => 'Portuguese',
-        :flag => 'pt'},
       'otq' => {
         :name => 'Querétaro Otomi',
         :flag => 'mx'},
