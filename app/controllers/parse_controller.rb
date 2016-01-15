@@ -6,6 +6,16 @@ class ParseController < ApplicationController
       # Set session to language of the book parsed
       session['user_language']['session_language'] = params[:text][:language]
 
+      # Change variable used in view
+      # Can be consolidated with code in application_controller
+      session_lang = session['user_language']['session_language'];
+      @current_lang = {
+          'code' => session_lang,
+          'name' => @lang_hash[session_lang][:name],
+          'flag' => @lang_hash[session_lang][:flag]
+      }
+
+
       # Call gutenberg
       url = params[:text][:text]
       response = RestClient.get url
