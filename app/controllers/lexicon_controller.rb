@@ -16,6 +16,16 @@ class LexiconController < ApplicationController
     end
 
     @user_words = current_user.words.where(language: language_code).order(:understood_word)
+
+    # Get word count for learned languages 
+    user_word_list = current_user.words
+    
+    word_count_by_lang = Hash.new(0)
+    user_word_list.each do |word|
+      word_count_by_lang[word.language] += 1
+    end
+
+    @words = word_count_by_lang.sort_by {|key, value| value}.reverse
   end
 
   def delete
