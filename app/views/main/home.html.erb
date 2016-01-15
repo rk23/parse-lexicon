@@ -38,42 +38,22 @@
           <%= f.hidden_field :language, :value => w.language %>
           <%= f.hidden_field 'text_form', :name => 'text_form' %>
 
-
-
           <%= button_tag(type: 'submit', class: "postfix render_book test-button") do %>
-
-            <!-- <i class="icon-ok icon-white"></i> -->
-        <ul class="small-block-grid-2 texts-item">
-          <!-- Flag -->
-          <li style="width: 10%">
-            <span class="flag-icon flag-icon-<%= w.language %>"></span>
-          </li>
-          <!-- Text -->
-          <li style="width: 90%">
-            <span style="font-style: italic"><strong><%= w.title %></strong></span>
-            <br>
-            <%= w.author %> (<%= w.year %>)
-          </li>
-        </ul>
-
-
-
-
-
+            <ul class="small-block-grid-2 texts-item">
+              <!-- Flag -->
+              <li style="width: 10%">
+                <span class="flag-icon flag-icon-<%= w.language %>"></span>
+              </li>
+              <!-- Text -->
+              <li style="width: 90%">
+                <span style="font-style: italic"><strong><%= w.title %></strong></span>
+                <br>
+                <%= w.author %> (<%= w.year %>)
+              </li>
+            </ul>
           <% end %>
 
         <% end %>
-
-
-
-
-
-
-
-
-
-
-
 
       <% end %>
     </div>
