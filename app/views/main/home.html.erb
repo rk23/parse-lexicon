@@ -29,8 +29,20 @@
       </a>
     </p>
     <div class="panel left_section hvr-underline-from-left" id="left3">
+
       <% @link.each do |w| %>
-        <!-- One text -->
+
+        <!-- Button -->
+        <%= form_for :text, url: "/parse" do |f| %>
+          <%= f.hidden_field :text, :value => w.link %>
+          <%= f.hidden_field :language, :value => w.language %>
+          <%= f.hidden_field 'text_form', :name => 'text_form' %>
+
+
+
+          <%= button_tag(type: 'submit', class: "postfix render_book test-button") do %>
+
+            <!-- <i class="icon-ok icon-white"></i> -->
         <ul class="small-block-grid-2 texts-item">
           <!-- Flag -->
           <li style="width: 10%">
@@ -44,17 +56,29 @@
           </li>
         </ul>
 
-        <!-- Button -->
-        <%= form_for :text, url: "/parse" do |f| %>
-          <%= f.hidden_field :text, :value => w.link %>
-          <%= f.hidden_field :language, :value => w.language %>
-          <%= f.hidden_field 'text_form', :name => 'text_form' %>
-          <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
+
+
+
+
+          <% end %>
+
         <% end %>
+
+
+
+
+
+
+
+
+
+
+
 
       <% end %>
     </div>
   </div>
+
 
   <!-- Text box for entering text -->
   <div class="large-8 columns content"> 
