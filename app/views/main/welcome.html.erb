@@ -30,6 +30,14 @@
   <div class="medium-4 columns left left paragraph random">
     <p class="lead text-center">Already a User? <a class="login hvr-underline-from-left" href="#" data-reveal-id="login">Login</a>
     <br>Get started by <a class="login hvr-underline-from-left" href="#" data-reveal-id="signUp">Signing Up</a></p>
+      <% if session[:danger] %>
+        <div data-alert class="alert-box alert round">
+          <p class="text-center"><%= session[:danger] %></p>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% else %>
+      <div data-alert class="alert-box alert round" style="display:none"></div>
+      <% end %>
   </div>
   
   <div class="medium-5 columns right paragraph">
