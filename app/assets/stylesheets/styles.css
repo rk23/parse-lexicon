@@ -24,8 +24,8 @@ a:visited {
 	font-weight: 500;
 	font-size: 14em;
 	position: relative;
-	top: 150px;
-	left: 130px;
+	top: 40px;
+	left: 100px;
 	z-index: 1;
 }
 
@@ -38,21 +38,21 @@ a:visited {
 }
 
 .random {
-	margin-top: 171px;
-	margin-left: 100px;
+	margin-top: 60px;
+	margin-left: 180px;
 	background-color: white;
 	border-bottom: 10px solid #69cdea;
 }
 
 .about {
 /*	margin-top: -20px;*/
-	margin-left: 20px;
-	line-height: 40px;
+	margin-left: 100px;
+	line-height: 50px;
 	letter-spacing: 2px;
 	font-size: 20px;
 	font-weight: 900;
 	/*background-color: white;*/
-	padding: 40px;
+	padding: 20px;
 	text-transform: uppercase;
 }
 
@@ -89,7 +89,9 @@ a:visited {
 }
 
 img {
-	width: 40px;
+	float: left;
+/*	padding: 20px;*/
+	margin: 20px;
 }
 
 /* Styling for the Welcome page */
@@ -339,6 +341,19 @@ h1#brand {
 
 .recommended {
 	margin: 20px auto;
+}
+
+.book_info {
+	padding: 30px;
+	background-color: transparent;
+}
+
+#book {
+	margin-bottom: 20px;
+}
+
+.book_link:hover {
+	color: black;
 }
 
 
