@@ -12,11 +12,11 @@ class ParseController < ApplicationController
       html = response.body
       data = Nokogiri::HTML(html, nil, 'UTF-8')
 
-      @show = data.css('body')
+      @show = data.css(".entry-content p").text
       text = @show.to_s
 
       # Parsing the string to get rid of header footer text
-      text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
+      # text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
     else
       # Grab data from the form on the main page
