@@ -15,9 +15,11 @@ class UsersController < ApplicationController
   			session[:user_id] = @user.id
         @user_language = @user.user_language.create(user_language_params)
         session[:user_language] = @user_language
+        session[:danger] = nil
         redirect_to root_path
       	else
-      		redirect_to "/signup"
+          session[:danger] = 'Missing Input Fields'
+      		redirect_to root_path
       	end
   end
 
