@@ -26,13 +26,10 @@
 
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Recommended Texts: </span></p>
     <div class="panel left_section hvr-underline-from-left" id="left3">
-        <p>fkjsdklfdsf</p>
+        
         <% @link.each do |w| %>
           Author: <%= w.author %><br>
-          <%= w.link %><br>
-          <%= w.language %><br>
-          <%= w.title %><br>
-          <%= w.year %><br> -->
+          <%= w.title %>
           <%= form_for :text, url: "/parse" do |f| %>
             <%= f.hidden_field :text, :value => w.link %>
             <%= f.hidden_field 'text_form', :name => 'text_form' %>
