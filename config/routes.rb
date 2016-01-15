@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   # Main routes
   root 'main#index'
+  get '/instructions'     => 'main#instructions'
   get '/about'            => 'main#about'
-  get '/recommended'      => 'texts#index'
 
-  # Sessions
+  # Sessions routes
   get '/login'            => 'sessions#new'
   post '/login'           => 'sessions#create'
-  put '/update'          => 'sessions#update'
+  put '/update'           => 'sessions#update'
   get '/logout'           => 'sessions#destroy'
 
   # Users routes
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post '/parse/translate' => 'parse#translate'
 
   # Texts routes
+  get '/recommended'      => 'texts#index'
   post 'texts/create'
   get '/juicyJ'           => 'texts#new'
   # get 'texts/show'
@@ -31,16 +32,16 @@ Rails.application.routes.draw do
   # Lexicon routes
   get '/lexicon'          => 'lexicon#index'
   get '/lexicon/:lang'    => 'lexicon#index'
-  delete '/lexicon'          => 'lexicon#delete'
+  delete '/lexicon'       => 'lexicon#delete'
 
   #404 route
   get "/403" => 'errors#forbidden', as: 'forbidden'
   get "*any", via: :all, to: "errors#not_found"
 
-  #403
+  # 403
   # get '/403', => 'main#recommended'
 
-  #Favorite routes
+  # Favorite routes
   # get '/users/:id/favorites'         => 'favorites#index'
   # get '/users/:id/favorites/:id'     => 'favorites#show'
   # get '/users/:id/favorites/new'     => 'favorites#new'

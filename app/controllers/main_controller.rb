@@ -23,7 +23,12 @@ class MainController < ApplicationController
 
   end
 
+  def instructions
+    disable_navbar
+  end
+
   def about
+    disable_navbar
   end
 
   def recommended
