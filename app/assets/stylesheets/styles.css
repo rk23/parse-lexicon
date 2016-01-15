@@ -80,15 +80,17 @@ a:visited {
 	font-family: 'Karla';
 }
 
-.intro {
-	margin-top: -20px;
-	background-color: white;
-}
+
 
 /* footer / second part of welcome.page */
 
 .instructions {
 	margin:  auto;
+}
+
+img {
+	width: 180px;
+	margin: 10px;
 }
 
 /* Styling for the Welcome page */

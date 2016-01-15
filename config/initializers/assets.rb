@@ -13,4 +13,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( background.png )
 Rails.application.config.assets.precompile += %w( half.png )
 Rails.application.config.assets.precompile += %w( parse_bg.jpg )
-Rails.application.config.assets.precompile += %w( Parse.mp4 )
+Rails.application.config.assets.precompile += %w( reed.png )
+Rails.application.config.assets.precompile += %w( derek.png )
+Rails.application.config.assets.precompile += %w( cynthia.png )
