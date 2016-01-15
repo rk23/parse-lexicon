@@ -6,14 +6,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate user_params[:email], user_params[:password]
-
     if @user
       session[:user_id] = @user.id
       @user_language = current_user.user_language.create(user_language_params)
       session[:user_language] = @user_language
+      session[:danger] = nil
       redirect_to root_path
     else
       # flash[:danger] = "wrong password"
+      session[:danger] = "Incorrect Log In or Password"
       redirect_to root_path
     end
 
