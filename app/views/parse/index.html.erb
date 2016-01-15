@@ -1,7 +1,7 @@
 <div class="row">
 <br>
 
-<ul class="medium-block-grid-3">
+<ul class="medium-block-grid-2">
 
   <li><p class="lead">Full Text Understood:</p><div class="progress success round columns ">
       <span class="meter text-right" id="progressBar" style="width: <%= @percentage %>%">
@@ -13,29 +13,6 @@
     <div class="progress success round columns">
       <span class="meter text-right" id="ratioProgress" style="width: <%= @ratio %>%">
       <span id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %>%</span></span>
-    </div>
-  </li>
-
-  <li>
-    <div class="columns translation">
-      <p class="lead">Translate: </p>
-
-      <!-- Foreign word to translate -->
-      <div>
-        <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>"></span>
-        <span id="to-translate">
-          <!-- Text is placed here on click -->
-        </span>
-      </div>
-
-      <!-- Translated word in English -->
-      <div>
-        <span class="flag-icon flag-icon-gb"></span>
-        <span id="translated">
-          <!-- Text is placed here on click -->
-        </span>
-      </div>
-
     </div>
   </li>
 
@@ -73,6 +50,30 @@
   </div>
 
   <div class="medium-3 small-12 columns panel right-sidebar">
+    
+    <li>
+    <div class="translation">
+      <p class="lead">Translate: </p>
+
+      <!-- Foreign word to translate -->
+      <div>
+        <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>"></span>
+        <span id="to-translate">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+      <!-- Translated word in English -->
+      <div>
+        <span class="flag-icon flag-icon-gb"></span>
+        <span id="translated">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+    </div>
+  </li>
+
     <!-- <h4>Translate:</h4><hr>
     <p id="to-translate" style="margin-bottom: 2px"></p>
     <p id="translated" style="margin-bottom: 2px"></p> -->

@@ -201,8 +201,13 @@ img {
 }
 
 #left2, #left3 {
-	max-height: 110px;
+	max-height: 130px;
 	width: 100%;
+}
+
+.foot {
+	background-color: white;
+	padding: 20px;
 }
 
 #left1 {
