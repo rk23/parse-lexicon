@@ -35,6 +35,6 @@ class TextsController < ApplicationController
   private
 
   def text_params
-    params.require(:text).permit(:link, :img_link, :author, :language)
+    params.require(:text).permit(:link, :img_link, :author, :language, :title, :year)
   end
 end

@@ -155,6 +155,9 @@ ready = function() {
     // Adding Scrollbar to the Learning Languages section
     $("#left2").mCustomScrollbar();
 
+    // Adding Scrollbar to the Recommended Texts
+    $("#left3").mCustomScrollbar();
+
     // Hover over Left Bar Panel 1 settings
 
     $("#left1").mouseenter(function(){

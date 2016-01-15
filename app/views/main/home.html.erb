@@ -28,16 +28,11 @@
     <div class="panel left_section hvr-underline-from-left" id="left3">
         
         <% @link.each do |w| %>
-          Author: <%= w.author %><br>
-          Link: <%= w.link %><br>
-          Language: <%= w.language %><br>
-          <%= w.title %><br>
-          <%= w.year %><br>
-          <%= w.title %>
+          <%= w.title %> by <strong><%= w.author %></strong><br>
           <%= form_for :text, url: "/parse" do |f| %>
             <%= f.hidden_field :text, :value => w.link %>
             <%= f.hidden_field 'text_form', :name => 'text_form' %>
-            <%= f.submit "render text", :class => 'button' %>
+            <%= f.submit "See Parsed Text", :class => 'tiny postfix render_book' %>
           <% end %>
         <% end %>
       </div>
