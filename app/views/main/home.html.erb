@@ -18,7 +18,7 @@
   <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba"> Change Language: </span></p>
       <div class="left_section panel hvr-underline-from-left" id="left1">
       <%= form_for :user_language, remote: true, :html=> {:id => "user_language_change"}, url: '/update' do |f| %>
-        Select language<%= f.select :session_language, @lang_dropdown_array %>
+        <%= f.select :session_language, @lang_dropdown_array %>
         <%= f.button "switch", :class => 'postfix' %>
       <% end %>
       </div>
