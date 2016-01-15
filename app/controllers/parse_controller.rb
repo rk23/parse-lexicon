@@ -2,14 +2,19 @@ class ParseController < ApplicationController
   def index
     # Scrape from the guttenberg sent from text index
     if params[:text_form]
-      @text = params[:text][:text]
+
+      # Set session to language of the book parsed
       session['user_language']['session_language'] = params[:text][:language]
-      url = @text
+
+      # Call gutenberg
+      url = params[:text][:text]
       response = RestClient.get url
       html = response.body
       data = Nokogiri::HTML(html, nil, 'UTF-8')
+
       @show = data.css('body')
       text = @show.to_s
+
       # Parsing the string to get rid of header footer text
       text = text.byteslice(text.index("*** START OF THIS PROJECT GUTENBERG EBOOK"), text.index("*** END OF THIS PROJECT GUTENBERG"))
 
