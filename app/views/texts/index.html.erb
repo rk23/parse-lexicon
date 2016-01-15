@@ -6,12 +6,11 @@
 <p class="lead">Recommended Texts:</p>
 	
 	<% @link.each do |w| %>
-	<div class="panel content">
-		Author: <%= w.author %><br>
-		Link: <%= w.link %><br>
-		Language: <%= w.language %><br>
-		<%= w.title %><br>
-		<%= w.year %><br>
+	<div class="panel book_info medium-block-grid-2" id="book">
+		<img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-bookmark-book-open-outline-stroke-64.png">
+		<h4><%= w.title %> by <%= w.author %></h4>
+		<span class="special_heading">Language: <%= w.language %> | Year: <%= w.year %> | <a class="hvr-underline-from-left book_link" href="<%= w.link %>">Link to Text</a>
+		<br><br>
 		<%= form_for :text, url: "/parse" do |f| %>
 			<%= f.hidden_field :text, :value => w.link %>
 			<%= f.hidden_field :language, :value => w.language %>
@@ -19,8 +18,8 @@
 			<%= f.submit "See Parsed Text", :class => 'postfix' %>
 		<% end %>
 			</div>
-
 	<% end %>
+
 
 </div>
 </div>
