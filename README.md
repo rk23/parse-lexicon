@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# parse-lexicon
-=======
-# PARSE
+# PARSE-LEXICON
 WDI SEA05 group project by Cynthia Wong, Derek Poppe, Reed Kinning, and Stuart Hiller
 
 ### About
@@ -31,4 +28,3 @@ Parse's secret sauce is comprised of many different technologies and resources:
 
 
 ### Plugins
->>>>>>> d3a2805d2486696ac9d3605f6870587ffb1c32f2
