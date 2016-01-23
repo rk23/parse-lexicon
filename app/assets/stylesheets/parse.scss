@@ -1,0 +1,14 @@
+// Place all the styles related to the parse controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.two-thirds {display: inline-block; width: 66vw; vertical-align: top}
+.one-third {display: inline-block; margin-left: 20px;}
+
+.prs {cursor: pointer}
+
+.highest-freq {background-color: #ff8976}
+.high-freq {background-color: #ffca76}
+.medium-freq {background-color: #96dba3}
+.low-freq {background-color: #9bd3ff}
+.lowest-freq {background-color: #d19bff}

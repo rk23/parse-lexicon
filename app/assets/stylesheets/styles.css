@@ -1,0 +1,367 @@
+body {
+	font-family: 'Avenir', sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+a:link, a:active {
+	color: #000000;
+}
+
+a:hover {
+	color: white;
+}
+
+a:visited {
+	color: #000000;
+}
+
+#brand-text {
+	font-family: 'avenir next', sans-serif;
+	letter-spacing: -20px;
+	font-weight: 500;
+	font-size: 14em;
+	position: relative;
+	top: 40px;
+	left: 100px;
+	z-index: 1;
+}
+
+.paragraph {
+	font-family: 'Karla', sans-serif;
+	margin-top: -208px;
+	background-color: white;
+	padding: 32px;
+	margin-right: 100px;
+}
+
+.random {
+	margin-top: 60px;
+	margin-left: 180px;
+	background-color: white;
+	border-bottom: 10px solid #69cdea;
+}
+
+.about {
+/*	margin-top: -20px;*/
+	margin-left: 100px;
+	line-height: 50px;
+	letter-spacing: 2px;
+	font-size: 20px;
+	font-weight: 900;
+	/*background-color: white;*/
+	padding: 20px;
+	text-transform: uppercase;
+}
+
+.callout_links {
+	border-bottom: 2px solid white;
+}
+
+.callout_links:hover {
+	border-bottom: 2px solid black;
+}
+
+.preview {
+	font-family: 'Calendas Plus';
+	margin-bottom: 40px;
+}
+
+.quote {
+	font-size: 30px;
+	font-weight: 900;
+/*	font-family: 'Calendas Plus';*/
+}
+
+.about_us {
+	font-size: 20px;
+	font-family: 'Karla';
+}
+
+
+
+/* footer / second part of welcome.page */
+
+.instructions {
+	margin:  auto;
+}
+
+img {
+	float: left;
+/*	padding: 20px;*/
+	margin: 20px;
+}
+
+/* Styling for the Welcome page */
+
+.login, .login:visited {
+	color: #21c6f5;
+}
+
+.login:hover {
+	color: black;
+}
+
+#login, #signUp {
+	width: 450px;
+	text-align: center;
+	font-family: 'Karla';
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+#textField {
+	border: 0px solid #008490;
+	background-color: #c1f1ff;
+}
+
+/* Styling the Form to Submit Text to Parse */
+
+
+.button, .postfix {
+	/*background-color: #008490;*/
+	background-color: #FFFFFF;
+	border: 1px solid #21c6f5;
+	color: #21c6f5;
+	border-radius: 0px;
+}
+
+.button:hover, .postfix:hover {
+	background-color: #FFFFFF;
+	color: #004478;
+	font-weight: 500;
+	border-color: #004478;
+}
+
+/*.submit_lang, .postfix {
+	border-radius: 5px;
+	background-color: transparent;
+	border: 1px solid #008490;
+	color: #008490;
+}*/
+
+#word-btn {
+	color: #008490;
+	font-weight: 500;
+	font-size: 14px;
+	width: 12em;
+}
+
+#word-btn:hover {
+	color: #21c6f5;
+}
+
+/* Parse Section and Text Area */
+
+.parse_area {
+	margin-top: 20px;
+	background-color: white;
+	height: 470px;
+	border: 0px;
+}
+
+.text_area {
+	font-size: 18px;
+	font-weight: 500;
+	border: 1px solid #21c6f5;
+	height: 360px;
+}
+
+#parse {
+	width: 100%;
+	border-radius: 0px;
+	border: 1px solid #21c6f5;
+}
+
+#parse:hover {
+	border-color: #004478;
+}
+
+/* ----- end parse section styling --------- */
+
+/* Styling for Left Side Bar in Homepage */
+
+.left_section {
+/*	margin-top: 20px;*/
+	border-radius: 0px;
+	background-color: transparent;
+	/*border-bottom: 4px solid #58b2ba;*/
+}
+
+.special_heading {
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 900;
+}
+
+#learning_languages {
+	height: 500px;
+}
+
+#left2, #left3 {
+	max-height: 130px;
+	width: 100%;
+}
+
+.foot {
+	background-color: white;
+	padding: 20px;
+}
+
+#left1 {
+	width: 100%;
+}
+
+#left3 {
+	font-size: 9px;
+	max-height: 150px;
+}
+
+.render_book {
+	font-size: 9px;
+	padding: 0;
+}
+
+.left-bar {
+	margin-top: 20px;
+}
+
+.content {
+	margin-top: 20px;
+	border-radius: 0px;
+	background-color: transparent;
+}
+
+/* dropdown menu */
+
+.language_dropdown {
+/*	width: 200px;*/
+	display: inline-block;
+}
+
+/* ----- end left sidebar section styling --------- */
+
+/* Style for the Right SideBar aka Word List */
+
+.right-sidebar {
+	max-height: 480px;
+	width: 15.5em;
+	/*border: 0px;*/
+	background-color: transparent;
+	float: right;
+
+}
+
+.p_text {
+	font-size: 18px;
+}
+
+h4 {
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+
+ /* styling for current user */
+
+h1#brand {
+	margin-top: 27px;
+	font-size: 20px;
+	font-family: 'Avenir Next', sans-serif;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.current {
+	margin-top: 35px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.top-bar, .nav-bar {
+	height: 6em;
+	background-color: #21c6f5;
+	border-bottom: 0px solid grey;
+}
+
+
+
+.fullWidth {
+	background-color: #000000;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 100%;
+	height: 300px;
+}
+
+/* progress bar styles */
+
+#progressBar, #ratioProgress {
+	background-color: #21c6f5;
+	-webkit-transition: width 500ms linear 0.1s;
+  -moz-transition: width 500ms linear 0.1s;
+  -o-transition: width 500ms linear 0.1s;
+  transition: width 500ms linear 0.1s;
+  overflow: hidden;
+  max-height: 32px;
+ 	font-size: 14px;
+ 	color: #FFFFFF;
+	padding-right: 10px;
+}
+
+/* ERRRRORRRRRRRRR */
+
+.error {
+/*	background-color: #FFFFFF;*/
+	margin-top: 100px;
+	border-radius: 20px;
+	opacity: 0.9;
+	padding: 20px;
+}
+
+.error_one {
+	background-color: #FFFFFF;
+	margin-top: 300px;
+	border-radius: 20px;
+	opacity: 0.9;
+	padding: 20px;
+}
+
+.four {
+	font-size: 150px;
+}
+
+/* Recommendation Styles */
+
+.recommended {
+	margin: 20px auto;
+}
+
+.book_info {
+	padding: 30px;
+	background-color: transparent;
+}
+
+#book {
+	margin-bottom: 20px;
+}
+
+.book_link:hover {
+	color: black;
+}
+
+.alert-box {
+	font-size: 0.5em;
+	height: 50px;
+	margin-top: 60px;
+}
+
+
+
+

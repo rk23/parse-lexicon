@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- content_for?(:title) ? yield(:title) : "foundation-rails" %>-->
+    <title>Parse</title>
+
+    <!-- Browser title icon -->
+    <%= favicon_link_tag 'favicon.ico' %>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+    <link href="assets/hover.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
+  </head>
+
+  <!-- Added data-no-turbolink to body tag to fix bug: after logging out, have to reload for buttons to work -->
+  <body data-no-turbolink="true">
+
+    <%= render :partial => "layouts/navbar" unless @disable_navbar %>
+  
+      <!-- All other html goes in yield below -->
+      <%= yield %>
+
+    <script src="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.js" type="text/javascript"></script>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<br>
+<div class="large-6 columns large-offset-3">
+<%= form_for :text, url: "/texts/create" do |f| %>
+	<label>UTF-8 Plain Text Link <%= f.text_field :link, :id => "textField" %></label>
+	<label>Image Link: <%= f.text_field :img_link,  :id => "textField" %></label>
+	<label>Author: <%= f.text_field :author, :id => "textField" %></label>
+	<label>Title: <%= f.text_field :title, :id => "textField" %></label>
+	<label>Year Published: <%= f.text_field :year, :id => "textField" %></label>
+	<label>Select Language: </p><%= f.select :language, @lang_dropdown_array %><br>
+	<%= f.submit "Add Book", :class => 'button postfix' %></label>
+<% end %>
+</div>

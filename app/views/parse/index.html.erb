@@ -1,0 +1,90 @@
+<div class="row">
+<br>
+
+<ul class="medium-block-grid-2">
+
+  <li><p class="lead">Full Text Understood:</p><div class="progress success round columns ">
+      <span class="meter text-right" id="progressBar" style="width: <%= @percentage %>%">
+      <span id="percentage" value="<%= @user_word_count %>" name="<%= @word_count %>"><%= @percentage %>%</span></span>
+    </div>
+  </li>
+
+  <li><p class="lead">Unique Words Known:</p>
+    <div class="progress success round columns">
+      <span class="meter text-right" id="ratioProgress" style="width: <%= @ratio %>%">
+      <span id="unique-ratio" value="<%= @parsed_sorted_and_compared.length %>" name="<%= @parsed_and_sorted.length%>"><%= @ratio %>%</span></span>
+    </div>
+  </li>
+
+</ul>
+
+<hr>
+<div class="row">
+  <div class="medium-9 small-12 columns preview">
+    <h4>Preview Text:</h4><br>
+    <% @count = 0.0; @parsed.each do |w| %>
+
+        <% if @user_known_words.include? w.downcase%>
+          <span class="prs"><%= w %></span>
+        <% else %>
+          <% @parsed_and_sorted.each do |word| %>
+            <% if word[0] == w.downcase %>
+              <% if word[1] > 20 %>
+                <span class="prs highest-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% elsif word[1] <= 20 && word[1] > 10 %>
+                <span class="prs high-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% elsif word[1] <= 10 && word[1] > 5 %>
+                <span class="prs medium-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% elsif word[1] <= 5 && word[1] > 2 %>
+                <span class="prs low-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% elsif word[1] <= 2 && word[1] > 0 %>
+                <span class="prs lowest-freq <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% else %>
+                <span class="prs <%= "parse-" + word[0].gsub("'", "_")%>"><%= w%></span>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+    <% end %>
+  </div>
+
+  <div class="medium-3 small-12 columns panel right-sidebar">
+    
+    <li>
+    <div class="translation">
+      <p class="lead">Translate: </p>
+
+      <!-- Foreign word to translate -->
+      <div>
+        <span class="flag-icon flag-icon-<%= @current_lang['flag'] %>"></span>
+        <span id="to-translate">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+      <!-- Translated word in English -->
+      <div>
+        <span class="flag-icon flag-icon-gb"></span>
+        <span id="translated">
+          <!-- Text is placed here on click -->
+        </span>
+      </div>
+
+    </div>
+  </li>
+
+    <!-- <h4>Translate:</h4><hr>
+    <p id="to-translate" style="margin-bottom: 2px"></p>
+    <p id="translated" style="margin-bottom: 2px"></p> -->
+    <br>
+    <h4>Word List:</h4><hr>
+    <% @count = 0.0;  @parsed_sorted_and_compared.each do |word| %>
+      <div class="word_known" value="<%= word[1] %>">
+        <button class="button tiny" id="word-btn" value="<%= word[0]%>"><%= word[0]%> X <%= word[1]%></button>
+        <br>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

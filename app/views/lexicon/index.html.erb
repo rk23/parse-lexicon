@@ -1,0 +1,23 @@
+<div class="row">
+
+  <div class="large-4 columns left-bar">
+	  <p class="special_heading"><span style="border-bottom: 2px solid #58b2ba">Learning: </span></p>
+    <div class="panel left_section hvr-underline-from-left" id="left2">
+      <% @words.each do |w| %>
+        <!-- w[0]: language code (string), w[1]: count (number) -->
+        <span class="learning-lang-switch" value="<%= @lang_hash[w[0]][:name] %>"><span class="flag-icon flag-icon-<%= @lang_hash[w[0]][:flag] %>"></span><%= @lang_hash[w[0]][:name] %></span>
+        <span class="view-lang-lexicon"><a style="font-size: 12px" href="/lexicon/<%= @lang_hash[w[0]][:name] %>">- <%= w[1] %> words</a></span><br>
+      <% end %>
+    </div>
+	</div>
+
+  <div class="large-8 columns content">
+  	<p class="special_heading"><span style="border-bottom: 2px solid #58b2ba"><%= @language %> lexicon:</span></p>
+    <div>
+    	<% @user_words.each do |w| %>
+		    <button class="button parse-lexicon" id="<%= w.id %>"><%= w.understood_word %></button>
+			<% end %>
+  	</div>
+  </div>
+
+</div>

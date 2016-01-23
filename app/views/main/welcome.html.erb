@@ -1,0 +1,117 @@
+<style>
+  
+  #section0 {
+  background-image: url(<%= asset_path 'parse_bg.jpg' %>);
+  background-repeat: repeat;
+  background-size: cover;
+
+}
+
+  #section2 {
+  background-image: url(<%= asset_path 'parse_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  }
+
+  #section3 {
+  background-image: url(<%= asset_path 'parse_bg.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  }
+
+</style>
+
+  <div id="fullpage">
+  <div class="section" id="section0" >
+    
+  <h1 id="brand-text">parse</h1> 
+  
+  <div class="medium-5 columns right paragraph">
+    <p class="lead">We understand that learning a new foreign language is frustrating. That is why we created translate - we want to help simplify the process and motivate you to read and learn more.</p>
+    <p class="lead">We generate a list of words that you don’t know. Once you feel like you’ve got the hang of it, you can hide the word. We keep track of your progress so you can focus on learning the actual language. </p>
+    <p class="lead text-center">Already a User? <a class="login hvr-underline-from-left" href="#" data-reveal-id="login">Login</a>
+    <br>Get started by <a class="login hvr-underline-from-left" href="#" data-reveal-id="signUp">Signing Up</a></p>
+    </div>
+
+    <div class="medium-5 columns about">
+    <a class="hvr-underline-from-left callout_links" href="#secondPage">1. How to Use Parse</a>
+    <br><a class="hvr-underline-from-left callout_links" href="#thirdPage">2. About the App</a>
+    <% if session[:danger] %>
+        <div data-alert class="alert-box alert round">
+          <p class="text-center"><%= session[:danger] %></p>
+          <a href="/" class="close">&times;</a>
+        </div>
+      <% else %>
+      
+      <% end %>
+    </div>
+
+  <div id="login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <p class="special_heading">Login</p><hr>
+      <%= form_for :user, url: "/login" do |f| %>
+        <%= f.text_field :email, placeholder: "Enter email", :id => "textField" %>
+        <%= f.password_field :password, placeholder: "Enter password", :id => "textField" %>
+        <p class="lead">Select language</p><%= f.select :session_language, @lang_dropdown_array %>
+        <%= f.submit "Login", :class => 'button' %>
+      <% end %>
+      
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+
+    <!-- Modal for Sign Up -->
+    <div id="signUp" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <p class="special_heading">Sign Up</p><hr>
+      <%= form_for :user, url: "/users" do |f| %>
+        <%= f.text_field :name, placeholder: "Choose a Username:", :id => "textField" %>
+        <%= f.text_field :email, placeholder: "Email:", :id => "textField" %>
+        <%= f.password_field :password, placeholder: "Password:", :id => "textField" %>
+        <p class="lead">Select language</p><%= f.select :session_language, @lang_dropdown_array %>
+        <%= f.submit "create account", :class => 'button' %>
+      <% end %>
+
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+
+  </div>
+
+  <div class="section" id="section2">
+      <div class="row instructions slide">
+        <div class="large-12 columns text-center">
+          <p class="lead"><strong>How Does It Work:</strong></p>
+          <iframe src="https://www.youtube.com/embed/TqpA0Tn21NQ?rel=0&showinfo=0&theme=light" width="900" height="536" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+<div class="row">
+    <div class="large-6 columns">
+    <!-- <p class="quote">"To have another language is to possess a second soul."</p> -->
+    <br><br><br><h3><strong>About the App</strong></h3>
+      <br><p class="about_us">Parse is a tool to help language learners read in another language and find important vocabulary to study. The idea is backed by the Pareto Principle: 20% of the words in a text give 80% of it's understanding. 
+      <br><br>To prove this principle, we submitted a sample text of over 15,000 words from The Count of Monte Cristo in the original French and it actually gave us exactly 79.68% understood when 20.02% of the unique words were known. Try it yourself!
+      </p>
+      </div>
+
+      <div class="large-6 columns">
+
+      <br><br><br><br><br><br><p class="about_us">
+      Don't know where to get started? We have a 'Recommended Texts' section.
+      <p class="about_us">Honestly, just watch the video and you will quickly learn how Parse works.
+        <br><br><strong><span class="callout_links">Languages:</span></strong> Ruby on Rails, HTML, CSS, jQuery, AJAX
+      <br><span class="callout_links"><strong>Resources:</strong></span></strong> MS Translator API, Project Gutenberg, Foundation 5 and icons from <a href="https://github.com/lipis/flag-icon-css" style="border-bottom: 2px solid #cfcfcf">flag-icon-css</a>.
+      </p></p>
+
+      <h3><a class="callout_links" href="#firstPage">Ready to Go?</a></h3>
+
+    </div>
+    <div class="large-12 columns"><p class="special_heading text-center foot" style="margin-top: 60px; border-bottom: 2px solid #cfcfcf">Made with a ton of &hearts; by Derek Poppe, Reed Kinning, Stuart Hiller, and Cynthia Wong. | <a class="hvr-underline-from-left" style="border-bottom: 2px solid #cfcfcf" href="https://github.com/djpo/kwph">Source Code</a></p></div>
+ 
+</div>
+  </div>
+</div>
+</div>
+
+  </div>

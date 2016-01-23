@@ -1,0 +1,23 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.test-headshot {
+	height: 100px;
+	width: 100px;
+	border: 3px solid teal;
+	background-color: gray;
+}
+.test-bio {
+	border: 1px solid black;
+}
+
+.texts-item {
+	font-size: 11px;
+}
+
+#left3 .test-button {
+	border: 1px solid rgba(33,198,245,1);
+	text-align: left;
+	padding: 3px 3px 3px 6px;
+}
